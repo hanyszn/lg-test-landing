@@ -91,17 +91,21 @@ body { font-family: 'Inter', sans-serif; background: #fff; color: rgba(0,0,0,.9)
 }
 .hero h1 em { font-style: normal; color: var(--brand-pink); }
 .hero-meta {
-  display: flex; gap: 0; margin-top: 52px;
-  border-top: 1px solid rgba(255,255,255,.1); padding-top: 32px;
+  display: flex; justify-content: space-between; align-items: flex-start;
+  margin-top: 52px;
+  border-top: 1px solid rgba(255,255,255,.1); padding-top: 36px;
+  width: 100%;
 }
 .hero-meta-item {
-  padding-right: 48px; margin-right: 48px;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+  flex: 1;
+  padding: 0 24px;
   border-right: 1px solid rgba(255,255,255,.1);
 }
 .hero-meta-item:last-child { border-right: none; }
-.hero-meta-label { font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 6px; }
-.hero-meta-val  { font-size: 17px; font-weight: 600; color: #fff; }
-.hero-meta-sub  { font-size: 12px; color: rgba(255,255,255,.4); margin-top: 2px; }
+.hero-meta-label { font-size: 13px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.45); margin-bottom: 10px; }
+.hero-meta-val  { font-size: 26px; font-weight: 700; color: #fff; }
+.hero-meta-sub  { font-size: 15px; color: rgba(255,255,255,.45); margin-top: 6px; }
 
 /* ── SECTIONS ── */
 .section { padding: 72px 80px; }
