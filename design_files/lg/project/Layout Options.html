@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LG전자 채용 — 레이아웃 옵션</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script type="text/babel" src="design-canvas.jsx"></script>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Inter', sans-serif; background: #f6f5f4; }
+
+/* ── Notion tokens ── */
+:root {
+  --black: rgba(0,0,0,0.95);
+  --white: #ffffff;
+  --warm-white: #f6f5f4;
+  --warm-dark: #31302e;
+  --gray-500: #615d59;
+  --gray-300: #a39e98;
+  --blue: #0075de;
+  --lg-red: #C8102E;
+  --border: 1px solid rgba(0,0,0,0.1);
+  --shadow-card:
+    rgba(0,0,0,0.04) 0px 4px 18px,
+    rgba(0,0,0,0.027) 0px 2px 8px,
+    rgba(0,0,0,0.02) 0px 1px 3px;
+  --r-card: 12px;
+  --r-micro: 4px;
+}
+
+/* ── Shared label ── */
+.option-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: var(--gray-300);
+  margin-bottom: 8px;
+}
+
+/* ═══════════════════════════════
+   OPTION A — Centered Hero + Cards
+   ═══════════════════════════════ */
+.optA {
+  width: 860px;
+  background: var(--white);
+  border-radius: var(--r-card);
+  overflow: hidden;
+}
+.optA-hero {
+  background: var(--warm-dark);
+  padding: 72px 64px 64px;
+  text-align: center;
+}
+.optA-hero-eyebrow {
+  font-size: 12px; font-weight: 500; letter-spacing:.1em; text-transform: uppercase;
+  color: rgba(255,255,255,.5); margin-bottom: 20px;
+}
+.optA-hero h1 {
+  font-size: 56px; font-weight: 700; color: var(--white);
+  line-height: 1.05; letter-spacing: -2px;
+  margin-bottom: 16px;
+}
+.optA-hero-sub {
+  font-size: 18px; color: rgba(255,255,255,.65); font-weight: 400; margin-bottom: 36px;
+}
+.optA-cta {
+  display: inline-block;
+  background: var(--white); color: var(--warm-dark);
+  font-size: 14px; font-weight: 600; padding: 12px 28px;
+  border-radius: 4px; text-decoration: none; cursor: pointer;
+}
+.optA-body { padding: 48px 64px; }
+.optA-deadline-bar {
+  display: flex; align-items: center; gap: 16px;
+  background: var(--warm-white); border-radius: 8px;
+  padding: 16px 20px; margin-bottom: 40px;
+  border: var(--border);
+}
+.optA-deadline-label { font-size: 11px; font-weight: 600; letter-spacing:.08em; text-transform: uppercase; color: var(--gray-300); }
+.optA-deadline-date { font-size: 18px; font-weight: 700; color: var(--black); }
+.optA-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 40px; }
+.optA-card {
+  background: var(--white); border: var(--border); border-radius: var(--r-card);
+  padding: 24px; box-shadow: var(--shadow-card);
+}
+.optA-card-title { font-size: 11px; font-weight: 600; letter-spacing:.08em; text-transform: uppercase; color: var(--gray-300); margin-bottom: 10px; }
+.optA-card-body { font-size: 14px; color: var(--black); line-height: 1.6; }
+.optA-section-title { font-size: 13px; font-weight: 600; color: var(--gray-500); margin-bottom: 16px; }
+.optA-timeline {
+  display: flex; gap: 0; overflow-x: auto;
+  background: var(--warm-white); border-radius: 8px; padding: 24px 20px;
+  border: var(--border);
+}
+.optA-step { display: flex; flex-direction: column; align-items: center; min-width: 80px; position: relative; }
+.optA-step:not(:last-child)::after {
+  content:''; position: absolute; top: 14px; left: 50%; width: 100%; height: 1px;
+  background: rgba(0,0,0,0.15);
+}
+.optA-step-dot {
+  width: 28px; height: 28px; border-radius: 50%; background: var(--white);
+  border: var(--border); display: flex; align-items: center; justify-content: center;
+  font-size: 10px; font-weight: 600; color: var(--black); z-index: 1; margin-bottom: 8px;
+  box-shadow: var(--shadow-card);
+}
+.optA-step-date { font-size: 9px; font-weight: 600; color: var(--blue); margin-bottom: 2px; }
+.optA-step-name { font-size: 10px; color: var(--gray-500); text-align: center; line-height: 1.3; }
+
+/* ═══════════════════════════════
+   OPTION B — Split / Sidebar
+   ═══════════════════════════════ */
+.optB {
+  width: 860px; background: var(--white);
+  border-radius: var(--r-card); overflow: hidden;
+  display: grid; grid-template-columns: 280px 1fr;
+  min-height: 700px;
+}
+.optB-sidebar {
+  background: var(--warm-dark); padding: 48px 32px;
+  display: flex; flex-direction: column; gap: 32px;
+}
+.optB-logo { font-size: 13px; font-weight: 700; color: rgba(255,255,255,.5); letter-spacing:.1em; text-transform: uppercase; margin-bottom: 8px; }
+.optB-sidebar h1 { font-size: 38px; font-weight: 700; color: var(--white); line-height: 1.1; letter-spacing: -1.5px; }
+.optB-sidebar-year { font-size: 13px; color: rgba(255,255,255,.5); margin-top: 8px; }
+.optB-sidebar-block { }
+.optB-sidebar-block-label { font-size: 10px; font-weight: 600; letter-spacing:.1em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 6px; }
+.optB-sidebar-block-val { font-size: 15px; font-weight: 600; color: var(--white); line-height:1.5; }
+.optB-sidebar-block-sub { font-size: 12px; color: rgba(255,255,255,.5); margin-top:2px; }
+.optB-main { padding: 40px 40px; display: flex; flex-direction: column; gap: 32px; overflow-y: auto; }
+.optB-section-heading { font-size: 11px; font-weight: 600; letter-spacing:.1em; text-transform: uppercase; color: var(--gray-300); margin-bottom: 12px; }
+.optB-info-row { display: flex; gap: 16px; align-items: flex-start; margin-bottom: 12px; }
+.optB-info-key { font-size: 12px; font-weight: 600; color: var(--gray-500); min-width: 48px; }
+.optB-info-val { font-size: 13px; color: var(--black); line-height: 1.6; }
+.optB-info-val .sub { font-size: 11px; color: var(--gray-300); margin-top: 2px; display: block; }
+.optB-divider { height: 1px; background: rgba(0,0,0,0.06); }
+.optB-steps { display: flex; flex-direction: column; gap: 10px; }
+.optB-step-row { display: flex; gap: 12px; align-items: flex-start; }
+.optB-step-num { width: 22px; height: 22px; border-radius: 50%; border: var(--border); display:flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600; color: var(--gray-500); flex-shrink: 0; margin-top:1px; }
+.optB-step-info { }
+.optB-step-date { font-size: 11px; font-weight: 600; color: var(--blue); }
+.optB-step-label { font-size: 13px; color: var(--black); }
+.optB-note { background: var(--warm-white); border-radius: 8px; padding: 16px 20px; font-size: 12px; color: var(--gray-500); line-height: 1.7; border: var(--border); }
+.optB-note li { list-style: none; padding-left: 12px; position: relative; }
+.optB-note li::before { content:'·'; position: absolute; left:0; }
+.optB-cta-row { display: flex; gap: 10px; }
+.optB-btn { display: inline-block; padding: 10px 20px; border-radius: 4px; font-size: 13px; font-weight: 600; cursor: pointer; text-decoration: none; }
+.optB-btn-primary { background: var(--black); color: var(--white); }
+.optB-btn-secondary { background: rgba(0,0,0,0.05); color: var(--black); }
+
+/* ═══════════════════════════════
+   OPTION C — Full-page Scroll
+   ═══════════════════════════════ */
+.optC { width: 860px; background: var(--white); border-radius: var(--r-card); overflow: hidden; }
+.optC-hero { background: var(--warm-dark); padding: 80px 64px 72px 64px; }
+.optC-hero-tag { display: inline-block; font-size: 11px; font-weight: 600; letter-spacing:.1em; text-transform:uppercase; color: rgba(255,255,255,.45); border: 1px solid rgba(255,255,255,.15); border-radius: 4px; padding: 4px 10px; margin-bottom: 24px; }
+.optC-hero h1 { font-size: 62px; font-weight: 700; color: var(--white); line-height: 1.0; letter-spacing: -2.5px; max-width: 540px; }
+.optC-hero-meta { display: flex; gap: 40px; margin-top: 40px; }
+.optC-hero-meta-item { }
+.optC-hero-meta-label { font-size: 10px; font-weight: 600; letter-spacing:.1em; text-transform:uppercase; color: rgba(255,255,255,.35); margin-bottom: 4px; }
+.optC-hero-meta-val { font-size: 16px; font-weight: 600; color: var(--white); }
+.optC-section { padding: 48px 64px; border-bottom: var(--border); }
+.optC-section:last-child { border-bottom: none; }
+.optC-section-alt { background: var(--warm-white); }
+.optC-section-heading { font-size: 22px; font-weight: 700; color: var(--black); letter-spacing: -.5px; margin-bottom: 24px; }
+.optC-qual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.optC-qual-card { background: var(--white); border: var(--border); border-radius: var(--r-card); padding: 20px 24px; }
+.optC-qual-card h3 { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing:.08em; color: var(--gray-300); margin-bottom: 8px; }
+.optC-qual-card p { font-size: 13px; color: var(--black); line-height: 1.65; }
+.optC-qual-card .note { font-size: 11px; color: var(--gray-300); margin-top: 6px; line-height: 1.5; }
+.optC-timeline-wrapper { display: flex; overflow-x: auto; gap: 0; padding-bottom: 4px; }
+.optC-tstep { display: flex; flex-direction: column; align-items: center; min-width: 90px; position: relative; }
+.optC-tstep:not(:last-child)::after {
+  content:''; position: absolute; top: 18px; left: 50%; width: 100%; height: 1px; background: rgba(0,0,0,.1);
+}
+.optC-tstep-circle { width: 36px; height: 36px; border-radius: 50%; background: var(--white); border: var(--border); display:flex; align-items:center; justify-content:center; font-size: 11px; font-weight: 700; color: var(--black); z-index:1; margin-bottom: 10px; box-shadow: var(--shadow-card); }
+.optC-tstep-date { font-size: 10px; font-weight: 600; color: var(--blue); margin-bottom: 3px; }
+.optC-tstep-name { font-size: 11px; color: var(--gray-500); text-align: center; line-height: 1.4; }
+.optC-notes { margin-top: 28px; display: flex; flex-direction: column; gap: 8px; }
+.optC-note-item { font-size: 13px; color: var(--gray-500); line-height: 1.65; padding-left: 16px; position:relative; }
+.optC-note-item::before { content:'•'; position:absolute; left:0; color: var(--gray-300); }
+.optC-links-row { display: flex; gap: 12px; margin-top: 24px; }
+.optC-link-card { background: var(--white); border: var(--border); border-radius: var(--r-card); padding: 16px 20px; flex: 1; box-shadow: var(--shadow-card); }
+.optC-link-card .lk-label { font-size: 11px; font-weight: 600; color: var(--gray-300); margin-bottom: 4px; text-transform: uppercase; letter-spacing:.07em; }
+.optC-link-card .lk-val { font-size: 13px; color: var(--blue); font-weight: 500; }
+.optC-cta-section { padding: 48px 64px; text-align: center; }
+.optC-cta-heading { font-size: 28px; font-weight: 700; letter-spacing: -.8px; margin-bottom: 8px; }
+.optC-cta-sub { font-size: 15px; color: var(--gray-500); margin-bottom: 28px; }
+.optC-btn { display: inline-block; padding: 14px 32px; border-radius: 4px; font-size: 14px; font-weight: 600; background: var(--black); color: var(--white); cursor: pointer; margin: 0 6px; }
+.optC-btn-ghost { background: transparent; color: var(--black); border: var(--border); }
+</style>
+</head>
+<body>
+<script type="text/babel">
+const { useState } = React;
+
+/* ── shared data ── */
+const steps = [
+  { date: "8/29–9/22", name: "입사지원" },
+  { date: "10/2", name: "1차 서류전형 발표" },
+  { date: "10/11–10/12", name: "LG Way Fit Test (AI면접)" },
+  { date: "10월 마지막 주", name: "종합 서류전형 발표" },
+  { date: "11월 중", name: "면접" },
+  { date: "12월 첫째 주", name: "종합 면접전형 발표" },
+  { date: "12월 중", name: "최종 전형 발표" },
+  { date: "1월 중", name: "입사" },
+];
+const notes = [
+  "최종 입사 시, 자사 정규 신입사원 처우에 준합니다.",
+  "입사 지원 마감일에는 시스템 접속이 원활하지 않을 수 있으니 여유를 두고 지원 바랍니다.",
+  "지원서 내용 중 허위사실이 있을 경우 합격이 취소될 수 있습니다.",
+  "전형 단계별 순서 및 일정은 내부사정에 의해 변경될 수 있으며, 전형결과는 LG Careers를 통해 확인하실 수 있습니다.",
+];
+
+/* ══════════════════════════════════
+   OPTION A — Centered Hero + Cards
+   ══════════════════════════════════ */
+function OptionA() {
+  return (
+    <div className="optA">
+      {/* Hero */}
+      <div className="optA-hero">
+        <div className="optA-hero-eyebrow">2025 하반기 · LG전자 신입사원 채용</div>
+        <h1>Join us,<br/>Make life better.</h1>
+        <div className="optA-hero-sub">미래를 함께 만들어갈 인재를 기다립니다</div>
+        <span className="optA-cta">지원하기 →</span>
+      </div>
+
+      {/* Body */}
+      <div className="optA-body">
+        {/* Deadline bar */}
+        <div className="optA-deadline-bar">
+          <span className="optA-deadline-label">모집기간</span>
+          <span style={{width:1, height:24, background:'rgba(0,0,0,.1)'}}></span>
+          <span className="optA-deadline-date">~ 9/22(월) 오전 11시</span>
+        </div>
+
+        {/* 3-column info cards */}
+        <div className="optA-cards">
+          <div className="optA-card">
+            <div className="optA-card-title">지원자격 — 대상</div>
+            <div className="optA-card-body">2026년 2월 졸업예정자 또는 기졸업자</div>
+          </div>
+          <div className="optA-card">
+            <div className="optA-card-title">지원자격 — 학위</div>
+            <div className="optA-card-body">국내/해외 학사, 석사, 박사 또는 이와 동등한 효력이 인정되는 자격 취득(예정)자</div>
+          </div>
+          <div className="optA-card">
+            <div className="optA-card-title">지원자격 — 병역</div>
+            <div className="optA-card-body">군필자 또는 면제자에 한함</div>
+          </div>
+        </div>
+
+        {/* Timeline */}
+        <div className="optA-section-title">채용 프로세스</div>
+        <div className="optA-timeline">
+          {steps.map((s, i) => (
+            <div className="optA-step" key={i}>
+              <div className="optA-step-dot">{i + 1}</div>
+              <div className="optA-step-date">{s.date}</div>
+              <div className="optA-step-name">{s.name}</div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ══════════════════════════════════
+   OPTION B — Split Sidebar
+   ══════════════════════════════════ */
+function OptionB() {
+  return (
+    <div className="optB">
+      {/* Sidebar */}
+      <div className="optB-sidebar">
+        <div>
+          <div className="optB-logo">LG Electronics</div>
+          <h1>Join us,<br/>Make life<br/>better.</h1>
+          <div className="optB-sidebar-year">2025 하반기 신입사원 채용</div>
+        </div>
+        <div className="optB-sidebar-block">
+          <div className="optB-sidebar-block-label">모집기간</div>
+          <div className="optB-sidebar-block-val">~ 9/22(월)</div>
+          <div className="optB-sidebar-block-sub">오전 11시 마감</div>
+        </div>
+        <div className="optB-sidebar-block">
+          <div className="optB-sidebar-block-label">지원서 접수</div>
+          <div className="optB-sidebar-block-val">LG Careers</div>
+          <div className="optB-sidebar-block-sub">careers.lg.com</div>
+        </div>
+        <div className="optB-sidebar-block">
+          <div className="optB-sidebar-block-label">채용정보 더보기</div>
+          <div className="optB-sidebar-block-val" style={{fontSize:13}}>유튜브: LG전자 채용<br/>lge-recruit.com</div>
+        </div>
+      </div>
+
+      {/* Main */}
+      <div className="optB-main">
+        {/* 지원자격 */}
+        <div>
+          <div className="optB-section-heading">지원자격</div>
+          {[
+            { key: "대상", val: "2026년 2월 졸업예정자 또는 기졸업자", sub: "2026년 1월부터 정규직으로 즉시 근무 가능해야 합니다." },
+            { key: "학위", val: "국내/해외 학사, 석사, 박사 또는 이와 동등한 효력이 인정되는 자격 취득(예정)자", sub: "졸업예정자의 경우 입사 후 3개월 내 학위증명서를 제출하지 못할 시 입사가 취소될 수 있습니다." },
+            { key: "병역", val: "군필자 또는 면제자에 한함", sub: null },
+          ].map((row) => (
+            <div className="optB-info-row" key={row.key}>
+              <div className="optB-info-key">{row.key}</div>
+              <div className="optB-info-val">
+                {row.val}
+                {row.sub && <span className="sub">{row.sub}</span>}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <div className="optB-divider"></div>
+
+        {/* 채용 프로세스 */}
+        <div>
+          <div className="optB-section-heading">채용 프로세스</div>
+          <div className="optB-steps">
+            {steps.map((s, i) => (
+              <div className="optB-step-row" key={i}>
+                <div className="optB-step-num">{i + 1}</div>
+                <div className="optB-step-info">
+                  <div className="optB-step-date">{s.date}</div>
+                  <div className="optB-step-label">{s.name}</div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="optB-divider"></div>
+
+        {/* Notes */}
+        <div>
+          <div className="optB-section-heading">유의사항</div>
+          <div className="optB-note">
+            <ul>
+              {notes.map((n, i) => <li key={i}>{n}</li>)}
+            </ul>
+          </div>
+        </div>
+
+        {/* CTA */}
+        <div className="optB-cta-row">
+          <span className="optB-btn optB-btn-primary">지원하기</span>
+          <span className="optB-btn optB-btn-secondary">채용 정보 더보기</span>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ══════════════════════════════════
+   OPTION C — Full-page Sections
+   ══════════════════════════════════ */
+function OptionC() {
+  return (
+    <div className="optC">
+      {/* Hero */}
+      <div className="optC-hero">
+        <div className="optC-hero-tag">2025 하반기 신입사원 채용</div>
+        <h1>Join us,<br/>Make life<br/>better.</h1>
+        <div className="optC-hero-meta">
+          <div className="optC-hero-meta-item">
+            <div className="optC-hero-meta-label">모집기간</div>
+            <div className="optC-hero-meta-val">~ 9/22 오전 11시</div>
+          </div>
+          <div className="optC-hero-meta-item">
+            <div className="optC-hero-meta-label">지원처</div>
+            <div className="optC-hero-meta-val">LG Careers</div>
+          </div>
+          <div className="optC-hero-meta-item">
+            <div className="optC-hero-meta-label">입사</div>
+            <div className="optC-hero-meta-val">2026년 1월</div>
+          </div>
+        </div>
+      </div>
+
+      {/* 지원자격 */}
+      <div className="optC-section">
+        <div className="optC-section-heading">지원자격</div>
+        <div className="optC-qual-grid">
+          {[
+            { title: "대상", body: "2026년 2월 졸업예정자 또는 기졸업자", note: "2026년 1월부터 정규직으로 즉시 근무 가능해야 합니다." },
+            { title: "학위", body: "국내/해외 학사, 석사, 박사 또는 이와 동등한 효력이 인정되는 자격 취득(예정)자", note: "졸업예정자의 경우 입사 후 3개월 내 학위증명서 제출 필요." },
+            { title: "병역", body: "군필자 또는 면제자에 한함", note: null },
+            { title: "지원서 접수", body: "채용 홈페이지를 통한 온라인 입사지원", note: "LG Careers — careers.lg.com" },
+          ].map((c) => (
+            <div className="optC-qual-card" key={c.title}>
+              <h3>{c.title}</h3>
+              <p>{c.body}</p>
+              {c.note && <p className="note">{c.note}</p>}
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* 채용 프로세스 */}
+      <div className="optC-section optC-section-alt">
+        <div className="optC-section-heading">채용 프로세스</div>
+        <div className="optC-timeline-wrapper">
+          {steps.map((s, i) => (
+            <div className="optC-tstep" key={i}>
+              <div className="optC-tstep-circle">{i + 1}</div>
+              <div className="optC-tstep-date">{s.date}</div>
+              <div className="optC-tstep-name">{s.name}</div>
+            </div>
+          ))}
+        </div>
+        <div className="optC-notes">
+          {notes.map((n, i) => <div className="optC-note-item" key={i}>{n}</div>)}
+        </div>
+      </div>
+
+      {/* 채용정보 링크 */}
+      <div className="optC-section">
+        <div className="optC-section-heading">채용정보 더보기</div>
+        <div className="optC-links-row">
+          <div className="optC-link-card">
+            <div className="lk-label">유튜브</div>
+            <div className="lk-val">LG전자 채용</div>
+          </div>
+          <div className="optC-link-card">
+            <div className="lk-label">신입채용 페이지</div>
+            <div className="lk-val">www.lge-recruit.com</div>
+          </div>
+        </div>
+      </div>
+
+      {/* CTA */}
+      <div className="optC-cta-section">
+        <div className="optC-cta-heading">미래를 함께 만들어갈 준비가 되셨나요?</div>
+        <div className="optC-cta-sub">LG전자와 함께 더 나은 삶을 만들어 나갑시다</div>
+        <span className="optC-btn">지원하기</span>
+        <span className="optC-btn optC-btn-ghost">채용 정보 더보기</span>
+      </div>
+    </div>
+  );
+}
+
+/* ── Canvas ── */
+function App() {
+  return (
+    <DesignCanvas title="LG전자 채용 — 레이아웃 옵션">
+      <DCSection id="layouts" title="레이아웃 방향 탐색">
+
+        <DCArtboard id="optA" label="Option A — 중앙 집중 + 카드" width={860} height={700}>
+          <OptionA />
+        </DCArtboard>
+
+        <DCArtboard id="optB" label="Option B — 사이드바 분할" width={860} height={700}>
+          <OptionB />
+        </DCArtboard>
+
+        <DCArtboard id="optC" label="Option C — 섹션 스크롤" width={860} height={900}>
+          <OptionC />
+        </DCArtboard>
+
+      </DCSection>
+    </DesignCanvas>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+</script>
+<div id="root"></div>
+</body>
+</html>

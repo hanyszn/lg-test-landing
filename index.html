@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>2025 하반기 LG전자 신입사원 채용</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { font-family: 'Inter', sans-serif; background: #fff; color: rgba(0,0,0,.9); -webkit-font-smoothing: antialiased; }
+
+:root {
+  --brand-red:    #C8102E;
+  --brand-rose:   #E8395A;
+  --brand-pink:   #F06080;
+  --brand-blush:  #FDE8EC;
+
+  --white:        #ffffff;
+  --warm-white:   #f6f5f4;
+  --warm-dark:    #1e1614;
+  --gray-700:     #2e2928;
+  --gray-500:     #615d59;
+  --gray-300:     #a39e98;
+  --gray-100:     #f0eeec;
+
+  --border:       rgba(0,0,0,0.09);
+  --shadow-card:
+    rgba(0,0,0,0.04) 0px 4px 18px,
+    rgba(0,0,0,0.027) 0px 2px 8px,
+    rgba(0,0,0,0.015) 0px 1px 3px;
+  --shadow-deep:
+    rgba(200,16,46,0.07) 0px 8px 32px,
+    rgba(0,0,0,0.05) 0px 2px 8px;
+
+  --r-micro: 4px;
+  --r-card:  12px;
+  --r-large: 16px;
+}
+
+/* ── NAV ── */
+.nav {
+  position: sticky; top: 0; z-index: 100;
+  background: rgba(255,255,255,.88); backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 48px; height: 56px;
+}
+.nav-logo { font-size: 13px; font-weight: 700; letter-spacing: .04em; color: var(--gray-700); }
+.nav-logo span { color: var(--brand-red); }
+.nav-links { display: flex; gap: 28px; }
+.nav-link {
+  font-size: 13px; font-weight: 500; color: var(--gray-500);
+  text-decoration: none; cursor: pointer; transition: color .15s;
+  background: none; border: none;
+}
+.nav-link:hover { color: var(--brand-red); }
+.nav-cta {
+  display: inline-block; padding: 8px 18px;
+  background: var(--brand-red); color: #fff;
+  font-size: 13px; font-weight: 600; border-radius: var(--r-micro);
+  text-decoration: none; transition: background .15s;
+}
+.nav-cta:hover { background: var(--brand-rose); }
+
+/* ── HERO ── */
+.hero {
+  background: var(--warm-dark);
+  padding: 96px 80px 80px;
+  position: relative; overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse 70% 90% at 80% 50%, rgba(200,16,46,.35) 0%, transparent 70%);
+  pointer-events: none;
+}
+.hero-inner { max-width: 1080px; margin: 0 auto; position: relative; }
+.hero-tag {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  color: rgba(255,255,255,.5); border: 1px solid rgba(255,255,255,.12);
+  border-radius: var(--r-micro); padding: 5px 12px; margin-bottom: 28px;
+}
+.hero-tag-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--brand-pink); }
+.hero h1 {
+  font-size: clamp(52px, 7vw, 88px); font-weight: 700;
+  color: #fff; line-height: 1.0; letter-spacing: -3px;
+  max-width: 700px; margin-bottom: 32px;
+}
+.hero h1 em { font-style: normal; color: var(--brand-pink); }
+.hero-meta {
+  display: flex; gap: 0; margin-top: 52px;
+  border-top: 1px solid rgba(255,255,255,.1); padding-top: 32px;
+}
+.hero-meta-item {
+  padding-right: 48px; margin-right: 48px;
+  border-right: 1px solid rgba(255,255,255,.1);
+}
+.hero-meta-item:last-child { border-right: none; }
+.hero-meta-label { font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.35); margin-bottom: 6px; }
+.hero-meta-val  { font-size: 17px; font-weight: 600; color: #fff; }
+.hero-meta-sub  { font-size: 12px; color: rgba(255,255,255,.4); margin-top: 2px; }
+
+/* ── SECTIONS ── */
+.section { padding: 72px 80px; }
+.section-alt { background: var(--warm-white); }
+.section-inner { max-width: 1080px; margin: 0 auto; }
+.section-label {
+  font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase;
+  color: var(--brand-rose); margin-bottom: 10px;
+}
+.section-heading {
+  font-size: 32px; font-weight: 700; letter-spacing: -1px; color: var(--gray-700);
+  margin-bottom: 36px; line-height: 1.1;
+}
+
+/* ── QUAL GRID ── */
+.qual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.qual-card {
+  background: var(--white); border: 1px solid var(--border); border-radius: var(--r-card);
+  padding: 28px 32px; box-shadow: var(--shadow-card);
+  transition: box-shadow .2s, transform .2s;
+}
+.qual-card:hover { box-shadow: var(--shadow-deep); transform: translateY(-2px); }
+.qual-card-label {
+  font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: .1em;
+  color: var(--brand-pink); margin-bottom: 10px;
+}
+.qual-card h3 { font-size: 16px; font-weight: 600; color: var(--gray-700); margin-bottom: 8px; }
+.qual-card p  { font-size: 14px; color: var(--gray-500); line-height: 1.7; }
+.qual-card .note {
+  font-size: 12px; color: var(--gray-300); margin-top: 10px; line-height: 1.6;
+  border-top: 1px solid var(--border); padding-top: 10px;
+}
+
+/* ── DEADLINE BANNER ── */
+.deadline-banner {
+  background: linear-gradient(135deg, var(--brand-red) 0%, var(--brand-rose) 60%, var(--brand-pink) 100%);
+  border-radius: var(--r-large); padding: 36px 40px;
+  display: flex; align-items: center; justify-content: space-between;
+  margin-bottom: 16px; box-shadow: var(--shadow-deep);
+}
+.deadline-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.6); margin-bottom: 6px; }
+.deadline-date    { font-size: 36px; font-weight: 700; color: #fff; letter-spacing: -1px; }
+.deadline-sub     { font-size: 14px; color: rgba(255,255,255,.65); margin-top: 4px; }
+.deadline-cta {
+  display: inline-block; padding: 14px 32px;
+  background: rgba(255,255,255,.15); color: #fff;
+  font-size: 14px; font-weight: 600; border-radius: var(--r-micro);
+  border: 1px solid rgba(255,255,255,.3); text-decoration: none;
+  transition: background .15s; flex-shrink: 0;
+}
+.deadline-cta:hover { background: rgba(255,255,255,.25); }
+
+/* ── COUNTDOWN ── */
+.countdown { display: flex; gap: 24px; margin-top: 8px; }
+.countdown-unit { text-align: center; }
+.countdown-val  { font-size: 28px; font-weight: 700; color: #fff; letter-spacing: -1px; line-height: 1; }
+.countdown-label { font-size: 10px; color: rgba(255,255,255,.4); margin-top: 4px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; }
+
+/* ── APPLY GRID ── */
+.apply-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+.apply-card {
+  background: var(--white); border: 1px solid var(--border); border-radius: var(--r-card);
+  padding: 24px 28px; box-shadow: var(--shadow-card);
+}
+.apply-card-label { font-size: 10px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: var(--gray-300); margin-bottom: 8px; }
+.apply-card-val   { font-size: 14px; font-weight: 600; color: var(--gray-700); margin-bottom: 4px; }
+.apply-card-link  { font-size: 13px; color: var(--brand-rose); font-weight: 500; text-decoration: none; }
+.apply-card-link:hover { text-decoration: underline; }
+
+/* ── TIMELINE ── */
+.timeline-scroll { overflow-x: auto; padding-bottom: 8px; }
+.timeline-track {
+  display: flex; min-width: max-content; gap: 0; padding: 8px 0 24px;
+  position: relative;
+}
+.timeline-track::before {
+  content: ''; position: absolute; top: 26px; left: 18px; right: 18px; height: 1px;
+  background: linear-gradient(to right, var(--brand-blush), var(--brand-pink), var(--brand-blush));
+}
+.t-step { display: flex; flex-direction: column; align-items: center; min-width: 110px; position: relative; }
+.t-step-circle {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--white); border: 2px solid var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px; font-weight: 700; color: var(--gray-500);
+  z-index: 1; margin-bottom: 12px; box-shadow: var(--shadow-card);
+  transition: border-color .2s, color .2s;
+}
+.t-step.active .t-step-circle { border-color: var(--brand-red); color: var(--brand-red); background: var(--brand-blush); }
+.t-step-date { font-size: 10px; font-weight: 600; color: var(--brand-rose); margin-bottom: 4px; text-align: center; }
+.t-step-name { font-size: 11px; color: var(--gray-500); text-align: center; line-height: 1.4; max-width: 90px; white-space: pre-line; }
+
+/* ── NOTES ── */
+.notes-list { display: flex; flex-direction: column; gap: 10px; margin-top: 36px; }
+.note-item {
+  display: flex; gap: 12px; align-items: flex-start;
+  font-size: 14px; color: var(--gray-500); line-height: 1.7;
+}
+.note-bullet { width: 5px; height: 5px; border-radius: 50%; background: var(--brand-pink); flex-shrink: 0; margin-top: 9px; }
+
+/* ── LINKS ── */
+.links-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.link-card {
+  display: flex; align-items: center; gap: 16px;
+  background: var(--white); border: 1px solid var(--border);
+  border-radius: var(--r-card); padding: 20px 24px;
+  box-shadow: var(--shadow-card); text-decoration: none;
+  transition: box-shadow .2s, transform .2s;
+}
+.link-card:hover { box-shadow: var(--shadow-deep); transform: translateY(-2px); }
+.link-icon {
+  width: 40px; height: 40px; border-radius: 10px;
+  background: var(--brand-blush); display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.link-icon svg { width: 20px; height: 20px; }
+.link-card-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; color: var(--gray-300); margin-bottom: 4px; }
+.link-card-val   { font-size: 14px; font-weight: 600; color: var(--gray-700); }
+
+/* ── CTA ── */
+.cta-section {
+  background: var(--warm-dark); padding: 80px;
+  text-align: center; position: relative; overflow: hidden;
+}
+.cta-section::before {
+  content: ''; position: absolute; inset: 0;
+  background: radial-gradient(ellipse 60% 80% at 50% 50%, rgba(200,16,46,.25) 0%, transparent 70%);
+  pointer-events: none;
+}
+.cta-inner    { max-width: 600px; margin: 0 auto; position: relative; }
+.cta-heading  { font-size: 38px; font-weight: 700; color: #fff; letter-spacing: -1.5px; line-height: 1.1; margin-bottom: 12px; }
+.cta-sub      { font-size: 16px; color: rgba(255,255,255,.5); margin-bottom: 36px; }
+.cta-buttons  { display: flex; gap: 12px; justify-content: center; }
+.btn-primary {
+  display: inline-block; padding: 14px 32px;
+  background: var(--brand-red); color: #fff;
+  font-size: 14px; font-weight: 600; border-radius: var(--r-micro);
+  text-decoration: none; transition: background .15s;
+}
+.btn-primary:hover { background: var(--brand-rose); }
+.btn-ghost {
+  display: inline-block; padding: 14px 28px;
+  background: rgba(255,255,255,.08); color: rgba(255,255,255,.75);
+  font-size: 14px; font-weight: 500; border-radius: var(--r-micro);
+  border: 1px solid rgba(255,255,255,.15); text-decoration: none;
+  transition: background .15s;
+}
+.btn-ghost:hover { background: rgba(255,255,255,.14); }
+
+/* ── FOOTER ── */
+.footer {
+  background: var(--warm-dark); border-top: 1px solid rgba(255,255,255,.06);
+  padding: 32px 80px;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.footer-copy  { font-size: 12px; color: rgba(255,255,255,.25); }
+.footer-links { display: flex; gap: 20px; }
+.footer-link  { font-size: 12px; color: rgba(255,255,255,.3); text-decoration: none; }
+.footer-link:hover { color: rgba(255,255,255,.6); }
+
+/* ── SCROLL REVEAL ── */
+.reveal { opacity: 0; transform: translateY(20px); transition: opacity .55s ease, transform .55s ease; }
+.reveal.visible { opacity: 1; transform: none; }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 768px) {
+  .nav { padding: 0 20px; }
+  .nav-links { display: none; }
+  .hero { padding: 64px 24px 48px; }
+  .hero-meta { flex-direction: column; gap: 20px; }
+  .hero-meta-item { border-right: none; padding-right: 0; margin-right: 0; border-bottom: 1px solid rgba(255,255,255,.1); padding-bottom: 20px; }
+  .hero-meta-item:last-child { border-bottom: none; }
+  .section { padding: 48px 24px; }
+  .qual-grid, .apply-grid, .links-row { grid-template-columns: 1fr; }
+  .deadline-banner { flex-direction: column; gap: 24px; align-items: flex-start; }
+  .cta-section { padding: 48px 24px; }
+  .footer { padding: 24px 20px; flex-direction: column; gap: 12px; text-align: center; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav class="nav">
+  <div class="nav-logo"><span>LG</span> Electronics</div>
+  <div class="nav-links">
+    <button class="nav-link" onclick="scrollTo('qualify')">지원자격</button>
+    <button class="nav-link" onclick="scrollTo('apply')">지원 안내</button>
+    <button class="nav-link" onclick="scrollTo('process')">채용 프로세스</button>
+    <button class="nav-link" onclick="scrollTo('links')">채용정보</button>
+  </div>
+  <a class="nav-cta" href="https://careers.lg.com" target="_blank" rel="noreferrer">지원하기</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-tag">
+      <span class="hero-tag-dot"></span>
+      2025 하반기 신입사원 채용
+    </div>
+    <h1>Join us,<br><em>Make life</em><br>better.</h1>
+    <div class="hero-meta">
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">모집기간</div>
+        <div class="hero-meta-val">~ 9/22(월)</div>
+        <div class="hero-meta-sub">오전 11시 마감</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">지원처</div>
+        <div class="hero-meta-val">LG Careers</div>
+        <div class="hero-meta-sub">careers.lg.com</div>
+      </div>
+      <div class="hero-meta-item">
+        <div class="hero-meta-label">입사 예정</div>
+        <div class="hero-meta-val">2026년 1월</div>
+        <div class="hero-meta-sub">정규직 즉시 근무</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- APPLY / DEADLINE -->
+<section class="section" id="apply">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="deadline-banner">
+        <div>
+          <div class="deadline-eyebrow">지원 마감까지</div>
+          <div class="deadline-date">9월 22일(월) 오전 11시</div>
+          <div class="countdown" id="countdown">
+            <div class="countdown-unit"><div class="countdown-val" id="cd-d">00</div><div class="countdown-label">일</div></div>
+            <div class="countdown-unit"><div class="countdown-val" id="cd-h">00</div><div class="countdown-label">시간</div></div>
+            <div class="countdown-unit"><div class="countdown-val" id="cd-m">00</div><div class="countdown-label">분</div></div>
+            <div class="countdown-unit"><div class="countdown-val" id="cd-s">00</div><div class="countdown-label">초</div></div>
+          </div>
+        </div>
+        <a class="deadline-cta" href="https://careers.lg.com" target="_blank" rel="noreferrer">지금 지원하기 →</a>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="apply-grid">
+        <div class="apply-card">
+          <div class="apply-card-label">지원서 접수</div>
+          <div class="apply-card-val">채용 홈페이지를 통한 온라인 입사지원</div>
+          <a class="apply-card-link" href="https://careers.lg.com" target="_blank" rel="noreferrer">LG Careers →</a>
+        </div>
+        <div class="apply-card">
+          <div class="apply-card-label">문의</div>
+          <div class="apply-card-val">LG전자 신입채용 공식 채널</div>
+          <a class="apply-card-link" href="https://www.lge-recruit.com" target="_blank" rel="noreferrer">lge-recruit.com →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- QUALIFICATIONS -->
+<section class="section section-alt" id="qualify">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">지원자격</div>
+      <div class="section-heading">이런 분들을 기다립니다</div>
+    </div>
+    <div class="reveal">
+      <div class="qual-grid">
+        <div class="qual-card">
+          <div class="qual-card-label">지원 대상</div>
+          <h3>졸업예정자 또는 기졸업자</h3>
+          <p>2026년 2월 졸업예정자 또는 기졸업자</p>
+          <p class="note">2026년 1월부터 정규직으로 즉시 근무 가능해야 합니다. 입사일은 최종합격자에 한해 개별 안내되며, 1월 중 순차적으로 입사예정입니다.</p>
+        </div>
+        <div class="qual-card">
+          <div class="qual-card-label">학위</div>
+          <h3>학사 · 석사 · 박사</h3>
+          <p>국내/해외에서 학사, 석사, 박사 또는 이와 동등한 효력이 인정되는 자격을 취득(예정)한 자</p>
+          <p class="note">졸업예정자의 경우 입사 후 3개월 내 학위증명서를 제출하지 못할 시 입사가 취소될 수 있습니다.</p>
+        </div>
+        <div class="qual-card">
+          <div class="qual-card-label">병역</div>
+          <h3>군필자 또는 면제자</h3>
+          <p>군필자 또는 면제자에 한합니다.</p>
+        </div>
+        <div class="qual-card">
+          <div class="qual-card-label">기타</div>
+          <h3>해외 여행에 결격 사유 없는 자</h3>
+          <p>해외여행에 결격 사유가 없어야 하며, LG전자 인사 규정상 채용에 결격 사유가 없는 자</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section" id="process">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">채용 프로세스</div>
+      <div class="section-heading">전형 일정</div>
+    </div>
+    <div class="reveal">
+      <div class="timeline-scroll">
+        <div class="timeline-track">
+          <div class="t-step">
+            <div class="t-step-circle">1</div>
+            <div class="t-step-date">8/29–9/22</div>
+            <div class="t-step-name">입사지원</div>
+          </div>
+          <div class="t-step">
+            <div class="t-step-circle">2</div>
+            <div class="t-step-date">10/2</div>
+            <div class="t-step-name">1차 서류전형 발표</div>
+          </div>
+          <div class="t-step">
+            <div class="t-step-circle">3</div>
+            <div class="t-step-date">10/11–10/12</div>
+            <div class="t-step-name">LG Way Fit Test&#10;(AI면접)</div>
+          </div>
+          <div class="t-step">
+            <div class="t-step-circle">4</div>
+            <div class="t-step-date">10월 마지막 주</div>
+            <div class="t-step-name">종합 서류전형 발표</div>
+          </div>
+          <div class="t-step">
+            <div class="t-step-circle">5</div>
+            <div class="t-step-date">11월 중</div>
+            <div class="t-step-name">면접</div>
+          </div>
+          <div class="t-step">
+            <div class="t-step-circle">6</div>
+            <div class="t-step-date">12월 첫째 주</div>
+            <div class="t-step-name">종합 면접전형 발표</div>
+          </div>
+          <div class="t-step">
+            <div class="t-step-circle">7</div>
+            <div class="t-step-date">12월 중</div>
+            <div class="t-step-name">최종 전형 발표</div>
+          </div>
+          <div class="t-step active">
+            <div class="t-step-circle">8</div>
+            <div class="t-step-date">1월 중</div>
+            <div class="t-step-name">입사</div>
+          </div>
+        </div>
+      </div>
+      <div class="notes-list">
+        <div class="note-item"><span class="note-bullet"></span><span>최종 입사 시, 자사 정규 신입사원 처우에 준합니다.</span></div>
+        <div class="note-item"><span class="note-bullet"></span><span>입사 지원 마감일에는 시스템 접속이 원활하지 않을 수 있으니 여유를 두고 지원을 부탁드립니다.</span></div>
+        <div class="note-item"><span class="note-bullet"></span><span>지원서 내용 중 허위사실이 있을 경우 합격이 취소될 수 있습니다.</span></div>
+        <div class="note-item"><span class="note-bullet"></span><span>전형 단계별 순서 및 일정은 내부사정에 의해 변경될 수 있으며, 전형결과는 LG Careers를 통해 확인하실 수 있습니다.</span></div>
+        <div class="note-item"><span class="note-bullet"></span><span>자세한 내용은 각 시점에 맞추어 안내드릴 예정입니다.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- LINKS -->
+<section class="section section-alt" id="links">
+  <div class="section-inner">
+    <div class="reveal">
+      <div class="section-label">채용정보 더보기</div>
+      <div class="section-heading">공식 채널</div>
+    </div>
+    <div class="reveal">
+      <div class="links-row">
+        <a class="link-card" href="https://www.youtube.com/@LGElectronicsKR" target="_blank" rel="noreferrer">
+          <div class="link-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#C8102E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+          </div>
+          <div>
+            <div class="link-card-label">유튜브</div>
+            <div class="link-card-val">LG전자 채용</div>
+          </div>
+        </a>
+        <a class="link-card" href="https://www.lge-recruit.com" target="_blank" rel="noreferrer">
+          <div class="link-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="#C8102E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+            </svg>
+          </div>
+          <div>
+            <div class="link-card-label">신입채용 페이지</div>
+            <div class="link-card-val">www.lge-recruit.com</div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section">
+  <div class="cta-inner">
+    <div class="cta-heading">미래를 함께<br>만들어갈 준비가 되셨나요?</div>
+    <div class="cta-sub">LG전자와 함께 더 나은 삶을 만들어 나갑시다</div>
+    <div class="cta-buttons">
+      <a class="btn-primary" href="https://careers.lg.com" target="_blank" rel="noreferrer">지금 지원하기</a>
+      <a class="btn-ghost" href="https://www.lge-recruit.com" target="_blank" rel="noreferrer">채용정보 더보기</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-copy">© 2025 LG Electronics Inc. All rights reserved.</div>
+  <div class="footer-links">
+    <a class="footer-link" href="#">개인정보처리방침</a>
+    <a class="footer-link" href="#">이용약관</a>
+    <a class="footer-link" href="#">LG그룹 채용</a>
+  </div>
+</footer>
+
+<script>
+// ── Smooth scroll ──
+function scrollTo(id) {
+  const el = document.getElementById(id);
+  if (el) el.scrollIntoView({ behavior: 'smooth' });
+}
+
+// ── Countdown ──
+(function () {
+  const target = new Date('2025-09-22T11:00:00+09:00');
+  const d = document.getElementById('cd-d');
+  const h = document.getElementById('cd-h');
+  const m = document.getElementById('cd-m');
+  const s = document.getElementById('cd-s');
+  if (!d) return;
+
+  function pad(n) { return String(n).padStart(2, '0'); }
+  function tick() {
+    const diff = target - Date.now();
+    if (diff <= 0) { d.textContent = h.textContent = m.textContent = s.textContent = '00'; return; }
+    d.textContent = pad(Math.floor(diff / 86400000));
+    h.textContent = pad(Math.floor((diff % 86400000) / 3600000));
+    m.textContent = pad(Math.floor((diff % 3600000) / 60000));
+    s.textContent = pad(Math.floor((diff % 60000) / 1000));
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+
+// ── Scroll reveal ──
+(function () {
+  const obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); }
+    });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(function (el) { obs.observe(el); });
+})();
+</script>
+</body>
+</html>
