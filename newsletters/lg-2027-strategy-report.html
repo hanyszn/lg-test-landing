@@ -1,0 +1,372 @@
+<title>LG 2027 AI·UX 전략</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap');
+
+  :root {
+    --bg: #faf6f5;
+    --surface: #ffffff;
+    --text: #1c1413;
+    --text-2: #6e5d5c;
+    --text-3: #8f7f7e;
+    --accent: #a50034;
+    --accent-2: #7a0027;
+    --accent-soft: #f4e3e8;
+    --border: #e9dfdd;
+    --border-strong: #d8c9c7;
+    --good: #2f7a4f;
+    --warn: #a56a00;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #171010; --surface: #1f1717; --text: #f3ebea; --text-2: #bfaeac; --text-3: #96827f;
+      --accent: #ff5c7a; --accent-2: #ff86a0; --accent-soft: #3a1a22; --border: #342626; --border-strong: #4a3736;
+      --good: #6fce93; --warn: #e0ab4d;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #171010; --surface: #1f1717; --text: #f3ebea; --text-2: #bfaeac; --text-3: #96827f;
+    --accent: #ff5c7a; --accent-2: #ff86a0; --accent-soft: #3a1a22; --border: #342626; --border-strong: #4a3736;
+    --good: #6fce93; --warn: #e0ab4d;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans KR', -apple-system, sans-serif;
+    padding-inline: 20px;
+    padding-block: 40px;
+  }
+  .sheet { max-width: 760px; margin-inline: auto; }
+
+  /* Cover */
+  .cover { padding-bottom: 30px; border-bottom: 3px double var(--border-strong); }
+  .cover .kicker { font-size: 12px; letter-spacing: .16em; font-weight: 700; color: var(--accent); text-transform: uppercase; }
+  .cover h1 { font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: clamp(30px, 6vw, 42px); line-height: 1.25; margin: 12px 0 14px; text-wrap: balance; }
+  .cover .dek { font-size: 16px; color: var(--text-2); line-height: 1.7; max-width: 58ch; }
+  .cover .meta { margin-top: 20px; display: flex; gap: 16px; font-size: 12.5px; color: var(--text-3); font-variant-numeric: tabular-nums; flex-wrap: wrap; }
+  .cover .meta span:not(:last-child)::after { content: "·"; margin-left: 16px; color: var(--border-strong); }
+
+  h2.section-title {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin: 48px 0 6px;
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+  }
+  h2.section-title .num { color: var(--accent); font-size: 16px; font-variant-numeric: tabular-nums; }
+  .section-rule { height: 1px; background: var(--border-strong); margin-bottom: 18px; }
+
+  p.body-text { font-size: 15px; line-height: 1.8; color: var(--text-2); margin: 0 0 14px; max-width: 64ch; }
+  p.body-text strong { color: var(--text); font-weight: 600; }
+
+  /* comparison table */
+  .table-wrap { overflow-x: auto; margin-block: 8px 20px; border: 1px solid var(--border); border-radius: 10px; }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; min-width: 640px; }
+  th, td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--border); vertical-align: top; line-height: 1.55; }
+  thead th { background: var(--accent-soft); color: var(--text); font-weight: 700; font-size: 12px; letter-spacing: .02em; }
+  tbody tr:last-child td { border-bottom: none; }
+  tbody tr.lg-row td { background: var(--accent-soft); font-weight: 500; }
+  td.company-name { font-family: 'Noto Serif KR', serif; font-weight: 700; white-space: nowrap; }
+  td.weak { color: var(--text-3); }
+
+  /* positioning chart */
+  .chart-card { border: 1px solid var(--border); border-radius: 12px; padding: 20px; background: var(--surface); margin-block: 8px 20px; }
+  .chart-card .chart-title { font-size: 13px; font-weight: 700; margin-bottom: 2px; }
+  .chart-card .chart-sub { font-size: 12px; color: var(--text-3); margin-bottom: 14px; }
+  svg text { font-family: 'Noto Sans KR', sans-serif; fill: var(--text-2); }
+  svg .axis-label { font-size: 11.5px; font-weight: 600; fill: var(--text-2); }
+  svg .grid { stroke: var(--border); stroke-width: 1; }
+  svg .dot-label { font-size: 12px; fill: var(--text); font-weight: 500; }
+  svg .lg-label { fill: var(--accent); font-weight: 700; }
+
+  /* trend list */
+  .trend {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    gap: 14px;
+    padding-block: 16px;
+    border-bottom: 1px solid var(--border);
+  }
+  .trend:last-child { border-bottom: none; }
+  .trend .n { font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 700; color: var(--accent); }
+  .trend h3 { font-size: 15.5px; font-weight: 700; margin: 0 0 5px; }
+  .trend p { font-size: 13.5px; line-height: 1.7; color: var(--text-2); margin: 0; }
+
+  /* SWOT */
+  .swot { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-block: 8px 20px; }
+  .swot .cell { border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; }
+  .swot .cell .tag { font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; margin-bottom: 8px; }
+  .swot .cell.s .tag { color: var(--good); }
+  .swot .cell.w .tag { color: var(--warn); }
+  .swot .cell.o .tag { color: var(--accent); }
+  .swot .cell.t .tag { color: var(--text-3); }
+  .swot ul { margin: 0; padding-left: 16px; }
+  .swot li { font-size: 13px; line-height: 1.6; color: var(--text-2); margin-bottom: 5px; }
+  @media (max-width: 520px) { .swot { grid-template-columns: 1fr; } }
+
+  /* roadmap */
+  .phase { margin-block: 10px 24px; }
+  .phase-head { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
+  .phase-head .badge { font-size: 11px; font-weight: 700; padding: 4px 10px; border-radius: 999px; background: var(--accent); color: #fff; white-space: nowrap; }
+  .phase-head h3 { font-size: 15px; font-weight: 700; margin: 0; }
+  .action { display: grid; grid-template-columns: 1fr; gap: 4px; padding: 14px 16px; border: 1px solid var(--border); border-radius: 10px; margin-bottom: 10px; }
+  .action .title { font-size: 14px; font-weight: 600; }
+  .action .why { font-size: 12.5px; color: var(--text-3); line-height: 1.6; }
+
+  footer { margin-top: 48px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12.5px; color: var(--text-3); line-height: 1.75; }
+</style>
+
+<div class="sheet">
+
+  <div class="cover">
+    <div class="kicker">Strategy Report</div>
+    <h1>LG전자 2027 AI·UX 준비 전략</h1>
+    <p class="dek">LG전자 자체 동향과 Apple·Google·Samsung·Huawei·Anthropic 5개사의 최신 AI·UX 행보를 종합해, 2027년 LG전자가 AI와 UX 영역에서 무엇을 준비해야 하는지 정리한 보고서입니다.</p>
+    <div class="meta">
+      <span>2026년 9월 19일</span>
+      <span>기준 자료: 자체 뉴스레터 2건 (LG / 빅테크 5개사)</span>
+    </div>
+  </div>
+
+  <h2 class="section-title"><span class="num">01</span>Executive Summary</h2>
+  <div class="section-rule"></div>
+  <p class="body-text">2026년 하반기 업계 전반의 AI 경쟁은 <strong>"더 똑똑한 모델"에서 "대신 행동하는 에이전트"</strong>로 무게중심이 이동했습니다. Google·Anthropic은 멀티스텝 작업을 스스로 완결하는 에이전틱 AI를, Huawei는 OS 자체를 에이전트 오케스트레이터로 재정의했고, Samsung은 빅스비를 전 가전에 통일된 대화형 에이전트로 확장했습니다. Apple은 AI 비서 완성도를 하드웨어 출시의 게이팅 기준으로 삼기 시작했습니다.</p>
+  <p class="body-text">LG전자는 씽큐 온·씽큐 클로로 비슷한 방향을 이미 선점했지만, <strong>개방형 포지셔닝의 메시지 강도, 온디바이스 실리콘 로드맵의 가시성, TV·가전 전반의 디자인 일관성</strong>에서 경쟁사 대비 더 명확한 신호가 필요합니다. 아래 보고서는 6개사 비교, 포지셔닝 진단, 5대 트렌드, LG의 SWOT, 그리고 3단계 실행 로드맵 순으로 구성됩니다.</p>
+
+  <h2 class="section-title"><span class="num">02</span>경쟁 구도 한눈에 보기</h2>
+  <div class="section-rule"></div>
+  <p class="body-text">6개사의 AI 소싱 전략과 UX 철학을 비교하면, LG전자는 "개방형 연동"과 "산업 현장 검증 AI"라는 독자적 축을 갖고 있지만 모바일 생태계 부재가 구조적 약점으로 반복 확인됩니다.</p>
+  <div class="table-wrap">
+    <table>
+      <thead>
+        <tr><th>기업</th><th>AI 소싱 전략</th><th>UX 철학</th><th>핵심 강점</th><th>리스크·약점</th></tr>
+      </thead>
+      <tbody>
+        <tr class="lg-row">
+          <td class="company-name">LG전자</td>
+          <td>자체 엑사원(EXAONE) + 엔비디아 등 오픈 파트너십, 씽큐 온·클로 에이전트</td>
+          <td>개방형 기기 연동 + 맥락인지 실행 에이전트</td>
+          <td>산업현장 검증 비전 AI(분사), iF 26개 부문 수상 디자인력</td>
+          <td>모바일 생태계 부재 → 크로스디바이스 약점, AI 브랜드 인지도 상대적 열위</td>
+        </tr>
+        <tr>
+          <td class="company-name">Apple</td>
+          <td>자체 모델 + Google Gemini 하이브리드</td>
+          <td>온디바이스·프라이버시 중심 개인화 비서</td>
+          <td>M5/M6 실리콘 AI 성능, 접근성 UX 선도</td>
+          <td class="weak">자체 AI 개발 지연, 급진적 리뉴얼의 사용성 리스크</td>
+        </tr>
+        <tr>
+          <td class="company-name">Google</td>
+          <td>자체 Gemini 전면 + 초고속 릴리즈 사이클</td>
+          <td>능동형(proactive) 에이전트, SDK 개방형 생태계</td>
+          <td>8세대 TPU 인프라, 스마트홈 플랫폼 개방(타사 제조 허용)</td>
+          <td class="weak">직접 기기 제조 약함 → 제조사 의존, 프라이버시 우려</td>
+        </tr>
+        <tr>
+          <td class="company-name">Samsung</td>
+          <td>자체 개발 + Google Gemini 결합</td>
+          <td>수직 통합형 폐쇄 생태계, 컴패니언형 UX</td>
+          <td>모바일+가전+TV 전 라인업 통일 브랜딩(빅스비), 주거 공간까지 확장</td>
+          <td class="weak">폐쇄성 → 타사 기기 연동 약함, LG와 정면 경쟁 구도</td>
+        </tr>
+        <tr>
+          <td class="company-name">Huawei</td>
+          <td>자체 어센드 칩 + 파운데이션 모델 완전 자립</td>
+          <td>슈퍼디바이스 크로스 UX, OS 자체가 에이전트 오케스트레이터</td>
+          <td>AI 반도체 자립도, 신흥시장 AI가전 상용화 속도</td>
+          <td class="weak">서방 시장 규제·신뢰 장벽</td>
+        </tr>
+        <tr>
+          <td class="company-name">Anthropic</td>
+          <td>프런티어 모델 전문(비하드웨어), 라이선싱·임베딩 확산</td>
+          <td>안전설계 우선 + 에이전틱 실행(컴퓨터 사용)</td>
+          <td>MHS 등 하드웨어 연동 표준 주도, 안전·신뢰 포지셔닝</td>
+          <td class="weak">소비자 하드웨어 없음 → 파트너 임베딩 필수</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="section-title"><span class="num">03</span>포지셔닝: 개방성 × 에이전트 실행력</h2>
+  <div class="section-rule"></div>
+  <p class="body-text">정성적 평가 기준, LG전자는 "개방성"에서는 이미 유리한 위치에 있지만 "에이전트 실행력"에서는 아직 씽큐 클로가 초기 단계입니다. 2027년까지 우상단(개방적이면서 실행력 높은) 방향으로 이동하는 것이 목표입니다.</p>
+  <div class="chart-card">
+    <div class="chart-title">AI 생태계 포지셔닝 맵 (정성 평가)</div>
+    <div class="chart-sub">가로축: 생태계 개방성 · 세로축: 에이전트 자율 실행력 — 점 크기는 무관, LG전자는 강조 표시</div>
+    <svg viewBox="0 0 640 420" width="100%" style="overflow:visible">
+      <!-- grid -->
+      <line class="grid" x1="60" y1="20" x2="60" y2="360"></line>
+      <line class="grid" x1="60" y1="360" x2="600" y2="360"></line>
+      <line class="grid" x1="330" y1="20" x2="330" y2="360" stroke-dasharray="3,4"></line>
+      <line class="grid" x1="60" y1="190" x2="600" y2="190" stroke-dasharray="3,4"></line>
+
+      <!-- axis labels -->
+      <text class="axis-label" x="330" y="395" text-anchor="middle">생태계 개방성 →</text>
+      <text class="axis-label" x="25" y="190" text-anchor="middle" transform="rotate(-90 25 190)">에이전트 실행력 →</text>
+      <text class="axis-label" x="60" y="378" text-anchor="start" font-size="10.5" fill="var(--text-3)">폐쇄적</text>
+      <text class="axis-label" x="600" y="378" text-anchor="end" font-size="10.5" fill="var(--text-3)">개방적</text>
+
+      <!-- Samsung -->
+      <circle cx="180" cy="230" r="6" fill="var(--text-3)"></circle>
+      <text class="dot-label" x="192" y="234">Samsung</text>
+
+      <!-- Apple -->
+      <circle cx="255" cy="255" r="6" fill="var(--text-3)"></circle>
+      <text class="dot-label" x="267" y="259">Apple</text>
+
+      <!-- Huawei -->
+      <circle cx="360" cy="150" r="6" fill="var(--text-3)"></circle>
+      <text class="dot-label" x="372" y="154">Huawei</text>
+
+      <!-- Google -->
+      <circle cx="510" cy="115" r="6" fill="var(--text-3)"></circle>
+      <text class="dot-label" x="522" y="119">Google</text>
+
+      <!-- Anthropic -->
+      <circle cx="555" cy="70" r="6" fill="var(--text-3)"></circle>
+      <text class="dot-label" x="500" y="55">Anthropic</text>
+
+      <!-- LG current -->
+      <circle cx="415" cy="260" r="8" fill="var(--accent)"></circle>
+      <text class="dot-label lg-label" x="427" y="264">LG전자 (현재)</text>
+
+      <!-- LG target -->
+      <circle cx="470" cy="135" r="8" fill="none" stroke="var(--accent)" stroke-width="2.5" stroke-dasharray="3,3"></circle>
+      <text class="dot-label lg-label" x="482" y="139">LG전자 (2027 목표)</text>
+
+      <!-- arrow -->
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+          <path d="M0,0 L10,5 L0,10 z" fill="var(--accent)"></path>
+        </marker>
+      </defs>
+      <line x1="415" y1="260" x2="463" y2="143" stroke="var(--accent)" stroke-width="2" stroke-dasharray="5,4" marker-end="url(#arrow)"></line>
+    </svg>
+  </div>
+
+  <h2 class="section-title"><span class="num">04</span>5대 크로스커팅 트렌드</h2>
+  <div class="section-rule"></div>
+
+  <div class="trend">
+    <div class="n">01</div>
+    <div><h3>어시스턴트 → 에이전트 전환</h3><p>모든 경쟁사가 "질문에 답하는 AI"에서 "여러 단계를 대신 완결하는 AI"로 이동 중. Google Gemini Intelligence, Samsung 새 빅스비, Huawei 하모니OS 7, Anthropic 컴퓨터 사용 기술이 공통적으로 이 방향을 가리킴.</p></div>
+  </div>
+  <div class="trend">
+    <div class="n">02</div>
+    <div><h3>온디바이스 AI·실리콘이 다시 승부처</h3><p>Apple M5/M6의 뉴럴 가속기, Huawei 어센드 칩 자립, Google Pixel 온디바이스 프라이버시 마케팅 — AI 응답성·프라이버시·전력효율이 소프트웨어가 아닌 칩 설계 단계에서 결정되는 추세.</p></div>
+  </div>
+  <div class="trend">
+    <div class="n">03</div>
+    <div><h3>스마트홈은 '개방 플랫폼' 경쟁으로 재편</h3><p>Google의 Gemini for Home SDK 개방, Anthropic의 모델 비종속 하드웨어 표준(MHS)은 특정 생태계 종속에서 벗어난 "누구와도 연동되는 AI 홈"을 예고. Samsung의 폐쇄형 전략과 대비되는 지점.</p></div>
+  </div>
+  <div class="trend">
+    <div class="n">04</div>
+    <div><h3>TV·거실이 다시 AI 허브 격전지로</h3><p>Google TV 홈스크린 대개편, Samsung Vision AI 컴패니언 전 라인업 탑재 — TV를 스트리밍 화면이 아닌 "거실의 대화형 AI 접점"으로 재정의하는 흐름이 뚜렷.</p></div>
+  </div>
+  <div class="trend">
+    <div class="n">05</div>
+    <div><h3>신뢰·안전 설계가 채택의 전제조건화</h3><p>Anthropic의 책임 있는 확장 정책 3.0, 프롬프트 인젝션 위험 공개, Apple의 프라이버시 우선 메시지 — 가정에 AI를 들이는 데 대한 소비자 불안을 선제적으로 해소하는 투명한 커뮤니케이션이 채택률을 좌우.</p></div>
+  </div>
+
+  <h2 class="section-title"><span class="num">05</span>LG전자 현재 위치 진단</h2>
+  <div class="section-rule"></div>
+  <div class="swot">
+    <div class="cell s">
+      <div class="tag">Strengths</div>
+      <ul>
+        <li>산업 현장에서 검증된 비전 AI(스펙트라브레인 분사)</li>
+        <li>iF 디자인 어워드 26개 부문 수상 — 국제 인증된 UX 역량</li>
+        <li>씽큐 클로: 타사 기기 연동을 전제로 한 개방형 에이전트 포지셔닝</li>
+        <li>자체 초거대 모델(K-엑사원 2.0) 확보 및 라이선스 개방</li>
+      </ul>
+    </div>
+    <div class="cell w">
+      <div class="tag">Weaknesses</div>
+      <ul>
+        <li>모바일 사업 철수로 크로스디바이스 UX 축 하나가 구조적으로 부재</li>
+        <li>ThinQ 앱·webOS·가전 UI 간 디자인 일관성 아직 미흡</li>
+        <li>소비자 대상 AI 브랜드 메시지가 삼성·구글 대비 상대적으로 약함</li>
+      </ul>
+    </div>
+    <div class="cell o">
+      <div class="tag">Opportunities</div>
+      <ul>
+        <li>MHS 등 모델 비종속 하드웨어 표준 조기 참여로 "개방형 AI 홈"의 기준 제시자 포지션 선점</li>
+        <li>헬스케어·접근성 특화 AI 가전으로 ESG·포용성 메시지와 실사용성 동시 확보</li>
+        <li>건설사·인테리어 업체와의 B2B2C 제휴로 공간 통합 AI 홈 시장 선점</li>
+      </ul>
+    </div>
+    <div class="cell t">
+      <div class="tag">Threats</div>
+      <ul>
+        <li>Samsung의 전 라인업 통일 빅스비 + 모듈러 홈 확장으로 가전-주거 시장 직접 잠식</li>
+        <li>Huawei·중국 업체의 신흥시장 AI가전 저가·고속 상용화</li>
+        <li>Google·Anthropic의 개방형 표준이 먼저 업계 표준으로 굳어질 경우 후발주자로 전락할 리스크</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 class="section-title"><span class="num">06</span>2027년 준비 로드맵</h2>
+  <div class="section-rule"></div>
+  <p class="body-text">아래 우선순위는 "즉시 착수 가능하고 경쟁 신호가 가장 명확한 것"부터 배치했습니다.</p>
+
+  <div class="phase">
+    <div class="phase-head"><span class="badge">즉시 착수 · ~2027 상반기</span><h3>지금 시작해야 신호를 놓치지 않는 과제</h3></div>
+
+    <div class="action">
+      <div class="title">씽큐 클로의 개방형 포지셔닝을 명시적 브랜드 메시지로 못박기</div>
+      <div class="why">근거: Samsung/LG 비교 기사(Korea Herald)가 이미 "개방 vs 폐쇄" 구도로 업계에 회자 중 — 선점 효과가 있을 때 메시지를 굳혀야 함.</div>
+    </div>
+    <div class="action">
+      <div class="title">MHS(Model Hardware Standard) 등 모델 비종속 하드웨어 표준에 초기 파트너로 참여</div>
+      <div class="why">근거: Anthropic이 리서치 프리뷰 단계로 공개 — 표준이 굳어지기 전 참여해야 씽큐 생태계와의 호환 설계 주도권 확보 가능.</div>
+    </div>
+    <div class="action">
+      <div class="title">webOS 차기 버전에 시청 중 실시간 대화형 질의응답 기능 추가</div>
+      <div class="why">근거: Samsung Vision AI 컴패니언, Google TV Ambient Display가 이미 표준 기능화 — TV UX 격차가 벌어지기 전 대응 필요.</div>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><span class="badge">중기 · 2027년</span><h3>구조적으로 준비가 필요한 과제</h3></div>
+
+    <div class="action">
+      <div class="title">가전·TV·ThinQ 앱을 잇는 통합 디자인 시스템 정립 및 거버넌스화</div>
+      <div class="why">근거: One UI 8.5, Material 3 Expressive 등 경쟁사가 전 제품군 UX 통일에 속도를 내는 중 — "제품군마다 UX가 제각각"이라는 인상은 브랜드 신뢰를 갉아먹음.</div>
+    </div>
+    <div class="action">
+      <div class="title">가전용 NPU·온디바이스 추론 성능 로드맵을 AI 비서 고도화 계획과 함께 공개</div>
+      <div class="why">근거: Apple M5/M6, Huawei 어센드 — AI UX 경쟁력이 실리콘 설계와 직결되는 추세. 로드맵 가시성 자체가 경쟁력 신호.</div>
+    </div>
+    <div class="action">
+      <div class="title">헬스케어·접근성 시나리오를 AI 기능의 1순위 적용 영역으로 공식 포지셔닝</div>
+      <div class="why">근거: Apple이 접근성·헬스를 AI 최우선 응용처로 삼아 "AI=포용적 기본 경험" 메시지를 선점 중 — LG도 시니어·헬스케어 가전에서 동일 전략 가능.</div>
+    </div>
+    <div class="action">
+      <div class="title">안전·투명성 커뮤니케이션 프레임 도입 (오작동·데이터 처리 방식 공개)</div>
+      <div class="why">근거: Anthropic RSP 3.0 등 "능력 과시보다 위험 투명 공개"가 신뢰의 기준이 되는 중 — 가정용 AI 특성상 소비자 불안 해소가 채택률을 좌우.</div>
+    </div>
+  </div>
+
+  <div class="phase">
+    <div class="phase-head"><span class="badge">방어적 대응</span><h3>경쟁사 확장에 대한 선제 방어</h3></div>
+
+    <div class="action">
+      <div class="title">건설사·인테리어 업체와의 AI 홈 패키지 제휴 검토</div>
+      <div class="why">근거: Samsung이 모듈러주택 업체와 협업해 '삼성 AI 모듈러 홈'을 이미 출시 — 가전을 넘어 주거 공간 자체를 선점하기 전 유사 대응 필요.</div>
+    </div>
+    <div class="action">
+      <div class="title">신흥시장(동남아·중동·중남미) AI 가전 가격 경쟁력 점검</div>
+      <div class="why">근거: Huawei·하이얼·하이센스의 AI 네이티브 가전이 이미 신흥시장에서 상용화 단계 — 가격 격차가 벌어지기 전 대응 전략 필요.</div>
+    </div>
+  </div>
+
+  <footer>
+    이 보고서는 공개된 뉴스·공식 발표를 종합해 작성한 자료이며, LG전자의 공식 입장이나 내부 전략 문서가 아닙니다. 포지셔닝 맵의 좌표는 정성적 판단에 근거한 일러스트레이션으로, 정밀한 지표 측정치가 아닙니다. 의사결정에 활용하시기 전 원문 기사 및 내부 데이터로 교차 검증을 권장합니다.
+  </footer>
+
+</div>

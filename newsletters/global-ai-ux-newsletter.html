@@ -1,0 +1,458 @@
+<title>빅테크 AI·UX 브리핑</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap');
+
+  :root {
+    --bg: #faf6f5;
+    --surface: #ffffff;
+    --text: #1c1413;
+    --text-2: #6e5d5c;
+    --text-3: #8f7f7e;
+    --accent: #a50034;
+    --accent-2: #7a0027;
+    --accent-soft: #f4e3e8;
+    --border: #e9dfdd;
+    --border-strong: #d8c9c7;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #171010;
+      --surface: #1f1717;
+      --text: #f3ebea;
+      --text-2: #bfaeac;
+      --text-3: #96827f;
+      --accent: #ff5c7a;
+      --accent-2: #ff86a0;
+      --accent-soft: #3a1a22;
+      --border: #342626;
+      --border-strong: #4a3736;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #171010;
+    --surface: #1f1717;
+    --text: #f3ebea;
+    --text-2: #bfaeac;
+    --text-3: #96827f;
+    --accent: #ff5c7a;
+    --accent-2: #ff86a0;
+    --accent-soft: #3a1a22;
+    --border: #342626;
+    --border-strong: #4a3736;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans KR', -apple-system, sans-serif;
+    padding-inline: 20px;
+    padding-block: 40px;
+  }
+  .sheet { max-width: 720px; margin-inline: auto; }
+
+  .masthead { text-align: center; padding-bottom: 22px; border-bottom: 3px double var(--border-strong); }
+  .masthead .kicker { font-size: 12px; letter-spacing: .16em; font-weight: 600; color: var(--accent); text-transform: uppercase; }
+  .masthead h1 { font-family: 'Noto Serif KR', serif; font-weight: 700; font-size: clamp(32px, 7vw, 44px); line-height: 1.15; margin: 10px 0 12px; text-wrap: balance; }
+  .masthead .sub { font-size: 15px; color: var(--text-2); line-height: 1.65; max-width: 50ch; margin-inline: auto; }
+  .masthead .meta { margin-top: 16px; display: flex; justify-content: center; gap: 14px; font-size: 12.5px; color: var(--text-3); font-variant-numeric: tabular-nums; flex-wrap: wrap; }
+  .masthead .meta span:not(:last-child)::after { content: "·"; margin-left: 14px; color: var(--border-strong); }
+
+  .nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 8px; padding-block: 18px; border-bottom: 1px solid var(--border); }
+  .nav a { font-size: 12.5px; font-weight: 600; color: var(--text-2); text-decoration: none; padding: 5px 12px; border: 1px solid var(--border-strong); border-radius: 999px; }
+  .nav a:hover { color: var(--accent); border-color: var(--accent); }
+
+  .company { padding-top: 38px; }
+  .company-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 4px; scroll-margin-top: 16px; }
+  .company-head .en { font-size: 11.5px; color: var(--text-3); font-weight: 600; letter-spacing: .04em; }
+  .company-head h2 { font-family: 'Noto Serif KR', serif; font-size: 22px; font-weight: 700; margin: 0; }
+  .company-head .count { font-size: 12px; color: var(--text-3); font-variant-numeric: tabular-nums; }
+  .company-rule { height: 1px; background: var(--border-strong); margin-bottom: 4px; }
+
+  .item { padding-block: 16px; border-bottom: 1px solid var(--border); display: grid; grid-template-columns: 62px 1fr; gap: 16px; }
+  .item:last-of-type { border-bottom: none; }
+  .item .date { font-size: 11.5px; color: var(--text-3); padding-top: 3px; font-variant-numeric: tabular-nums; line-height: 1.5; }
+  .item h4 { font-family: 'Noto Serif KR', serif; font-size: 15.5px; font-weight: 600; line-height: 1.4; margin: 0 0 5px; }
+  .item h4 a { color: var(--text); text-decoration: none; }
+  .item h4 a:hover { color: var(--accent); }
+  .item p { font-size: 13.5px; line-height: 1.6; color: var(--text-2); margin: 0 0 6px; }
+  .item .source { font-size: 11.5px; color: var(--text-3); }
+
+  @media (max-width: 480px) {
+    .item { grid-template-columns: 1fr; gap: 3px; }
+    .item .date { order: -1; }
+  }
+
+  .insight {
+    margin-top: 18px;
+    background: var(--accent-soft);
+    border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .insight .label { font-size: 11px; font-weight: 700; letter-spacing: .08em; color: var(--accent); text-transform: uppercase; margin-bottom: 8px; }
+  .insight ul { margin: 0; padding-left: 18px; }
+  .insight li { font-size: 13.5px; line-height: 1.65; color: var(--text); margin-bottom: 6px; }
+  .insight li:last-child { margin-bottom: 0; }
+
+  footer { margin-top: 44px; padding-top: 20px; border-top: 1px solid var(--border); font-size: 12.5px; color: var(--text-3); line-height: 1.7; }
+</style>
+
+<div class="sheet">
+
+  <div class="masthead">
+    <div class="kicker">Competitive Intelligence</div>
+    <h1>빅테크 AI·UX 브리핑</h1>
+    <p class="sub">Apple·Google·Samsung·Huawei·Anthropic 5개사의 최신 AI·UX 행보를 한 통에 모았습니다. LG전자의 다음 스텝을 위한 경쟁 인텔리전스 자료입니다.</p>
+    <div class="meta">
+      <span>Vol. 1</span>
+      <span>2026년 9월 19일</span>
+      <span>5개사 · 기사 30건</span>
+    </div>
+  </div>
+
+  <div class="nav">
+    <a href="#apple">Apple</a>
+    <a href="#google">Google</a>
+    <a href="#samsung">Samsung</a>
+    <a href="#huawei">Huawei</a>
+    <a href="#anthropic">Anthropic</a>
+  </div>
+
+  <!-- APPLE -->
+  <div class="company" id="apple">
+    <div class="company-head"><h2>애플</h2><span class="en">Apple</span><span class="count">6</span></div>
+    <div class="company-rule"></div>
+
+    <div class="item">
+      <div class="date">08.15</div>
+      <div>
+        <h4><a href="https://9to5mac.com/2026/08/15/apple-home-product-roadmap-tv-homepod-smart-display/" target="_blank" rel="noopener">애플의 스마트홈 로드맵 — 화면 탑재 허브 '홈패드' 출시 임박</a></h4>
+        <p>시리 AI 개편 완료를 전제로 화면 탑재 스마트홈 허브를 연내 출시 예정. AI 비서 완성도가 하드웨어 출시 시점 자체를 좌우한 사례.</p>
+        <div class="source">9to5Mac</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="date">08월</div>
+      <div>
+        <h4><a href="https://www.apple.com/newsroom/2026/08/apple-introduces-m6-and-m5-ultra-for-a-big-leap-in-performance-and-ai-compute/" target="_blank" rel="noopener">M5·M6 칩 발표 — GPU 코어별 '뉴럴 가속기'로 AI 연산 4배↑</a></h4>
+        <p>온디바이스 AI 전략을 실리콘 설계 차원에서 뒷받침. 클라우드 의존도를 낮추는 방향.</p>
+        <div class="source">Apple Newsroom</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="date">06월</div>
+      <div>
+        <h4><a href="https://www.apple.com/newsroom/2026/06/apple-intelligence-brings-powerful-ai-capabilities-into-everyday-experiences/" target="_blank" rel="noopener">WWDC — '애플 인텔리전스' 일상 경험 확장 발표</a></h4>
+        <p>온디바이스+프라이빗 클라우드 병행 처리로 프라이버시를 핵심 차별점으로 내세운 개인화 비서 경험.</p>
+        <div class="source">Apple Newsroom</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="date">05.19</div>
+      <div>
+        <h4><a href="https://www.apple.com/newsroom/2026/05/apple-unveils-new-accessibility-features-and-updates-with-apple-intelligence/" target="_blank" rel="noopener">애플 인텔리전스 기반 접근성 기능 대거 공개</a></h4>
+        <p>AI를 접근성 강화의 핵심 도구로 포지셔닝 — "AI=프리미엄"이 아닌 "AI=포용적 기본 경험".</p>
+        <div class="source">Apple Newsroom</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="date">01.12</div>
+      <div>
+        <h4><a href="https://techcrunch.com/2026/01/12/googles-gemini-to-power-apples-ai-features-like-siri/" target="_blank" rel="noopener">애플, 시리 AI 위해 구글 제미나이 채택 (연 $10억 규모)</a></h4>
+        <p>자체 파운데이션 모델 지연 속 외부 최상위 모델 도입으로 노선 전환. 핵심 OS 경험에 타사 LLM을 첫 공식 탑재.</p>
+        <div class="source">TechCrunch</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="date">'25.10</div>
+      <div>
+        <h4><a href="https://www.nngroup.com/articles/liquid-glass/" target="_blank" rel="noopener">"Liquid Glass Is Cracked" — UX 전문가의 디자인 비판</a></h4>
+        <p>반투명·굴절 효과 중심 새 디자인 언어가 가독성·대비 저하로 실사용성 논란. 심미성과 사용성의 균형 과제 재조명.</p>
+        <div class="source">Nielsen Norman Group</div>
+      </div>
+    </div>
+
+    <div class="insight">
+      <div class="label">전략적 시사점</div>
+      <ul>
+        <li>온디바이스 처리 + 프라이버시가 AI 차별화의 핵심 축으로 굳어지는 중 — "어떤 모델이냐"보다 "데이터가 어디서 처리되나"가 소비자 메시지의 중심.</li>
+        <li>자체 LLM 완성도에 얽매이지 않는 하이브리드 소싱(외부 모델 + 자체 최적화 레이어)이 현실적 전략.</li>
+        <li>AI 비서 완성도가 하드웨어 출시 게이팅 기준이 되는 시대 — "하드웨어 먼저, AI 나중"은 리스크.</li>
+        <li>급진적 디자인 언어 전환은 사용성 리스크 동반 — 리뉴얼 시 가독성·접근성 테스트 병행 필수.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- GOOGLE -->
+  <div class="company" id="google">
+    <div class="company-head"><h2>구글</h2><span class="en">Google</span><span class="count">6</span></div>
+    <div class="company-rule"></div>
+
+    <div class="item">
+      <div class="date">09.02</div>
+      <div>
+        <h4><a href="https://9to5google.com/2026/09/02/gemini-3-8-flash-launch/" target="_blank" rel="noopener">Gemini 3.8 Flash 출시 — 3주 만의 세 번째 업데이트</a></h4>
+        <p>모델 출시 속도 자체를 경쟁 무기로 삼는 전략. 전 제품군(Sheets, AI 모드 등)에 즉시 반영.</p>
+        <div class="source">9to5Google</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="date">04.22</div>
+      <div>
+        <h4><a href="https://blog.google/innovation-and-ai/infrastructure-and-cloud/google-cloud/eighth-generation-tpu-agentic-era/" target="_blank" rel="noopener">8세대 TPU 2종 공개 — "에이전틱 시대를 위한 칩"</a></h4>
+        <p>학습·추론용 TPU 동시 공개로 엔비디아에 정면 도전. AI 무게중심이 에이전트로 이동함을 인프라 차원에서 뒷받침.</p>
+        <div class="source">Google / Bloomberg·CNBC</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="date">05월</div>
+      <div>
+        <h4><a href="https://blog.google/products-and-platforms/platforms/android/gemini-intelligence/" target="_blank" rel="noopener">Gemini Intelligence — 안드로이드를 '능동형 AI'로 전환</a></h4>
+        <p>앱을 넘나드는 멀티스텝 작업 자동화. 워치·차량·안경까지 단계적 확장, 민감 작업엔 사용자 확인 안전장치.</p>
+        <div class="source">Google 공식 블로그</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="date">05월</div>
+      <div>
+        <h4><a href="https://m3.material.io/blog/whats-new-at-io26" target="_blank" rel="noopener">Material 3 Expressive — Material You 이후 최대 디자인 개편</a></h4>
+        <p>물리 기반 모션·햅틱·형태 변형 등 '감각적 디자인' 전면화. 폰·워치·TV 간 UX 일관성 전략.</p>
+        <div class="source">Material Design 공식 블로그</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="date">03월</div>
+      <div>
+        <h4><a href="https://blog.google/products-and-platforms/platforms/google-tv/new-gemini-features-march-2026/" target="_blank" rel="noopener">구글 TV, 제미나이 신기능 3종 + 홈스크린 대개편</a></h4>
+        <p>설정 메뉴 통합 등 대규모 UX 리디자인과 Ambient Display 결합. TV를 '거실의 AI 허브'로 재정의.</p>
+        <div class="source">Google 공식 블로그</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="date">'25.10</div>
+      <div>
+        <h4><a href="https://techcrunch.com/2025/10/01/google-reveals-its-gemini-powered-smart-home-lineup-and-ai-strategy" target="_blank" rel="noopener">'Gemini for Home' 발표 — 스마트홈 AI 풀스택 개방</a></h4>
+        <p>Assistant를 대체하는 대화형 AI. 타사 제조사도 사용 가능한 SDK·SoC 권장사양 제공 — 삼성 스마트싱스 정조준.</p>
+        <div class="source">TechCrunch</div>
+      </div>
+    </div>
+
+    <div class="insight">
+      <div class="label">전략적 시사점</div>
+      <ul>
+        <li>'어시스턴트'에서 '에이전트'로 — 질문에 답하는 AI가 아니라 대신 행동하는 AI로 무게중심 이동.</li>
+        <li>스마트홈 경쟁은 '플랫폼 개방' 경쟁으로 진화 — SDK·개발자 도구 개방이 생태계 장악의 핵심.</li>
+        <li>TV·거실 UX가 다시 격전지 — 대기화면을 AI 허브 접점으로 재정의하는 흐름.</li>
+        <li>폰·워치·TV·글래스 전반의 디자인 시스템 일관성이 곧 브랜드 경쟁력.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- SAMSUNG -->
+  <div class="company" id="samsung">
+    <div class="company-head"><h2>삼성전자</h2><span class="en">Samsung</span><span class="count">7</span></div>
+    <div class="company-rule"></div>
+
+    <div class="item">
+      <div class="date">09.03</div>
+      <div>
+        <h4><a href="https://www.koreaherald.com/article/10860301" target="_blank" rel="noopener">"Samsung, LG take AI home race beyond appliances" — IFA 2026</a></h4>
+        <p>삼성은 자사 기기 중심 폐쇄형 생태계, LG는 외부 연동·맥락인지 에이전트(씽큐 클로)로 대비된다는 분석.</p>
+        <div class="source">The Korea Herald</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="date">09.02</div>
+      <div>
+        <h4><a href="https://news.samsung.com/uk/samsung-connect-opens-at-ifa-2026-bringing-the-future-of-ai-powered-living-to-life" target="_blank" rel="noopener">'Samsung Connect' IFA 전시공간 오픈 — "Your Companion to AI Living"</a></h4>
+        <p>TV·모니터·가전·모바일·웨어러블 통합 전시. 도심 체험형 공간을 통한 브랜드 경험 설계.</p>
+        <div class="source">Samsung Newsroom UK</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="date">06.18</div>
+      <div>
+        <h4><a href="https://biz.newdaily.co.kr/site/data/html/2026/06/18/2026061800030.amp.html" target="_blank" rel="noopener">'삼성 AI 모듈러 홈' 출시 — 가전을 넘어 주거 공간으로</a></h4>
+        <p>모듈러주택 기업과 협업, 출고 단계부터 AI가전이 설치된 주택 판매. 오피스·숙박시설까지 확장 계획.</p>
+        <div class="source">뉴데일리경제</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="date">04.15</div>
+      <div>
+        <h4><a href="https://news.samsung.com/kr/삼성전자-2026년형-tv-신제품-출시ai-tv-대중화-시대-연다" target="_blank" rel="noopener">2026년형 TV 신제품 — 'Vision AI 컴패니언' 전면 탑재</a></h4>
+        <p>시청 중 실시간 음성 질의응답. TV를 대화형 AI 기기로 재정의, 전용 AI 프로세서까지 탑재.</p>
+        <div class="source">Samsung Newsroom Korea</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="date">02월</div>
+      <div>
+        <h4><a href="https://news.samsung.com/global/samsung-introduces-the-new-bixby-in-one-ui-8-5" target="_blank" rel="noopener">새 빅스비 공개 — '대화형 디바이스 에이전트'로 전면 개편</a></h4>
+        <p>자연어 기기 제어, 대화 히스토리, 실시간 웹검색 통합. 모바일→가전(냉장고·세탁기 등) 순차 확대.</p>
+        <div class="source">Samsung Global Newsroom</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="date">'25.12</div>
+      <div>
+        <h4><a href="https://news.samsung.com/global/samsung-to-unveil-ai-vision-built-with-google-gemini-at-ces-2026" target="_blank" rel="noopener">CES 2026 프리뷰 — 구글 제미니 기반 비전 AI, 비스포크 냉장고에 통합</a></h4>
+        <p>자체 AI뿐 아니라 구글과의 협업으로 가전 AI 성능 강화. 온디바이스·클라우드 하이브리드 방향.</p>
+        <div class="source">Samsung Global Newsroom</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="date">05.11</div>
+      <div>
+        <h4><a href="https://designcompass.org/2026/05/11/samsung-starts-official-one-ui-8-5-rollout/" target="_blank" rel="noopener">One UI 8.5 정식 배포 — 반투명·블러 '앰비언트 디자인'</a></h4>
+        <p>애플 리퀴드 글래스와 유사한 톤으로 전환. 전 앱 3D 아이콘 적용, TV·가전 UX 통일성에도 영향 가능성.</p>
+        <div class="source">디자인나침반</div>
+      </div>
+    </div>
+
+    <div class="insight">
+      <div class="label">전략적 시사점 — LG전자 최우선 경쟁사</div>
+      <ul>
+        <li>삼성은 자사 기기 중심 '폐쇄형 AI 리빙'을 강화 중 — LG의 '개방성·실행형 에이전트' 포지셔닝을 더 명확한 메시지로 못박을 기회.</li>
+        <li>전 TV 라인업에 대화형 Vision AI 표준 탑재 — webOS도 동등 이상의 시청 중 실시간 정보 제공 기능 필요.</li>
+        <li>빅스비를 모바일+전 가전에 통일 브랜딩 — LG ThinQ AI의 '체감 통일 속도' 격차 좁혀야.</li>
+        <li>가전을 넘어 주거·건설 영역까지 확장 — LG도 건설사 협업 등 공간 통합 전략 선제 대응 검토.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- HUAWEI -->
+  <div class="company" id="huawei">
+    <div class="company-head"><h2>화웨이</h2><span class="en">Huawei</span><span class="count">6</span></div>
+    <div class="company-rule"></div>
+
+    <div class="item">
+      <div class="date">09.17</div>
+      <div>
+        <h4><a href="https://www.huawei.com/en/news/2026/9/hc-wang-keynote" target="_blank" rel="noopener">화웨이 커넥트 2026 — "Advancing the Agentic World" 기조연설</a></h4>
+        <p>AI 인프라·컴퓨팅 기반 강화 전략 제시. Atlas 960E SuperPoD 등 신제품 공개.</p>
+        <div class="source">Huawei 공식 뉴스룸</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="date">09월</div>
+      <div>
+        <h4><a href="https://www.androidheadlines.com/2026/09/huawei-rolls-out-harmonyos-7-with-new-smart-features-and-fresh-design.html" target="_blank" rel="noopener">하모니OS 7 정식 출시 — AI 에이전트 셀리아 강화</a></h4>
+        <p>여러 앱을 넘나드는 에이전트형 기능, 유리질감 UI 개편, 실시간 피싱 탐지. AI를 OS 핵심 경험으로 격상.</p>
+        <div class="source">Android Headlines</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="date">09.16-18</div>
+      <div>
+        <h4><a href="https://www.trendforce.com/news/2026/09/17/news-huawei-speeds-up-ai-chip-roadmap-reportedly-pulls-ascend-960dt-forward-three-quarters-to-1q27/" target="_blank" rel="noopener">어센드 AI칩 로드맵 가속 — 960DT 출시 3개 분기 앞당김</a></h4>
+        <p>수출 규제 속 자체 아키텍처로 AI 인프라 자립도 강화. 다이 생산량도 전년 대비 대폭 확대.</p>
+        <div class="source">Bloomberg / TrendForce</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="date">03월</div>
+      <div>
+        <h4><a href="https://techgenyz.com/ai-smart-homes-awe-2026-incredible-innovations/" target="_blank" rel="noopener">AWE 2026 — '샤오이/셀리아 버틀러 6.0' 스마트홈 AI 시연</a></h4>
+        <p>식재료 인식, 세탁모드 자동조정 등 AI 기반 전주기 가전 자동화. 하이얼·하이센스와 함께 中 AI가전 경쟁 본격화.</p>
+        <div class="source">techgenyz</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="date">03.10</div>
+      <div>
+        <h4><a href="https://www.huaweicentral.com/huawei-harmonyos-wins-global-award-for-user-friendly-ui-experience/" target="_blank" rel="noopener">하모니OS UI/UX, 2026 iF 디자인 어워드 수상</a></h4>
+        <p>폰-스마트카-스마트홈-TV 전 기기 일관 UX, '매직 제스처' 등 90개 이상 인터랙션 기능 높은 평가.</p>
+        <div class="source">Huawei Central / iF Design</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="date">04.02</div>
+      <div>
+        <h4><a href="https://www.etnews.com/20260402000280" target="_blank" rel="noopener">AI 비서 '셀리아' 고도화 — 中 애플 견제</a></h4>
+        <p>일정·문자·번역·사진 처리 및 자율주행 에이전트 고도화. 中 프리미엄 시장에서 애플 AI 공백 정조준.</p>
+        <div class="source">전자신문</div>
+      </div>
+    </div>
+
+    <div class="insight">
+      <div class="label">전략적 시사점</div>
+      <ul>
+        <li>OS가 아닌 '에이전트'가 UX의 중심 — 의도 파악→서비스 자동 연결을 OS 계층에 내재화.</li>
+        <li>폰-태블릿-PC-TV-가전을 잇는 '슈퍼 디바이스'식 크로스 디바이스 UX가 국제 어워드 벤치마크로 확산 중.</li>
+        <li>중국·신흥시장에서 'AI 네이티브 가전'이 이미 상용화 단계 — 신흥시장 가격 경쟁력 견제 필요.</li>
+        <li>어센드 AI칩 자립 전략이 온디바이스 반응속도·프라이버시 경쟁 우위로 이어질 가능성.</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- ANTHROPIC -->
+  <div class="company" id="anthropic">
+    <div class="company-head"><h2>앤트로픽</h2><span class="en">Anthropic</span><span class="count">6</span></div>
+    <div class="company-rule"></div>
+
+    <div class="item">
+      <div class="date">08.27</div>
+      <div>
+        <h4><a href="https://www.anthropic.com/news/model-hardware-standard-research-preview" target="_blank" rel="noopener">Model Hardware Standard(MHS) 리서치 프리뷰 공개</a></h4>
+        <p>AI 에이전트가 로봇팔 등 실물 하드웨어를 표준 규격으로 제어. 모델 비종속(model-agnostic) 개방형 규격.</p>
+        <div class="source">Anthropic 공식</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="date">09.17</div>
+      <div>
+        <h4><a href="https://www.usnews.com/news/business/articles/2026-09-17/anthropic-says-its-model-claude-is-helping-to-build-the-next-version-of-itself" target="_blank" rel="noopener">"Claude가 차세대 Claude 개발을 돕고 있다" — 재귀적 자기개선 신호</a></h4>
+        <p>Claude가 자사 모델 R&D의 26%를 주도한다고 발표. AI 개발 속도 자체가 AI로 가속화되는 초기 신호.</p>
+        <div class="source">US News (AP)</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="date">09.01</div>
+      <div>
+        <h4><a href="https://www.anthropic.com/claude-fable-and-mythos-5-1" target="_blank" rel="noopener">Claude Fable 5.1 & Mythos 5.1 출시</a></h4>
+        <p>장시간 자율 실행 에이전트의 경제성을 높이는 캐시 비용 75% 인하, 최대 100만 토큰 컨텍스트.</p>
+        <div class="source">Anthropic 공식</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="date">08.26</div>
+      <div>
+        <h4><a href="https://www.salesforce.com/news/press-releases/2026/08/26/salesforce-and-anthropic-announce-claudeforce/" target="_blank" rel="noopener">세일즈포스-Anthropic 'Claudeforce' — Claude가 Slack 기본 AI로</a></h4>
+        <p>자체 모델 개발 대신 프런티어 모델을 파트너 플랫폼에 '기본 지능'으로 내장하는 라이선싱형 확산 전략.</p>
+        <div class="source">Salesforce 공식</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="date">02.25</div>
+      <div>
+        <h4><a href="https://techcrunch.com/2026/02/25/anthropic-acquires-vercept-ai-startup-agents-computer-use-founders-investors/" target="_blank" rel="noopener">컴퓨터 사용(Computer Use) 스타트업 Vercept 인수</a></h4>
+        <p>화면을 보고 마우스·키보드를 조작하는 에이전트 기술. 기존 UI를 바꾸지 않고 AI가 대신 조작하는 UX의 기술적 토대.</p>
+        <div class="source">TechCrunch</div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="date">02.24</div>
+      <div>
+        <h4><a href="https://www.anthropic.com/responsible-scaling-policy/rsp-v3-0" target="_blank" rel="noopener">책임 있는 확장 정책(RSP) 3.0 발표</a></h4>
+        <p>위험 수준별 개발·배포 기준 전면 개정, 정기 위험 보고서 발간 제도화. 능력 확장과 투명한 위험 공개를 병행.</p>
+        <div class="source">Anthropic 공식</div>
+      </div>
+    </div>
+
+    <div class="insight">
+      <div class="label">전략적 시사점</div>
+      <ul>
+        <li>'대화형 비서'에서 '실행형 비서'로 — 여러 단계 작업을 감독 하에 스스로 완결하는 에이전틱 UX가 표준이 되는 중.</li>
+        <li>MHS는 가전업계가 가장 주목해야 할 신호 — 향후 가전이 모델 비종속 표준으로 어떤 프런티어 AI와도 연동될 미래.</li>
+        <li>거대 플랫폼도 자체 모델보다 '라이선싱/임베딩'을 택하는 추세 — 자체 초거대 모델 집착보다 통합·차별화에 자원 집중이 효율적.</li>
+        <li>'안전을 설계에 내재화'하는 태도가 소비자 신뢰의 핵심 — 가정용 AI일수록 투명한 위험 공개가 중요.</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    이 브리핑은 공개된 뉴스·공식 발표 검색 결과를 바탕으로 요약·정리한 자료이며, 각 기업의 공식 발행물이 아닙니다. 정확한 내용은 각 기사 원문 링크에서 확인하세요.
+  </footer>
+
+</div>

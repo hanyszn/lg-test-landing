@@ -1,0 +1,330 @@
+<title>LG AI·UX 브리핑</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap');
+
+  :root {
+    --bg: #faf6f5;
+    --surface: #ffffff;
+    --text: #1c1413;
+    --text-2: #6e5d5c;
+    --text-3: #8f7f7e;
+    --accent: #a50034;
+    --accent-2: #7a0027;
+    --accent-soft: #f4e3e8;
+    --border: #e9dfdd;
+    --border-strong: #d8c9c7;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #171010;
+      --surface: #1f1717;
+      --text: #f3ebea;
+      --text-2: #bfaeac;
+      --text-3: #96827f;
+      --accent: #ff5c7a;
+      --accent-2: #ff86a0;
+      --accent-soft: #3a1a22;
+      --border: #342626;
+      --border-strong: #4a3736;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #171010;
+    --surface: #1f1717;
+    --text: #f3ebea;
+    --text-2: #bfaeac;
+    --text-3: #96827f;
+    --accent: #ff5c7a;
+    --accent-2: #ff86a0;
+    --accent-soft: #3a1a22;
+    --border: #342626;
+    --border-strong: #4a3736;
+  }
+
+  * { box-sizing: border-box; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Noto Sans KR', -apple-system, sans-serif;
+    padding-inline: 20px;
+    padding-block: 40px;
+  }
+
+  .sheet {
+    max-width: 680px;
+    margin-inline: auto;
+  }
+
+  /* Masthead */
+  .masthead {
+    text-align: center;
+    padding-bottom: 28px;
+    border-bottom: 3px double var(--border-strong);
+  }
+  .masthead .kicker {
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    font-weight: 600;
+    color: var(--accent);
+    text-transform: uppercase;
+  }
+  .masthead h1 {
+    font-family: 'Noto Serif KR', serif;
+    font-weight: 700;
+    font-size: clamp(34px, 8vw, 48px);
+    line-height: 1.15;
+    margin: 10px 0 12px;
+    text-wrap: balance;
+  }
+  .masthead .sub {
+    font-size: 15.5px;
+    color: var(--text-2);
+    line-height: 1.6;
+    max-width: 46ch;
+    margin-inline: auto;
+  }
+  .masthead .meta {
+    margin-top: 18px;
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    font-size: 12.5px;
+    color: var(--text-3);
+    font-variant-numeric: tabular-nums;
+  }
+  .masthead .meta span:not(:last-child)::after {
+    content: "·";
+    margin-left: 14px;
+    color: var(--border-strong);
+  }
+
+  /* Hero */
+  .hero {
+    padding-block: 32px;
+    border-bottom: 1px solid var(--border);
+  }
+  .hero .tag {
+    display: inline-block;
+    font-size: 11.5px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: var(--accent);
+    background: var(--accent-soft);
+    padding: 3px 9px;
+    border-radius: 3px;
+    margin-bottom: 12px;
+  }
+  .hero h2 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: clamp(22px, 5vw, 28px);
+    line-height: 1.3;
+    font-weight: 600;
+    margin: 0 0 12px;
+  }
+  .hero h2 a { color: var(--text); text-decoration: none; }
+  .hero h2 a:hover { color: var(--accent); }
+  .hero p {
+    font-size: 15.5px;
+    line-height: 1.75;
+    color: var(--text-2);
+    margin: 0 0 14px;
+    max-width: 62ch;
+  }
+  .hero .byline {
+    font-size: 12.5px;
+    color: var(--text-3);
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* Section */
+  .section { padding-top: 36px; }
+  .section-head {
+    display: flex;
+    align-items: baseline;
+    gap: 10px;
+    margin-bottom: 4px;
+  }
+  .section-head h3 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0;
+  }
+  .section-head .count {
+    font-size: 12px;
+    color: var(--text-3);
+    font-variant-numeric: tabular-nums;
+  }
+  .section-rule {
+    height: 1px;
+    background: var(--border-strong);
+    margin-bottom: 6px;
+  }
+
+  .item {
+    padding-block: 20px;
+    border-bottom: 1px solid var(--border);
+    display: grid;
+    grid-template-columns: 74px 1fr;
+    gap: 18px;
+  }
+  .item:last-child { border-bottom: none; }
+  .item .date {
+    font-size: 12px;
+    color: var(--text-3);
+    padding-top: 3px;
+    font-variant-numeric: tabular-nums;
+    line-height: 1.5;
+  }
+  .item h4 {
+    font-family: 'Noto Serif KR', serif;
+    font-size: 16.5px;
+    font-weight: 600;
+    line-height: 1.4;
+    margin: 0 0 6px;
+  }
+  .item h4 a { color: var(--text); text-decoration: none; }
+  .item h4 a:hover { color: var(--accent); }
+  .item p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: var(--text-2);
+    margin: 0 0 8px;
+  }
+  .item .source {
+    font-size: 12px;
+    color: var(--text-3);
+  }
+  .item .source .dot { margin: 0 6px; }
+  .item .source a { color: var(--text-3); }
+
+  @media (max-width: 480px) {
+    .item { grid-template-columns: 1fr; gap: 4px; }
+    .item .date { order: -1; }
+  }
+
+  footer {
+    margin-top: 44px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
+    font-size: 12.5px;
+    color: var(--text-3);
+    line-height: 1.7;
+  }
+  footer a { color: var(--text-3); }
+</style>
+
+<div class="sheet">
+
+  <div class="masthead">
+    <div class="kicker">Weekly Briefing</div>
+    <h1>LG AI·UX 브리핑</h1>
+    <p class="sub">LG전자의 AI와 UX 전략을 다룬 최신 소식을 한 통에 모았습니다 — AI 사업 분사부터 IFA·CES 혁신, 디자인 수상까지.</p>
+    <div class="meta">
+      <span>Vol. 1</span>
+      <span>2026년 9월 19일</span>
+      <span>기사 9건</span>
+    </div>
+  </div>
+
+  <div class="hero">
+    <span class="tag">TOP STORY · AI</span>
+    <h2><a href="https://www.fnnews.com/news/202609151347121644" target="_blank" rel="noopener">LG전자, '산업 현장'서 키운 AI 사업 분사한다…연내 독립</a></h2>
+    <p>LG전자가 자체 산업 현장에서 검증한 AI 기반 영상분석(비전 AI) 사업을 '스펙트라브레인'이라는 별도 법인으로 분사해 연내 독립시킨다. 휴머노이드 로봇의 '눈' 역할을 하는 이 기술은 피지컬 AI 확산과 함께 활용도가 커질 전망이며, LG의 AI 사업 확장 전략을 보여주는 사례다.</p>
+    <div class="byline">파이낸셜뉴스 · 2026.09.15</div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <h3>AI 소식</h3>
+      <span class="count">6</span>
+    </div>
+    <div class="section-rule"></div>
+
+    <div class="item">
+      <div class="date">09.15<br>–16</div>
+      <div>
+        <h4><a href="https://www.nextdaily.co.kr/news/articleView.html?idxno=253102" target="_blank" rel="noopener">LG전자, 'LG AI 데브콘 2026' 개최…AI 활용 SW 개발 혁신 가속</a></h4>
+        <p>서울 마곡 LG사이언스파크에서 LG전자·LG CNS·LG유플러스 등 계열사 개발자 1,500여 명이 참여하는 AI 소프트웨어 개발자 콘퍼런스 개최. 엔비디아·마이크로소프트·구글클라우드·AWS 등과 함께 최신 AI 개발 도구와 사례를 공유하며 AI 중심 개발 문화 전환을 보여줬다.</p>
+        <div class="source">넥스트데일리</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="date">09.04</div>
+      <div>
+        <h4><a href="https://www.newspim.com/news/view/20260904000773" target="_blank" rel="noopener">LG전자, IFA 2026서 '연결' 넘어선 AI홈 생태계 공개…'씽큐 클로' 첫선</a></h4>
+        <p>독일 베를린 IFA 2026에서 차세대 AI홈 허브 '씽큐 온'과 대화형 실행 AI 에이전트 '씽큐 클로'를 처음 공개. 자연어 대화로 가전을 제어하고 서비스를 연동하는 기능을 선보이며 단순 '연결'을 넘어선 AI홈 경험 혁신을 강조했다.</p>
+        <div class="source">뉴스핌</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="date">08.31</div>
+      <div>
+        <h4><a href="https://www.lg.com/global/newsroom/news/home-appliance-solution/lg-electronics-unveils-the-next-evolution-of-ai-home-at-ifa-2026/" target="_blank" rel="noopener">LG Electronics Unveils the Next Evolution of AI Home at IFA 2026</a></h4>
+        <p>문맥 인지 지능이 강화된 AI홈의 다음 단계를 발표. 신규 AI 에이전트 '씽큐 클로'는 텍스트 채팅 기반으로 사용자 의도와 맥락을 이해해 맞춤형 지원을 제공하며, 유럽 최초로 상업 공간용 '씽큐 프로'도 함께 선보였다.</p>
+        <div class="source">LG Global Newsroom</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="date">07.31</div>
+      <div>
+        <h4><a href="https://www.dailian.co.kr/news/view/1673033/LG-AI%EC%97%B0%EA%B5%AC%EC%9B%90-%EA%B5%AD%EB%82%B4-%EC%B5%9C%EB%8C%80-7500%EC%96%B5-2026" target="_blank" rel="noopener">LG AI연구원, 국내 최대 7500억 파라미터 'K-엑사원 2.0' 공개</a></h4>
+        <p>7,500억 파라미터 규모의 국내 최대 초거대 AI 모델 'K-엑사원 2.0'을 공개하고 라이선스를 전면 개방. 장문 문맥 이해와 에이전틱 툴 사용 능력에서 중국 주요 모델을 앞서는 성능을 확보해 자체 AI 연구 역량을 입증했다.</p>
+        <div class="source">데일리안</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="date">01.06</div>
+      <div>
+        <h4><a href="https://www.lg.com/global/newsroom/news/corporate/lg-electronics-showcases-affectionate-intelligence-in-action-at-ces-2026/" target="_blank" rel="noopener">LG Electronics Showcases Affectionate Intelligence in Action at CES 2026</a></h4>
+        <p>'센스-싱크-액트' 운영 모델을 기반으로 한 공감지능(Affectionate Intelligence) 철학을 발표. 홈로봇 'LG 클로이드'와 모빌리티 솔루션 등을 통해 AI가 사람을 이해하고 능동적으로 돌보는 경험 비전을 제시했다.</p>
+        <div class="source">LG Global Newsroom</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="date">01.08</div>
+      <div>
+        <h4><a href="https://www.etnews.com/20260108000150" target="_blank" rel="noopener">[CES 2026] 세계인이 주목 'LG전자'</a></h4>
+        <p>CES 2026에서 LG전자 전시관이 '당신에게 맞춘 혁신'을 주제로 공감지능 콘셉트를 선보이며 전 세계 관람객의 이목을 끌었다. 9mm대 무선 올레드 TV 'W6' 등 AI 기반 제품이 특히 주목받아 다수의 CES 혁신상을 수상했다.</p>
+        <div class="source">전자신문</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-head">
+      <h3>UX · 디자인 소식</h3>
+      <span class="count">2</span>
+    </div>
+    <div class="section-rule"></div>
+
+    <div class="item">
+      <div class="date">08.27</div>
+      <div>
+        <h4><a href="https://www.lg.com/global/newsroom/news/media-entertainment-solution/lg-electronics-introduces-an-award-winning-ai-tv-experience-at-ifa-2026/" target="_blank" rel="noopener">LG Electronics Introduces an Award-Winning AI TV Experience at IFA 2026</a></h4>
+        <p>알파11 AI 프로세서 3세대를 탑재한 2026년형 AI TV 라인업 공개. NPU 성능이 5.6배 향상돼 AI 듀얼 4K 업스케일링 등 화질 개선 기능을 제공하며, CES 2026 혁신상 수상 보안 기술 'LG 실드'도 함께 소개해 AI와 UX가 결합된 시청 경험을 강조했다.</p>
+        <div class="source">LG Global Newsroom</div>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="date">02.25</div>
+      <div>
+        <h4><a href="https://www.etoday.co.kr/news/view/2559296" target="_blank" rel="noopener">LG전자, 'iF 디자인 어워드 2026'서 26개 본상 수상</a></h4>
+        <p>세계 3대 디자인상 중 하나인 iF 디자인 어워드 2026에서 제품·UX·UI 등 9개 부문에 걸쳐 총 26개 본상 수상. 사람의 표정·음성·몸짓에 반응하는 홈로봇 '클로이드'와 9mm대 무선 올레드 TV 등이 수상해 UX·디자인 경쟁력을 입증했다.</p>
+        <div class="source">이투데이</div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    이 브리핑은 공개된 뉴스 검색 결과를 바탕으로 요약·정리한 자료이며, LG전자의 공식 발행물이 아닙니다. 정확한 내용은 각 기사 원문 링크에서 확인하세요.
+  </footer>
+
+</div>
