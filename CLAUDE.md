@@ -39,7 +39,12 @@ these directories first — a prior session may have already done the work.
 ## Related skills
 
 - `ai-ux-trend-research` — briefs `competitor-research` for UX/AI product-trend research
+  (business/market competitiveness lens)
 - `ai-agent-usage-research` — briefs `competitor-research` for how practitioners actually use AI agents
+- `ux-ai-capability-research` — briefs `competitor-research`/`own-company-research` for how orgs use
+  AI to strengthen their *own* UX/design/research team's capability (internal workflow lens, not
+  product/market strategy). Findings under this lens should include both a "사업적 시사점" and a
+  "내부 역량 강화 시사점" section so `report-writer` can cover both angles.
 
 ## Imported prior work
 
