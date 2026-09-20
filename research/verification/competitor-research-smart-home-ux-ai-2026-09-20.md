@@ -78,16 +78,13 @@ already discloses.
 
 ## Issues found
 
-- [minor] Samsung 430M vs 500M framing — where: "경쟁사별 분석 > 삼성전자 > 생태계 구조" and "리서치 한계" — the
-  report presents this as a flat "공식 발표 자체의 불일치" without considering the alternative reading that 500M
-  could be a forward-looking projection rather than a second concurrent headcount; recommend adding that caveat
-  explicitly rather than asserting pure inconsistency.
-- [minor] Matter camera "early 2026" phrasing is imprecise given evidence some partner cameras ship as late as
-  March 2026, i.e., the same month as the Matter 1.5.1 spec release — recommend narrowing the date range stated
-  in the report to reduce future conflation risk.
-- [info] Report's own "출처" section provides source *types* only, no URLs — this was already flagged by the
-  report itself as a limitation; still true, still worth fixing before the report is cited externally in 2027
-  planning materials (a reviewer cannot re-verify individual figures without URLs).
+- [minor, RESOLVED 2026-09-20] Samsung 430M vs 500M framing — 후속 인터뷰에서 원문 확인이 끝내
+  불가능하다고 판단, 사용자 결정으로 "430M(공식 확인), 500M(출처 불명확, 참고용 부기)"로 단순화.
+  더 추적하지 않기로 결정. 보고서 본문 수정 완료 — `research/interview/competitor-ai-trend-reports-open-items-2026-09-20.md` 참고.
+- [minor, RESOLVED 2026-09-20] Matter camera "early 2026" phrasing — 권고대로 "2026년 1분기(자료에
+  따라 3월 포함)"로 보고서 본문 수정 완료.
+- [info, DEFERRED 2026-09-20] Report's own "출처" section provides source *types* only, no URLs —
+  사용자 결정: 지금은 보류하고 실제 외부 공유 시점에 필요하면 채워 넣기로 함.
 
 ## Unverifiable claims
 

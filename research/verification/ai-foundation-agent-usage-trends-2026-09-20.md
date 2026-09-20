@@ -76,12 +76,11 @@ snippet triangulation across independent outlets, consistent with the report's o
 
 ## Issues found
 
-- [medium] Fortune 500 MCP 28% figure — where: "Anthropic(Claude) 동향 > 리서치·생태계" and "리서치 한계" — sourcing
-  is thinner than "medium confidence" implies (vendor estimate, inconsistent timeframes across citing sites);
-  recommend downgrading confidence label and naming the likely source (Truto) with appropriate caveats before
-  this is used in 2027 planning.
-- [info] Report's "출처" section again lists source types, not URLs, consistent with the competitor report's
-  same limitation — recommend backfilling actual URLs before external circulation.
+- [medium, RESOLVED 2026-09-20] Fortune 500 MCP 28% figure — 사용자 결정: 다운그레이드 대신 **수치
+  자체를 보고서에서 삭제** (2027 사업계획 근거로 쓰기엔 너무 약하다고 판단). 보고서 본문 수정 완료 —
+  `research/interview/competitor-ai-trend-reports-open-items-2026-09-20.md` 참고.
+- [info, DEFERRED 2026-09-20] Report's "출처" section again lists source types, not URLs — 사용자 결정:
+  지금은 보류하고 실제 외부 공유 시점에 필요하면 채워 넣기로 함.
 
 ## Unverifiable claims
 
