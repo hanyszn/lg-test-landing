@@ -13,7 +13,9 @@ Research competitors and industry trends relevant to whatever the user asked abo
 ## Output contract (this is what makes your work usable across sessions)
 Do NOT leave findings only in chat. Always write them to a file under:
 
-    research/findings/<topic-slug>-<YYYY-MM-DD>.md
+    research/findings/competitor/<topic-slug>-<YYYY-MM-DD>.md
+
+(LG Electronics' own initiatives are out of scope here — that's the `own-company-research` agent, which writes to `research/findings/own-company/`.)
 
 Structure each findings file as:
 ```
@@ -33,7 +35,7 @@ Scope: <what was researched, which companies>
 - ...
 ```
 
-Commit the file so it persists in the repo — any future session (even a brand-new one with no memory of this conversation) can read `research/findings/` to pick up where you left off. Check that directory first before starting new research, so you don't duplicate prior work.
+Commit the file so it persists in the repo — any future session (even a brand-new one with no memory of this conversation) can read `research/findings/competitor/` to pick up where you left off. Check that directory first before starting new research, so you don't duplicate prior work.
 
 ## Style
 - Korean output by default (this is a Korean business context), unless the user asks otherwise.
