@@ -12,14 +12,20 @@ sandbox; verification below is based on triangulation across multiple independen
 
 ## Priority claims checked
 
-1. **LG CLOiD roadmap (2026 Tennessee washing-machine-plant industrial pilot → 2027 home PoC) — PASS,
-   confirmed by multiple independent sources.**
-   - Confirmed via Bitget News (citing original reporting), Dezeen, TechEBlog, Tom's Guide, and
-     FinancialContent/tokenring coverage of CES 2026: LG plans to deploy wheeled CLOiD robots on a washing
-     machine production line at its Tennessee factory "by the end of 2026," with results guiding "future
-     iterations and a wider rollout to other plants, homes, and commercial buildings" — consistent with the
-     report's "2026년 내 테네시 세탁기 공장 실증 투입 → 2027년 가정용 PoC" framing. No contradicting timeline
-     found across sources checked.
+1. **LG CLOiD roadmap (2026 Tennessee washing-machine-plant industrial pilot → 2027 home PoC) —
+   ~~PASS~~ SUPERSEDED, 2026-09-20 후속 인터뷰에서 정정됨.**
+   - Original check confirmed via Bitget News (citing original reporting), Dezeen, TechEBlog, Tom's Guide, and
+     FinancialContent/tokenring coverage of CES 2026 that LG plans to deploy wheeled CLOiD robots on a washing
+     machine production line at its Tennessee factory "by the end of 2026" — but **none of those sources
+     covered LG's own investor-facing statement**, so the "2027년 가정용 PoC" framing this verification
+     originally passed was itself inaccurate.
+   - **정정**: 후속 인터뷰(2026-09-20)에서 LG전자 2026-04-29 실적 컨퍼런스콜(공식 임원 발언)을 인용한
+     4개 독립 매체(Daum, 데일리안, 녹색경제신문, mdtoday)를 교차 확인한 결과, 공식 목표 시점은
+     "2027년 가정용 PoC"가 아니라 **"2028년 홈로봇 상용화 기반 마련"**이며 2027년은 산업 실증 확대
+     구간이다. `research/reports/2026-09-20-lg-own-ai-ux-status.md`와
+     `research/findings/own-company/2027-business-plan-followup-updates-2026-09-20.md`를 이 내용으로
+     정정했다. **교훈**: 제품 발표 보도(CES 등)만으로는 회사의 공식 상용화 목표 시점까지 확인되지
+     않을 수 있다 — 투자자 대상 실적 컨퍼런스콜을 함께 확인해야 한다.
 
 2. **Bipedal humanoid robot public reveal targeted Q1 2027 — PASS, confirmed by multiple independent Korean
    outlets.**
@@ -71,6 +77,10 @@ sandbox; verification below is based on triangulation across multiple independen
 
 ## Issues found
 
+- [major, RESOLVED 2026-09-20] CLOiD 홈로봇 로드맵 — 이 검증이 처음 PASS 처리했던 "2027년 가정용
+  PoC"는 부정확했다. 실제 공식 목표는 "2028년 홈로봇 상용화 기반 마련"(LG 2026-04-29 실적 컨퍼런스콜).
+  원인은 이 검증이 제품 발표 보도(CES 등)만 확인하고 투자자 대상 실적 콜은 확인하지 못했기 때문 —
+  후속 인터뷰·재조사로 정정 완료, 위 "Priority claims checked" 1번 항목 참고.
 - [minor] AI robot patent ranking section — where: "특허 현황" and Executive Summary — recommend strengthening
   the caveat from "2025~2026년 갱신된 최신 순위는 확인되지 않았다" to explicitly state that **no methodologically
   comparable updated industry ranking appears to exist yet anywhere** (per 2026 patent-landscape research
