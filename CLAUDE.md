@@ -27,6 +27,11 @@ research/
   verification/      ← verifier writes here
   interview/         ← interview writes here (follow-ups for the two above)
   reports/           ← report-writer writes here (reads both findings/ subfolders + verification)
+  playbooks/          ← organizational/methodology reference material — NOT AI-specific and not
+                         about a competitor or LG전자 itself (e.g. how another company structures
+                         its product/engineering org). No dedicated agent owns this folder; file
+                         things here by hand when the source material doesn't fit the AI/competitor/
+                         own-company scope of the five agents above, and note it in the file itself.
 ```
 
 Typical loop: competitor-research + own-company-research → verifier →
