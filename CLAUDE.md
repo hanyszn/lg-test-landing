@@ -27,11 +27,11 @@ research/
   verification/      ← verifier writes here
   interview/         ← interview writes here (follow-ups for the two above)
   reports/           ← report-writer writes here (reads both findings/ subfolders + verification)
-  playbooks/          ← organizational/methodology reference material — NOT AI-specific and not
-                         about a competitor or LG전자 itself (e.g. how another company structures
-                         its product/engineering org). No dedicated agent owns this folder; file
-                         things here by hand when the source material doesn't fit the AI/competitor/
-                         own-company scope of the five agents above, and note it in the file itself.
+  playbooks/          ← organizational/role-evolution reference material, owned by the
+                         `org-role-evolution-research` skill — NOT AI-specific and not tied to a
+                         competitor or LG전자 itself (e.g. new job roles emerging industry-wide, how
+                         another company structures its org). No dedicated agent writes here
+                         autonomously; file things here by hand per that skill's brief.
 ```
 
 Typical loop: competitor-research + own-company-research → verifier →
@@ -50,6 +50,11 @@ these directories first — a prior session may have already done the work.
   AI to strengthen their *own* UX/design/research team's capability (internal workflow lens, not
   product/market strategy). Findings under this lens should include both a "사업적 시사점" and a
   "내부 역량 강화 시사점" section so `report-writer` can cover both angles.
+- `org-role-evolution-research` — a third lens: how organizations and job roles themselves should
+  evolve (new roles emerging, org structure tradeoffs, headcount/hiring strategy shifts) — directly
+  relevant to 2027 사업계획 organizational planning, not just product or AI-tooling strategy. Owns
+  `research/playbooks/`; findings should carry a "조직·인력 구조 시사점" section that `report-writer`
+  keeps as its own report section, separate from the business and AI-capability lenses.
 
 ## Imported prior work
 
