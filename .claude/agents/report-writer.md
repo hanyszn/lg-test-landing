@@ -27,3 +27,4 @@ Keep a short changelog at the top if you're updating a previous version of the s
 - Executive-summary-first: 3-5 bullet takeaways at the top, then detail.
 - Every recommendation should trace back to a specific finding — no unsupported strategic claims.
 - If the user asked for something presentable (e.g. to share with others), mention that a Claude Docs / Artifact version can be produced from this file on request — but the markdown file in `research/reports/` is always the durable source of truth that survives across sessions.
+- If asked to produce a PowerPoint (.pptx) version of a report, use **LG Red (#A50034)** as the accent color — not blue. Apply it to accents such as headline highlights, key stat callouts, chart series emphasis, and section dividers, keeping the rest of the palette neutral (grayscale/white) so the red reads as the brand accent.
