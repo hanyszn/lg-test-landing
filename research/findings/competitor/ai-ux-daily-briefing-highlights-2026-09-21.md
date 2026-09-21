@@ -67,18 +67,51 @@ UX 안전장치(지출 한도 슬라이더, 상점 신뢰도 뱃지, 1-Tap 취�
 **LG 연결점**: Theme 06에 바로 쓸 수 있는 구체적 UI 컴포넌트 설계안 — "AI Agent 전사 가이드 1.0"에
 이 "4단 에스컬레이션 카드" 포맷을 표준 컴포넌트로 반영하는 것을 검토할 만함.
 
-### 5) 크로스 모달 컨텍스트 핸드오프 (Voice ↔ Text ↔ Canvas)
-(2026-09-18자 브리핑, 문서 ID `1j1pbnINgXBbNEC10cfmOo2-KKEk3D_h1UyFWDPCOHK4`)
+### 5) 크로스 모달 컨텍스트 핸드오프 (Voice ↔ Text ↔ Canvas) — [2026-09-21 재조사로 보강]
+(원 출처: 2026-09-18자 브리핑, 문서 ID `1j1pbnINgXBbNEC10cfmOo2-KKEk3D_h1UyFWDPCOHK4` — 매체명만
+있고 URL이 없어 신뢰도가 낮았던 항목. 아래는 사용자 요청으로 자체 재조사해 확보한 실제 근거.)
 
-이동 중 음성으로 나눈 AI와의 브레인스토밍이, 데스크톱 캔버스를 여는 순간 장황한 텍스트 로그가
-아니라 "구조화된 기획 문서 템플릿과 To-Do 카드"로 자동 모핑되어 렌더링. 기기 전환 시 "방금 음성
-대화의 핵심 결론 3가지가 캔버스 블록으로 정돈되었습니다" 같은 가벼운 수락 배지로 알림.
-(원 출처: HCI Today, UX Collective — 브리핑 문서에 구체 URL 없이 매체명만 기재됨, 원문 미확인)
+**원 아이디어**: 이동 중 음성으로 나눈 AI와의 대화가, 데스크톱을 여는 순간 장황한 텍스트 로그가
+아니라 구조화된 문서로 자동 정리되는 패턴 — 이 자체는 브리핑 문서에 구체 출처가 없었지만, 재조사
+결과 **실제로 존재하는 제품 패턴**임을 확인했다.
+
+**실증 사례 1 — Google Gemini Live의 "단일 연속 스레드" 아키텍처**: Google 공식 설명에 따르면
+텍스트로 채팅을 시작한 뒤 이동 중 음성 대화로 전환해도 "맥락·도구·대화 기록이 하나의 연속된
+스레드에 그대로 유지"된다(source: [Gemini Live 공식 페이지](https://gemini.google/overview/gemini-live/)).
+2026-09-15에는 후속 모델 **Gemini 3.8 Live**가 발표되어(source: [Unite.AI](https://www.unite.ai/google-launches-gemini-3-8-live-and-extended-thinking-voice-models/)),
+시각 입력 실시간 처리와 대화 중 97개 언어 자동 전환을 지원한다.
+
+**실증 사례 2 — Gemini Live가 2026년 여름부터 Gmail·Docs·Keep으로 확장 ("Docs Live" 등)**:
+Google이 2026년 9월 공식 발표한 바에 따르면, "Docs Live"는 사용자가 음성으로 아이디어를 말하면
+Gemini가 이를 **구조화된 문서 초안으로 직접 작성**하고(Gmail·Drive·Chat·웹에서 관련 정보까지
+끌어와 반영), "Keep Live"는 말로 떠오른 생각을 정리된 노트·리스트·할 일로 변환한다
+(source: [Android Headlines](https://www.androidheadlines.com/2026/09/google-workspace-live-voice-conversations-gemini-gmail-docs-keep.html),
+[TechRadar](https://www.techradar.com/pro/you-can-now-talk-to-gemini-directly-in-your-google-docs-drive-gmail-and-more)).
+Docs Live는 Google AI Pro/Ultra 구독자 대상으로 이미 제공 중이며, 비즈니스 고객 대상 출시일은
+미발표.
+
+**실증 사례 3 — Google Gemini가 GM 차량에 탑재**: 2026-04-30(구글)·2026-04-28(GM 확인) 기준,
+2022년식 이후 GM 차량(Cadillac·Chevrolet·Buick·GMC) 약 400만 대에 OTA 업데이트로 Gemini가
+Google Assistant를 대체해 탑재되기 시작했다. 2026-07에는 캐딜락 EV·콜벳 일부 해외 시장(호주·
+뉴질랜드·일본·유럽)으로 확대됐다(source: [GM 공식 뉴스룸](https://news.gm.com/home.detail.html/Pages/news/us/en/2026/apr/0428-Google-Gemini.html),
+[GM Authority](https://gmauthority.com/blog/2026/04/these-gm-vehicles-are-getting-google-gemini-conversational-ai-through-software-update/)).
+
+**종합 — 확인된 것과 추론인 것을 구분**: "GM 차 안에서 Gemini와 나눈 대화가 그대로 Docs Live로
+이어진다"는 **구체적 연결까지는 이번 조사에서 확인되지 않았다(unverified)** — 다만 (1) 같은
+Gemini Live 아키텍처가 차량용 어시스턴트와 Workspace 음성 기능 양쪽에 쓰이고, (2) Google이
+"기기·surface가 바뀌어도 하나의 연속된 스레드"라고 공식적으로 설명하고 있다는 두 사실을
+근거로, "차→데스크톱" 핸드오프가 기술적으로는 이미 상당 부분 성립돼 있고 전면 통합은 시간
+문제로 보인다는 것이 합리적 추정이다. 참고로 유사 패턴의 이미 검증된 실제 제품 사례로
+**Granola**(회의 음성을 구조화된 노트·액션아이템으로 자동 정리하는 도구, source:
+[Granola 공식](https://www.granola.ai/blog/ai-meeting-transcription-how-it-works-and-which-tools-lead-in-2026))가
+있다 — 다만 이건 "회의→노트"이지 "차→데스크톱"은 아니다.
 
 **LG 연결점**: Part 4 Theme 02(멀티디바이스 디자인 인프라 통합)와 연결 — LG의 webOS Micro
-플랫폼이 다루는 "여러 화면 크기 대응"을 넘어 "기기 전환 시 입력 모달리티 자체가 바뀌는" 경험까지
-설계 범위에 넣을지 검토할 소재. 다만 이 항목은 원 출처 URL이 브리핑에 없어 신뢰도가 낮음
-— 인용 시 `competitor-research`로 원문 재확인 권장.
+플랫폼이 다루는 "여러 화면 크기 대응"을 넘어, **차량(LG는 VS사업본부 보유)·가전·모바일 간
+음성-텍스트-화면 컨텍스트가 끊기지 않는 경험**까지 설계 범위에 넣을지 검토할 소재. 구글이
+이미 "차량(Gemini in GM)"과 "생산성 도구(Docs/Gmail/Keep Live)" 양쪽에 동일 아키텍처를
+심고 있다는 건, LG도 가전(냉장고·TV 스크린)과 모바일/차량 간 유사한 컨텍스트 연속성을
+2027 로드맵 후보로 검토할 근거가 된다.
 
 ## Open questions / gaps
 
