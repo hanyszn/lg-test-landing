@@ -24,10 +24,14 @@ WebFetch로 직접 접근할 수 없었다(EGRESS_BLOCKED). 아래 내용 중 �
 - **토스는 TDS(Toss Design System)를 "디자이너 도구에 국한되지 않고 개발과 연결된 공통 언어"로
   운영하며, 화면 설계 시간 30~40분→3~4분, 코드량 50% 감소, 6개월간 약 4,500시간(562일) 절약이라는
   정량 성과를 공개했다.** (source: [토스 디자이너가 제품에만 집중할 수 있는 방법 — Toss Tech](https://toss.tech/article/toss-design-system), WebSearch 스니펫 기반 — 원문 직접 접근 불가, 수치의 산출 기준·시점은 별도 검증 필요)
-- **토스는 UX 라이팅을 "8가지 라이팅 원칙"으로 시스템화했다** — 확인된 항목: Weed Cutting(의미 없는
-  단어 제거), Mute Mute(반복 문장 제거), Speak(읽기보다 말하듯 쓰기), Suggest than Force(강요 대신
-  제안), Universal Words(보편적 단어 사용), Find Hidden Emotion(숨은 감정에 공감) — 나머지 2개
-  항목은 스니펫으로 확인 못함. (source: [토스의 8가지 라이팅 원칙들 — Toss Tech](https://toss.tech/article/21022) 등 다수 2차 정리 글의 WebSearch 스니펫 종합)
+- **[2026-09-21 verifier 정정] 토스는 UX 라이팅을 "8가지 라이팅 원칙"으로 시스템화했다** — 8개 전체
+  확인됨: Predictable Hint(예측 가능한 힌트), Weed Cutting(의미 없는 단어 제거), Remove Empty
+  Sentences(빈 문장 제거), Focus on Key Message(핵심 메시지에 집중), Easy to Speak(말하듯 쓰기),
+  Suggest than Force(강요 대신 제안), Universal Words(보편적 단어 사용), Find Hidden Emotion(숨은
+  감정에 공감). **원래 목록에 있던 "Mute Mute"는 verifier 재검증 결과 존재가 확인되지 않아
+  삭제 — 같은 자리에 반복적으로 등장한 "Remove Empty Sentences"로 정정했다.** (source: [토스의
+  8가지 라이팅 원칙들 — Toss Tech](https://toss.tech/article/21022) 등 다수 2차 정리 글의 WebSearch
+  스니펫 종합, 2026-09-21 verifier가 독립 재검색으로 재확인)
 - **토스는 Simplicity라는 자체 디자인 컨퍼런스를 운영한다** — 2021년 최초 개최, 2023년
   Simplicity23(2023.05.22, 23개 세션, UX리서처/라이터/인터랙션/브랜드/프로덕트/하드웨어 디자이너
   전 직군 참여), 2025년 후속 컨퍼런스도 확인됨. (source: [토스 디자인 컨퍼런스, Simplicity23](https://simplicity-23.toss.im/), [블로터 보도](https://www.bloter.net/news/articleView.html?idxno=601963))
@@ -43,7 +47,11 @@ WebFetch로 직접 접근할 수 없었다(EGRESS_BLOCKED). 아래 내용 중 �
 - **Stripe의 내부 디자인시스템 명칭은 "Sail"이며 전체는 비공개(사내 전용)이나, 2022년 Stripe Apps
   출시와 함께 공개 컴포넌트 라이브러리 일부를 공식 문서(docs.stripe.com/stripe-apps/components)로
   공개했다.** Payment Element를 도입한 기업은 평균 11.9% 매출 증가를 기록했다(전환율이 아니라
-  매출 지표임에 유의). (source: [Stripe 공식 리소스 — Build a streamlined checkout process](https://stripe.com/resources/more/streamlined-checkout-processes-how-to-boost-conversions-with-an-easier-checkout-flow), 2025.06.29 업데이트 기준, [Stripe Design System — DesignSystems.one](https://www.designsystems.one/design-systems/stripe-design) 스니펫)
+  매출 지표임에 유의). **[2026-09-21 verifier 추가 확인] 이 11.9%는 `stripe.com/payments/elements`에서
+  원문 그대로 확인됐으나, Stripe 자체 매칭 코호트(matched-cohort) 비교이지 무작위대조시험(RCT)이
+  아니다 — 같은 연구로 보이는 이전 공식 발표에서는 10.5%로 제시된 적도 있고, "다른 관측되지 않은
+  변화의 영향이 포함됐을 수 있다"는 Stripe 자체 단서도 있다. 2027 사업계획에 인용할 땐 이 방법론적
+  단서를 함께 표기할 것.** (source: [Stripe 공식 리소스 — Build a streamlined checkout process](https://stripe.com/resources/more/streamlined-checkout-processes-how-to-boost-conversions-with-an-easier-checkout-flow), 2025.06.29 업데이트 기준, [Stripe Design System — DesignSystems.one](https://www.designsystems.one/design-systems/stripe-design) 스니펫)
 - **Duolingo는 design.duolingo.com이라는 공식 디자인시스템 사이트에서 Voice/Tone 가이드까지
   공개한다.** Voice는 4가지 특성(Expressive·Playful·Embracing·Worldly)으로 고정하고, Tone은
   상황(맥락)에 따라 조정하는 "읽는 이의 상태를 읽는다(reading the room)"는 원칙을 명시한다.
@@ -99,10 +107,12 @@ WebFetch로 직접 접근할 수 없었다(EGRESS_BLOCKED). 아래 내용 중 �
 - **UX 라이팅**: 배민 첫 전담 UX 라이터(유다정) 합류 이전에도 프로덕트 디자이너들이 자체적으로 UX
   라이팅을 수행해왔고, 이후 전담 라이터가 합류해 "고객과 명확히 소통하는지" 점검·가이드로 전사
   일관성을 지키는 역할을 맡았다고 확인됨. (source: ["UX 라이팅, 배민은 이렇게 시작했어요" — bcut.baemin.com](https://bcut.baemin.com/6287/), 스니펫 기반)
-- **AI UX 라이터 실험(미확인, 후속 조사 필요)**: 우아한형제들 기술블로그에 "안녕하세요! AI
-  UX라이터 제민희입니다. 무엇을 도와드릴까요?"라는 제목의 게시물이 확인됨 — 제목상 AI를 UX
-  라이팅 업무에 결합한 사내 도구/에이전트로 추정되나, 본문 접근 불가로 구체 내용은 확인하지 못함.
-  (source: [techblog.woowahan.com/23836](https://techblog.woowahan.com/23836/), 제목만 확인)
+- **[2026-09-21 verifier 확인] AI UX 라이터 "제민희"는 사람이 아니라 배민 사내 AI 라이팅 검토
+  도구다.** "신입 UX라이터" 페르소나로 설계됐고, 이름 자체가 "제미나이(Gemini)"를 딴 말장난이다
+  ("제미나이" → "제민희"). 우아한형제들이 UX 라이팅 검토 업무에 AI를 결합한 사내 도구/에이전트
+  사례로, 앞서 정리한 "전담 UX 라이터(유다정)" 이후 단계의 AI 활용 사례로 볼 수 있다.
+  (source: [techblog.woowahan.com/23836](https://techblog.woowahan.com/23836/), 스니펫 기반,
+  2026-09-21 verifier가 독립 재검색으로 정체 확인)
 - **브랜드 아이덴티티/2025 리브랜딩**: 대부분의 앱이 플랫 디자인 일색인 흐름 속에서 낙서 같은
   일러스트 아이콘과 자체 서체로 시각적 차별화를 확보. 2025년 15주년을 맞아 "배민 2.0" 리브랜딩을
   진행 — 전용 컬러를 더 밝게 조정하고 신규 서체 "워크체(WORK체)"(한글 빗침획을 블록 형태로
@@ -228,10 +238,12 @@ WebFetch로 직접 접근할 수 없었다(EGRESS_BLOCKED). 아래 내용 중 �
   `designsystems.one`, `weeklyuxuichallenge.oopy.io` 등 다수 원문 도메인이 EGRESS_BLOCKED로 직접
   WebFetch 접근이 불가능했다. 위 대부분의 findings는 WebSearch가 반환한 요약 스니펫에 근거한
   것으로, 원문 전체를 대조 검증하지 못했다 — **verifier 에이전트의 원문 대조 검증이 특히 필요하다.**
-- 토스 8가지 라이팅 원칙 중 6개만 스니펫으로 확인됨 — 나머지 2개 원칙명은 미확인.
-- 토스 TDS의 "화면설계 30~40분→3~4분, 코드 50% 절감, 4,500시간/562일 절약" 수치의 정확한 발표
-  시점·발표자·산출 방법론(측정 기간, 대상 팀 범위 등)이 스니펫만으로는 불명확 — 원문(toss.tech)
-  대조 필요.
+- ~~토스 8가지 라이팅 원칙 중 6개만 확인됨~~ → **2026-09-21 verifier 해결: 8개 전체 확인 + "Mute
+  Mute" 오류 정정 완료.** 위 본문 반영됨.
+- 토스 TDS의 "화면설계 30~40분→3~4분, 코드 50% 절감, 4,500시간/562일 절약" 수치 — **2026-09-21
+  verifier가 수치 일관성(팀 전체 125시간/인 × 6개월 → 4,500시간 ÷ 8시간 = 562일)은 확인했으나,
+  정확한 발표 시점·발표자·산출 방법론(측정 기간, 대상 팀 범위)은 원문(toss.tech) 접근 불가로
+  여전히 미대조 — 재조사 필요.**
 - 배민 "워크체(WORK체)" 리브랜딩의 정확한 공개 일정(2025년 7월 티징 이후 정식 공개일 등)과 세부
   디자인 의도는 designcompass.org 원문 접근 불가로 스니펫 수준만 확인했다.
 - Stripe의 "Sail" 디자인시스템은 사내 전용이라 구조(토큰 체계, 컴포넌트 수 등)를 외부에서 완전히
@@ -240,9 +252,10 @@ WebFetch로 직접 접근할 수 없었다(EGRESS_BLOCKED). 아래 내용 중 �
   등)가 제시한 정확한 토큰 수치(18개 컬러, 22개 컴포넌트 등)는 Duolingo 공식 자료가 아니라 제3자가
   리버스엔지니어링한 것으로 보인다 — 공식 design.duolingo.com에서 직접 확인이 필요하나 이번
   세션에서는 접근 불가했다.
-- "AI UX라이터 제민희"(techblog.woowahan.com/23836) 게시물의 구체 내용 미확인 — 배민이 UX
-  라이팅에 AI를 어떻게 결합했는지는 `ux-ai-capability-research` 관점에서 특히 흥미로운 후속 조사
-  주제이므로, 접근 가능한 세션에서 재조사할 가치가 있다.
+- ~~"AI UX라이터 제민희" 정체 미확인~~ → **2026-09-21 verifier 해결: 사람이 아니라 배민 사내 AI
+  라이팅 검토 도구("제미나이" 말장난 네이밍).** 위 본문 반영됨. 다만 이 도구의 구체적 기능·워크플로우
+  통합 방식은 여전히 미확인 — `ux-ai-capability-research` 관점에서 흥미로운 후속 조사 주제이므로,
+  접근 가능한 세션에서 재조사할 가치가 있다.
 - 미국 대응 기업 선정(Stripe, Duolingo)은 "공개 문서화 수준 + 업계 인용 빈도"를 기준으로 한 이번
   에이전트의 판단이며, 정량적 순위(예: 업계 설문조사, 수상 실적 비교표)로 뒷받침된 것은 아니다 —
   `interview` 단계에서 사용자가 다른 후보(Robinhood, Cash App/Block, Airbnb, Mailchimp)를 원할
