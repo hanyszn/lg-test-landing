@@ -14,6 +14,14 @@ Scope: 기존 리서치(스마트홈 가전 AI UX, AI 에이전트 실무 활용
 `gartner.com` 뉴스룸 등은 검색 스니펫 자체가 해당 공식/1차 도메인에서 나온 것으로 비교적 신뢰도가
 높다.
 
+**[2026-09-21 verifier 확인]** 동일한 EGRESS_BLOCKED 제약을 재확인했다(`openai.com`, `claude.com`,
+`blog.google`, `stateofaidesign.com` 모두 직접 접근 불가, 우회 시도 없음). 다만 Anthropic의 별도
+공식 서브도메인인 `platform.claude.com`(Claude Developer Platform 공식 문서), `code.claude.com`
+(Claude Code 공식 문서), 그리고 `github.com/anthropics/*`(Anthropic 공식 GitHub 조직)는 이번
+세션에서 직접 접근 가능했다 — `claude.com`(마케팅/블로그 도메인)과는 별개 서브도메인이라 egress
+정책상 차단되지 않은 것으로 보인다. 이를 활용해 아래 Anthropic 2026-09 업데이트, "/goal vs
+Outcomes" 항목은 1차 문서로 직접 대조·해결했다(자세한 내용은 해당 항목 및 Open questions 참고).
+
 ## Key findings
 
 ### 트랙 1 — 미국 AI 파운데이션 모델 기업의 최신 에이전트 제품 (Anthropic / OpenAI / Google)
@@ -28,14 +36,31 @@ Scope: 기존 리서치(스마트홈 가전 AI UX, AI 에이전트 실무 활용
   - *멀티에이전트 오케스트레이션*: 리드 에이전트가 복잡한 작업을 하위 작업으로 쪼개 서브에이전트에
     분배.
   - 법률 AI 스타트업 Harvey가 파일럿을 진행해 작업 완료율이 약 6배 상승했다고 보고됨(Harvey 자체
-    수치, 제3자 검증 여부 불명).
+    수치, 제3자 검증 여부 불명). **[2026-09-21 verifier 확인]** 복수 독립 매체(FindSkill.ai,
+    Sean Kim 블로그 등)가 "Harvey의 내부 테스트(internal testing)에서 약 6배 상승"이라고 동일하게
+    보도하며, 이는 Anthropic 자사 블로그(claude.com/blog, EGRESS_BLOCKED)가 고객 사례로 인용한
+    Harvey 자체 발표 수치라는 점이 일관되게 확인된다 — 독립 감사기관 등 제3자 검증 수치라는 근거는
+    어디에도 없었다. 기존 "Harvey 자체 수치, 제3자 검증 여부 불명" 라벨은 정확하며 유지할 것.
   (source: [New in Claude Managed Agents — claude.com/blog](https://claude.com/blog/new-in-claude-managed-agents) — 직접 접근 불가(EGRESS_BLOCKED), [Let's Data Science](https://letsdatascience.com/blog/anthropic-dreaming-claude-managed-agents-self-improving-may-6), [SiliconANGLE](https://siliconangle.com/2026/05/06/anthropic-letting-claude-agents-dream-dont-sleep-job/), [Developers Digest](https://www.developersdigest.tech/blog/claude-managed-agents-dreaming-outcomes-multi-agent), [MindStudio](https://www.mindstudio.ai/blog/code-with-claude-2026-new-agent-features) 스니펫 종합)
   - **이 항목은 "자율적 다단계 실행"이 명확히 확인되므로 "에이전틱" 표현 사용이 타당하다.**
 - **Anthropic, 2026년 9월 기준 Claude Developer Platform에 Managed Agents용 자동 권한 정책(auto
   permission policies), ant CLI의 베타 "세션 연결(sessions connect)"(라이브 세션 원격 제어),
-  커머스 에이전트 블루프린트(참조용 쇼핑·판매자 에이전트 + 가드레일)를 추가.** (source: Releasebot
-  Anthropic 업데이트 집계 페이지 — 단일 애그리게이터 출처로 신뢰도 낮음, **원문 미검증**,
-  [releasebot.io/updates/anthropic](https://releasebot.io/updates/anthropic))
+  커머스 에이전트 블루프린트(참조용 쇼핑·판매자 에이전트 + 가드레일)를 추가.**
+  **[2026-09-21 verifier 확인]** 세 항목 모두 Anthropic 공식 문서/저장소로 원문 대조를 완료했다 —
+  자동 권한 정책은 `platform.claude.com/docs/en/managed-agents/permission-policies`(호출을
+  자동실행/차단/사람 승인대기 3가지로 판정하며, "auto는 사람 체크포인트가 아니다 — 승인된 호출은
+  누군가 검토하기 전에 이미 실행된다"는 경고 문구 확인), ant CLI 세션 연결은
+  `platform.claude.com/docs/en/cli-sdks-libraries/cli/sessions-connect`(CLI v1.32.0 이상 필요,
+  `ant beta:sessions connect` 명령, 베타 표기 확인), 커머스 에이전트 블루프린트는 GitHub
+  `anthropics/commerce-agents`(Apache-2.0, 쇼핑/판매자 에이전트 레퍼런스 구현, 실제 결제·주문
+  확정은 하지 않고 체크아웃·판매자 쓰기는 사람 승인 대기 상태로 스테이징하는 가드레일 확인)로
+  각각 직접 확인됨. InfoWorld·Techzine Global·AlphaSignal·byteiota·QATechTools·PYMNTS·qz.com 등
+  다수의 독립 매체에서도 교차 확인되어, "단일 애그리게이터 출처·신뢰도 낮음" 평가는 더 이상
+  유효하지 않다 — releasebot.io는 최초 발견 경로였을 뿐, 내용 자체는 1차 출처로 검증됐다.
+  (source: [releasebot.io/updates/anthropic](https://releasebot.io/updates/anthropic),
+  [platform.claude.com — 자동 권한 정책](https://platform.claude.com/docs/en/managed-agents/permission-policies),
+  [platform.claude.com — sessions connect](https://platform.claude.com/docs/en/cli-sdks-libraries/cli/sessions-connect),
+  [github.com/anthropics/commerce-agents](https://github.com/anthropics/commerce-agents))
 - **OpenAI, 2026-07-09 "ChatGPT Work" 출시** — 목표(outcome)를 입력하면 여러 앱·파일에서 정보를
   수집해 최종 결과물(스프레드시트, 슬라이드, 리포트, 소형 웹앱)을 만들어내는 에이전트. 복잡한
   프로젝트를 여러 단계로 쪼개 수 시간 동안 독립적으로 이어서 수행하며, Slack·Gmail·Google Drive·
@@ -46,9 +71,16 @@ Scope: 기존 리서치(스마트홈 가전 AI UX, AI 에이전트 실무 활용
 - **OpenAI, 2026-04-22 "Workspace Agents" 도입** — 클라우드에서 상시 실행되는 공유 에이전트로,
   노트북을 닫아도 장시간 워크플로우가 계속 실행됨(ChatGPT Work의 전신 격 기능으로 추정).
   (source: [chatlyai.app](https://chatlyai.app/news/openai-chatgpt-workspace-agents-april-2026), 스니펫 기반 — 원문 미검증)
-- **OpenAI, 2026-09-16 기준 "Sponsored Agents"(광고주가 후원하는 에이전트) 테스트 중** — 대화
-  안에서 상품을 추천/판매하려는 봇. **(미확정/실험 단계)** — 정식 출시 여부, 사용자 UX(광고 표시
-  방식 등) 미확인. (source: [The Register](https://www.theregister.com/ai-and-ml/2026/09/16/openais-new-sponsored-agents-are-happy-to-chat-about-selling-you-things/5296946/))
+- **OpenAI, 2026-09-16 "Sponsored Agents"(광고주가 후원하는 에이전트) 테스트 발표** — 대화
+  안에서 상품을 추천/판매하려는 봇. **[2026-09-21 verifier 확인 — 세부사항 보강]** 독립 매체
+  다수(Unite.AI, PYMNTS, Search Engine Roundtable, qz.com, Remote Work Europe 등)가 동일하게
+  보도한 바로는: 미국 내 일부 광고주(Newegg·Best Buy·Lowe's·VistaPrint 등) 대상 테스트이며,
+  광고에서 "스폰서드 에이전트"와의 대화로 들어가는 것은 ChatGPT 자체 답변과 분리된, 명시적으로
+  라벨링된 별도 대화라고 함(사용자 UX 골자는 확인됨). 국제 시장으로는 2026-09-23부터 확대 예정.
+  다만 이 설명도 OpenAI 공식 발표문(openai.com, EGRESS_BLOCKED) 원문이 아니라 2차 보도 스니펫
+  종합이므로 **정식 전면 출시 여부·최종 UX는 여전히 유동적**일 수 있다. **(미확정/실험 단계 —
+  이 표기는 유지)**
+  (source: [The Register](https://www.theregister.com/ai-and-ml/2026/09/16/openais-new-sponsored-agents-are-happy-to-chat-about-selling-you-things/5296946/), [Unite.AI](https://www.unite.ai/openai-tests-sponsored-agents-and-rolls-out-ai-tools-for-chatgpt-ads/), [PYMNTS](https://www.pymnts.com/news/artificial-intelligence/2026/openai-tests-sponsored-ai-agents-in-chatgpt-ads/))
 - **Google, 2026-05-19 I/O 2026에서 "Gemini Spark" 공개** — Google Cloud 전용 가상머신에서 24시간
   구동되는 개인용 에이전트로, 기기가 꺼져 있어도 백그라운드에서 계속 작업을 이어간다. Gemini 3.5와
   "Google Antigravity" 하니스 기반으로 리서치·계획·후속 실행 같은 장기 과업(long-horizon task)을
@@ -136,14 +168,50 @@ Linear는 에이전트를 "워크스페이스의 정식 멤버"(할당·멘션 �
   사업 가치·부족한 리스크 통제로 취소될 것"이라는 경고성 전망도 함께 내놓았다. **에이전틱 AI
   도입 자체보다 "신뢰할 수 있게 끝까지 실행하는 것"이 관건이라는 시그널.**
   (source: [Gartner 뉴스룸 — 40% 예측](https://www.gartner.com/en/newsroom/press-releases/2025-08-26-gartner-predicts-40-percent-of-enterprise-apps-will-feature-task-specific-ai-agents-by-2026), [Gartner 뉴스룸 — 프로젝트 취소 예측](https://www.gartner.com/en/newsroom/press-releases/2025-06-25-gartner-predicts-over-40-percent-of-agentic-ai-projects-will-be-canceled-by-end-of-2027))
+  - **[2026-09-21 verifier 확인]** 두 보도자료의 날짜·정확한 문구를 재검색으로 대조했다. (1)
+    2025-08-26 보도자료(2025-09-05 갱신) 원문: "Forty percent of enterprise applications will be
+    integrated with task-specific AI agents by the end of 2026, up from less than 5% today." (2)
+    2025-06-25 보도자료 원문(Gartner 애널리스트 Anushree Verma 발언 포함): "Over 40% of agentic AI
+    projects will be canceled by the end of 2027, due to escalating costs, unclear business value or
+    inadequate risk controls." findings의 인용은 날짜·수치·취지 모두 정확하다 — "같은 시기"라는
+    표현은 두 보도자료가 실제로는 약 2개월 차이(2025-06-25 vs 2025-08-26)라 다소 느슨하지만,
+    같은 해(2025년) 안이라는 점에서 실질적 오류는 아니다.
 - **Model Context Protocol(MCP)이 사실상 업계 공통 표준으로 자리잡는 중**: 2025-12-09 Anthropic이
   MCP를 리눅스 재단 산하 신설 "Agentic AI Foundation(AAIF)"에 기증했고, Anthropic·Block·OpenAI가
   공동 창립사로, AWS·Google·Microsoft·Cloudflare·Bloomberg가 플래티넘 멤버로 참여했다. 2026년
-  3월 기준 MCP SDK 다운로드는 월 9,700만 건(2024년 11월 출시 후 18개월 만에 970배 성장), 5,800개
-  이상의 MCP 서버·300개 이상의 클라이언트가 존재하고, 포춘 500대 기업의 28%가 MCP를 배포,
-  설문에 응한 소프트웨어 조직의 41%가 제한적 또는 광범위한 프로덕션 단계에 있다고 보고됨.
+  3월 기준 MCP SDK 다운로드는 월 9,700만 건(2024년 11월 출시 후 18개월 만에 970배 성장) [아래
+  verifier 각주 참고], 5,800개 이상의 MCP 서버 [2026-09-21 verifier 정정 — 아래 참고] · 300개
+  이상의 클라이언트가 존재하고, 포춘 500대 기업의 28%가 MCP를 배포 [2026-09-21 verifier: 신뢰도
+  낮음, 아래 참고], 설문에 응한 소프트웨어 조직의 41%가 제한적 또는 광범위한 프로덕션 단계에
+  있다고 보고됨 [2026-09-21 verifier 확인 — 아래 참고].
   2026-07-28에는 상태 비저장(stateless)·캐시 가능·라우팅 가능한 구조로 발전시키는 새 스펙이
   공개됨. (source: [Model Context Protocol 공식 블로그 — 2026-07-28 스펙](https://blog.modelcontextprotocol.io/posts/2026-07-28/), [digitalapplied.com — MCP 채택 통계](https://www.digitalapplied.com/blog/mcp-adoption-statistics-2026-model-context-protocol), [guptadeepak.com](https://guptadeepak.com/the-complete-guide-to-model-context-protocol-mcp-enterprise-adoption-market-trends-and-implementation-strategies/) — 통계 출처는 대부분 2차 집계 사이트로 교차검증 필요)
+  - **[2026-09-21 verifier 정정] 서버 개수 불일치.** Anthropic·Linux Foundation의 1차 발표문
+    (`blog.modelcontextprotocol.io/posts/2025-12-09-mcp-joins-agentic-ai-foundation/`, 2025-12-09)
+    은 이미 그 시점에 "10,000개 이상의 active MCP 서버"라고 명시했고, 공식 MCP Registry API도
+    2026-05-24 기준 9,652개의 최신 서버 레코드(28,959개 서버/버전 레코드 전체)를 집계했다 — 두
+    수치 모두 findings가 인용한 "2026년 3월 기준 5,800개 이상"보다 크다. 시점상 더 나중인 2026-03
+    수치가 그보다 앞선 2025-12 수치보다 작은 것은 앞뒤가 맞지 않는다 — "5,800개"는 다른 카운팅
+    방식(특정 2차 집계 사이트의 자체 카운트)이거나 오래된/오기재된 수치일 가능성이 높다. 2027
+    사업계획에 인용할 때는 "5,800개"보다 1차 출처의 "10,000개 이상"(2025-12, AAIF 발표) 또는
+    "9,652개"(2026-05, 공식 Registry API) 쪽을 우선 사용할 것을 권고한다.
+  - **[2026-09-21 verifier 확인 — 부분]** 월 9,700만 다운로드 수치는 1차 출처(위 AAIF 발표문,
+    2025-12-09)의 "over 97 million monthly SDK downloads" 문구와 정확히 일치한다. 다만 그 1차
+    출처의 시점은 2025년 12월이며 findings가 표기한 "2026년 3월"이 아니다 — 3개월 뒤에도 정확히
+    동일한 숫자가 보고된다는 것은, 실측이 갱신되지 않은 채 2차 집계 사이트들이 2025-12 수치를
+    2026-03 수치인 것처럼 재인용했을 가능성을 시사한다. "970배/18개월" 산수도 2024-11 출시 기준
+    18개월 후는 2026-05경이라 "2026년 3월"과는 약 2개월 어긋난다(2차 출처 자체의 근사 표현으로
+    보이며 findings의 오류는 아님). 수치 자체는 1차 출처로 확인되나, "2026년 3월 시점"이라는
+    표기는 신뢰하지 말 것을 권고한다.
+  - **[2026-09-21 verifier: 신뢰도 낮음, 정정 보류]** 포춘 500대 기업 28% 배포 수치는 재검색
+    결과 복수의 독립 MCP 통계 비평 글에서 "명시된 출처 없이 반복 인용되는 수치"로 별도 지적되고
+    있음을 확인했다 — 검증 가능한 1차 소스(named survey/report)를 찾지 못했다. 2027 사업계획에는
+    인용하지 않거나, 인용 시 "출처 불명확" 캐비엇을 반드시 유지할 것을 권고한다(수치 자체를
+    틀렸다고 단정할 근거도 없어 findings 본문은 수정하지 않고 각주만 남긴다).
+  - **[2026-09-21 verifier 확인]** 41% 프로덕션 단계 수치는 digitalapplied.com 기사의 최신판이
+    Stacklok의 "2026 소프트웨어 리포트"를 named 1차 소스로 명시하며(이전 판의 미확인 "78%" 수치를
+    이 41% 수치로 대체했다고 그 기사 스스로 밝히고 있음), 다른 통계들보다 출처가 비교적 명확하다.
+    다만 Stacklok 원문 자체는 이번 세션에서 직접 대조하지 못했다(unverifiable claims 참고).
 - **"에이전틱 UX"가 하나의 독립된 디자인 분과로 굳어지는 흐름** — Smashing Magazine(2026-02)은
   에이전틱 AI UX의 핵심 설계 원칙으로 (1) 투명성(의도·자율성 경계·추론 과정·결과를 명확히
   전달), (2) 사용자 통제/개입(일시정지·수정·취소·되돌리기 권한을 에이전트 UX의 예외가 아니라
@@ -174,8 +242,9 @@ LG 가전 AI 에이전트가 외부 서비스(캘린더, 배달앱, 스마트홈
 ### Anthropic
 - Claude Managed Agents: Dreaming(자가학습형 메모리), Outcomes(rubric 기반 채점+재작업 루프),
   멀티에이전트 오케스트레이션, 웹훅 — 2026-05-06/07 Code with Claude에서 공개.
-- 2026-09 기준 자동 권한 정책, ant CLI 세션 연결 베타, 커머스 에이전트 블루프린트 추가(출처
-  신뢰도 낮음, 재검증 필요).
+- 2026-09 기준 자동 권한 정책, ant CLI 세션 연결 베타, 커머스 에이전트 블루프린트 추가
+  **[2026-09-21 verifier 정정]** (Anthropic 공식 문서·GitHub로 원문 대조 완료, 더 이상
+  "출처 신뢰도 낮음" 아님 — 위 트랙 1 해당 항목 참고).
 
 ### OpenAI
 - ChatGPT Work(2026-07-09) — 목표 지향형 멀티스텝 자율 실행, 앱 연동 Plugins 디렉터리, 예약 실행.
@@ -216,24 +285,44 @@ LG 가전 AI 에이전트가 외부 서비스(캘린더, 배달앱, 스마트홈
 
 ## Open questions / gaps
 
-- `openai.com`, `claude.com`, `blog.google`, `stateofaidesign.com` 원문에 이번 세션에서
-  EGRESS_BLOCKED로 직접 접근하지 못했다. 위 findings 중 상당수는 이들 공식 발표를 인용하는 2차
-  기사의 WebSearch 스니펫에 근거한다 — **verifier 에이전트가 접근 가능한 세션에서 원문 대조가
-  필요하다.**
-- Anthropic의 2026-09 업데이트(자동 권한 정책, ant CLI 세션 연결, 커머스 에이전트 블루프린트)는
-  단일 애그리게이터(releasebot.io) 출처로만 확인됐다 — 공식 changelog/블로그 원문 대조 필요.
-  "Claude Code v2.1.139의 /goal 명령"도 별도 출처(SitePoint) 단일 인용이라 교차검증하지 못했다.
-  Code with Claude의 "/goal"과 "Outcomes" 기능이 동일한 기능의 다른 명칭인지, 별개 기능인지도
-  불명확하다 — 재조사 필요.
-  - OpenAI "Sponsored Agents"는 명백히 초기 실험 단계이며 정식 UX/공개 범위가 불명확하다 —
-    "(미확정)"으로 표기했으나, 사용자 신뢰 관점에서 파장이 클 수 있는 주제이므로 다음 세션에서
-    후속 조사 가치가 있다.
-- MCP 채택 통계(월 9,700만 다운로드, 포춘 500대 기업 28% 등)는 다수 2차 집계 사이트에서 반복
-  인용되나, 1차 출처(Anthropic/AAIF 공식 발표)와의 직접 대조는 하지 못했다.
+- **[2026-09-21 verifier 확인 — 재확인됨, 미해결]** `openai.com`, `claude.com`, `blog.google`,
+  `stateofaidesign.com` 원문은 이번 verifier 세션에서도 동일하게 EGRESS_BLOCKED로 직접 접근하지
+  못했다(우회 시도 없음). 다만 Anthropic의 별도 공식 서브도메인 `platform.claude.com`,
+  `code.claude.com`, `github.com/anthropics/*`는 차단되지 않아 이를 통해 아래 두 항목은 1차
+  문서로 해결했다. `openai.com`·`blog.google`·`stateofaidesign.com`에 준하는 대체 공식 도메인은
+  찾지 못해 해당 출처들은 여전히 2차 기사 스니펫에 의존한다 — 접근 가능한 세션에서 재확인 권장.
+- **[2026-09-21 verifier 정정 — 해결됨]** Anthropic의 2026-09 업데이트(자동 권한 정책, ant CLI
+  세션 연결, 커머스 에이전트 블루프린트)는 verifier가 Anthropic 공식 문서(`platform.claude.com`)
+  및 공식 GitHub(`anthropics/commerce-agents`)로 원문 대조를 완료했다 — 더 이상 단일 애그리게이터
+  출처가 아니다. 자세한 내용은 위 "트랙 1 — Anthropic" 해당 항목의 verifier 각주 참고.
+- **[2026-09-21 verifier 정정 — 해결됨]** "/goal"과 "Outcomes"는 **서로 다른 별개 기능**임을
+  Anthropic 공식 문서(`code.claude.com/docs/en/goal`)로 확인했다. "/goal"은 **Claude Code(CLI
+  코딩 도구)**의 세션 범위 슬래시 명령으로 v2.1.139(2026-05 무렵)에 도입되었으며, 매 턴 종료 후
+  별도의 소형 판정 모델(기본 Haiku)이 완료 조건 충족 여부를 판단하는 "Stop hook" 메커니즘 기반
+  이다. 반면 "Outcomes"는 **Claude Managed Agents(클라우드 에이전트 플랫폼)** 기능으로, 개발자가
+  작성한 rubric을 독립된 채점 모델이 평가해 재작업 루프를 트리거하는 방식이다 — 제품 자체가
+  다르다(Claude Code CLI vs. Managed Agents 플랫폼). 개념적으로는 "판정 모델이 완료 여부를
+  결정한다"는 설계 패턴을 공유한다. "SitePoint 단일 출처" 우려는 공식 문서로 대체 검증되어
+  해소됐다(SitePoint 원문 자체는 이번 세션 검색에서 발견되지 않았으나, 핵심 사실은 1차 출처로
+  확인됨). (source: [code.claude.com/docs/en/goal](https://code.claude.com/docs/en/goal))
+  - **[2026-09-21 verifier 확인 — 보강, 완전 해소는 아님]** OpenAI "Sponsored Agents"는 여전히
+    초기 테스트 단계가 맞다(미국 일부 광고주 대상). 사용자 UX(별도 라벨링된 대화, ChatGPT 본답변과
+    분리)와 국제 확대 일정(2026-09-23~)은 이번 재조사로 확인됐다 — 자세한 내용은 위 "트랙 1 —
+    OpenAI" 해당 항목 참고. 정식 전면 출시 여부와 장기 UX 방향은 여전히 유동적이므로 "다음
+    세션에서 후속 조사 가치가 있다"는 원 researcher의 판단은 유효하게 유지한다.
+- **[2026-09-21 verifier 정정 — 부분 해결]** MCP 채택 통계는 1차 출처(AAIF 공식 발표,
+  2025-12-09)와 대조를 완료했다 — 위 트랙 3 MCP 항목의 인라인 각주 참고. 요약: 월 9,700만
+  다운로드는 1차 출처와 수치는 일치하나 표기된 시점("2026년 3월")이 실제로는 1차 출처의 시점
+  (2025년 12월)일 가능성이 높고, 5,800개 서버 수치는 1차 출처(10,000개 이상, 2025-12)·공식
+  Registry API(9,652개, 2026-05)와 모순되어 오류로 추정되며, 포춘 500대 28% 수치는 named 1차
+  소스를 찾지 못해 신뢰도가 낮고, 41% 프로덕션 단계 수치는 Stacklok 2026 소프트웨어 리포트라는
+  비교적 명확한 출처가 새로 확인됐다.
 - "AI in Design Report 2026"(Designer Fund·Foundation Capital, 906명·60개국, 2026-03 설문)의
   구체적 수치는 원문(stateofaidesign.com) 접근 불가로 이번 findings에 반영하지 않았다 — LG UX
   조직 벤치마크에 유용할 수 있으므로 접근 가능한 세션에서 재조사 권장.
-  (`ux-ai-capability-research` 렌즈와도 연결될 수 있음.)
+  (`ux-ai-capability-research` 렌즈와도 연결될 수 있음.) **[2026-09-21 verifier 확인 — 미해결]** 이번 verifier 세션에서도
+  `stateofaidesign.com`은 동일하게 EGRESS_BLOCKED로 확인되어, 원 researcher의 접근 제약과
+  동일하다(우회 시도 없음) — 계속 재조사 필요 항목으로 남겨둔다.
   - **결과 문서 형식 참고**: 이번 파일은 `ai-ux-trend-research` 스킬(사업/시장 경쟁력 렌즈)에
   가깝게 작성했다. 만약 `ux-ai-capability-research`(내부 역량 강화) 또는
   `org-role-evolution-research`(조직·인력 구조) 렌즈로도 이 소스들을 재해석하고 싶다면, 해당
