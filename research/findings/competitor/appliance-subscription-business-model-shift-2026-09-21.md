@@ -19,10 +19,17 @@ Scope: 구글 Home Premium, 삼성 SmartThings/API 과금, 유럽 가전사(일�
 ### 1. 구글 Home Premium — 구독형 AI홈의 최대 실험, 그러나 재무 성과는 여전히 블랙박스
 
 - **가격·출시**: 2026-06-25, Google Home Speaker($99.99)와 함께 Google Home Premium 정식 출시
-  (Standard 월 $10, Advanced/Premium 월 $20 또는 연 $200 — 구 Nest Aware Plus 대비 약 60% 인상).
+  (Standard 월 $10, Advanced/Premium 월 $20 또는 연 $200). **[2026-09-21 verifier 정정] "구 Nest
+  Aware Plus 대비 약 60% 인상"은 부정확하다 — Nest Aware Plus는 이미 2025-08-15부터 $15→$20/월
+  ($150→$200/년)로 인상된 상태였고, Google Home Premium Advanced는 바로 그 인상된 $20/월 가격을
+  그대로 승계한 것이므로 이번 출시 자체로 인한 가격 인상은 확인되지 않는다(기존 Nest Aware Plus
+  가입자 기준 인상폭은 0%). "약 60~67% 인상"이라는 수치는 2020년 출시가($12/월, $120/년) 대비
+  2025-08 인상 후 가격($20/월, $200/년)까지의 5년간 누적 인상률이며, 2026-06-25 Google Home
+  Premium 출시와는 직접 관련이 없다(source 교차검증: [droid-life](https://www.droid-life.com/2025/07/16/your-nest-aware-prices-are-going-up-again/), [9to5google(2025-07-16)](https://9to5google.com/2025/07/16/nest-aware-price-2025/), [Google Nest Community 포럼](https://www.googlenestcommunity.com/t5/Nest-Aware/25-price-increase-US-Reasons/m-p/727974)).**
   미국·캐나다·영국·아일랜드·프랑스·스페인·이탈리아·네덜란드·덴마크·노르웨이·스웨덴·핀란드·벨기에·
   스위스·오스트리아·일본·호주·뉴질랜드 등 18개국 동시 출시, 2026-09-30 이전 구매 시 6개월 무료
-  체험 제공.
+  체험 제공. [2026-09-21 verifier 확인] $99.99 가격·2026-06-25 출시일·6개월 무료체험은 재검색으로
+  교차확인됨.
   (source: [9to5google](https://9to5google.com/2026/06/17/google-home-speaker-launch/), [TechAdvisor](https://www.techadvisor.com/article/2927829/google-home-speaker-release-date-price-and-features-confirmed.html))
 - **설치기반**: 글로벌 Nest 디바이스 보유 가구 약 5,000만(2026년 기준 추정치) — 그러나 **유료 전환율,
   구독자 수, 매출 기여도는 이번 세션 검색 범위에서 확인하지 못했다("2026년 확인 자료 없음" — Google
@@ -98,14 +105,22 @@ Scope: 구글 Home Premium, 삼성 SmartThings/API 과금, 유럽 가전사(일�
   2025년 자료이므로 2026-only 원칙에 따라 본문 헤드라인 통계로는 쓰지 않고, 위 2026년 BofA
   데이터를 보완하는 배경 참고로만 인용한다.**
   (source: [Parks Associates(2025-07-15)](https://www.parksassociates.com/products/smart-home-products-and-services/ai-in-the-smart-home-applications-and-consumer-perceptions), [PR Newswire(2025)](https://www.prnewswire.com/news-releases/parks-associates-up-to-52-of-consumers-are-willing-to-pay-a-monthly-fee-for-an-ai-smart-home-assistant-that-offers-security-convenience-and-automation-use-cases-302505001.html))
-- **한국 가전구독 시장(2026년)은 빠르게 성장 중이나, 성격이 다르다는 점을 명확히 구분해야 한다.**
-  2026년 국내 가전구독 매출 약 2조 4,800억원, 전년 대비 29% 성장(2026-06-02 보도). 그러나 이는
-  LG/삼성의 "가전구독"이 대부분 **하드웨어 초기비용 분할납부(렌탈)+정기 케어서비스**(냉장고 도어
-  패널 교체, 세탁조 분해 세척 등 위생관리)를 의미하며, "AI 기능 자체"를 별도로 과금하는 SaaS형
-  구독이 아니다. 즉 한국 소비자가 받아들이는 것은 "목돈 부담 완화"이지 "AI 기능값 지불"이 아니다 —
-  이 구분을 명확히 하지 않으면 "한국은 구독 수용도가 높다"는 착시로 "AI 기능 구독도 잘 팔릴 것"이라는
-  잘못된 결론에 이르기 쉽다.
-  (source: [비즈워치(2026-06-02)](https://news.bizwatch.co.kr/article/industry/2026/06/02/0041))
+- **[2026-09-21 verifier 정정] "국내 가전구독 시장(전체) 매출 2.48조원"이라는 서술은 부정확하다 —
+  실제로는 LG전자 한 회사의 2025년 연간 가전구독 사업 매출이다.** 재검색 결과, 2조 4,800억원·전년
+  대비 29% 성장 수치는 LG전자가 2026-01-30 2025년 4분기/연간 실적 컨퍼런스콜에서 발표한 **LG전자
+  자체** 가전구독 매출이며(source: [데일리안](https://www.dailian.co.kr/news/view/1604753), [네이트뉴스(컨콜)](https://news.nate.com/view/20260130n26012), [헤럴드경제](https://biz.heraldcorp.com/article/10760749) 등 다수), 한국 가전구독 "시장 전체"(삼성·코웨이·쿠쿠·SK매직 등
+  경쟁사 포함) 매출이 아니다. 실제로 한국 가전구독 시장 전체 규모는 이보다 훨씬 크다 — 전자신문
+  보도(2025-09-17)에 따르면 2025년 **상반기만으로도 국내 시장이 3.5조원을 돌파**했다는 별도 집계가
+  있어, LG 한 회사의 연간 2.48조원과는 카테고리가 다르다(source: [전자신문](https://www.etnews.com/20250917000333)). 아래 문단의 "AI 기능 자체가 아니라 하드웨어
+  렌탈+케어서비스"라는 정성적 구분 자체는 LG전자 IR 자료·기사 내용과 일치해 타당하지만, 인용된
+  숫자(2.48조원, 29%)는 "한국 가전구독 시장 전체"가 아니라 **"LG전자 자체 가전구독 사업의
+  2025년 연간 매출"**로 재기술해야 한다. 즉 LG/삼성의 "가전구독"이 대부분 **하드웨어 초기비용
+  분할납부(렌탈)+정기 케어서비스**(냉장고 도어 패널 교체, 세탁조 분해 세척 등 위생관리)를 의미하며,
+  "AI 기능 자체"를 별도로 과금하는 SaaS형 구독이 아니라는 결론 자체는 유지하되, 근거 수치는 위와
+  같이 정정한다. 한국 소비자가 받아들이는 것은 "목돈 부담 완화"이지 "AI 기능값 지불"이 아니라는
+  해석도 유지한다.
+  (source: [비즈워치(2026-06-02, 원문 EGRESS_BLOCKED으로 직접 대조는 못했으나 위 1차 소스들과
+  수치가 일치)](https://news.bizwatch.co.kr/article/industry/2026/06/02/0041))
 - → **종합: 공급 측(구글·삼성)은 AI 기능/API 접근권 자체를 유료화하는 쪽으로 빠르게 움직이고 있지만,
   수요 측 지불의향은 2026년 기준으로도 여전히 낮은 한 자릿수~십몇 퍼센트대에 머물러 있다. "구독으로
   전환하면 매출이 늘 것"이라는 가정은 아직 소비자 데이터로 뒷받침되지 않는다.**

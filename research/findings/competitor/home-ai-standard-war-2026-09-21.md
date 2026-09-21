@@ -26,11 +26,16 @@ Scope: 삼성(Bixby/Gauss+Perplexity), 구글(Gemini for Home), 애플(Siri AI+G
   **단, 접근 자체가 Google Home Premium Advanced(월 $20 또는 연 $200) 가입자 전용으로 게이트됨** —
   "개방형 표준"을 표방하지만 실제 접근권은 유료 구독 뒤에 있는 구조.
   (source: [TechCrunch(제목·날짜, 원문 직접 열람은 EGRESS_BLOCKED)](https://techcrunch.com/2026/09/16/your-ai-agents-can-now-control-your-google-home-devices/), [Unite.AI](https://www.unite.ai/google-opens-home-mcp-early-access-to-ai-agents-for-smart-home-control/), [dev.to](https://dev.to/techaiwire/google-home-adds-an-mcp-server-gated-at-20-a-month-5gop), [progressiverobot.com](https://www.progressiverobot.com/2026/09/16/google-home-mcp-ai-agents-smart-home/))
+  [2026-09-21 verifier 확인] 2026-09-16 얼리 액세스 공개, Google Home Premium Advanced($20/월) 게이트,
+  Claude/ChatGPT/Google Antigravity/Hermes/Open Claw 지원 모두 재검색으로 교차확인됨(Engadget,
+  AiCybr 등 추가 매체 일치).
 - **삼성 SmartThings API 유료화 — 2026년 6월 발표(개별 매체 보도일 2026-06-26), 2026년 10월부터
   시행.** 비상업 개인 개발자에게 월 $4.99("Personal Plan") 과금. Home Assistant 등 무료 서드파티
   연동 생태계가 직접 타격을 받음(Home Assistant 창립자 Paulus Schoutsen이 공개적으로 "영향받을 것"
   이라 언급). 상업용 티어는 별도 예정.
   (source: [SamMobile](https://www.sammobile.com/news/smartthings-api-access-will-soon-require-a-5-monthly-payment/), [AndroidHeadlines](https://www.androidheadlines.com/2026/06/samsung-smartthings-api-monthly-fees-home-assistant.html), [Eastern Herald(2026-10 시행일 명시)](https://easternherald.com/2026/07/02/samsung-smartthings-api-fee-developers-home-assistant-october-2026/), [How-To Geek](https://www.howtogeek.com/samsung-smartthings-api-price-for-access/))
+  [2026-09-21 verifier 확인] $4.99/월 "Personal Plan", 2026년 10월 시행(무료 접근은 2026년 3분기까지
+  유지) 모두 재검색으로 교차확인됨(Android Authority, Gadget Hacks, Windows News 등 추가 매체 일치).
 - → 구글·삼성 두 회사가 같은 시기(2026년 6~10월)에 독립적으로 같은 패턴("개방 표준 + 유료 게이트")을
   택했다는 것은 우연이 아니라, 에이전트 접근권이 업계 공통의 새로운 수익원으로 자리잡고 있다는 신호.
 
@@ -56,6 +61,8 @@ Scope: 삼성(Bixby/Gauss+Perplexity), 구글(Gemini for Home), 애플(Siri AI+G
   로만 확인)에서 "Siri AI"로 첫 공개, Apple Intelligence 차세대 버전은 2026-09에 "오늘부터 제공"
   (Apple 뉴스룸 명시).
   (source: [TechCrunch](https://techcrunch.com/2026/01/12/googles-gemini-to-power-apples-ai-features-like-siri/), [CNBC](https://www.cnbc.com/2026/01/12/apple-google-ai-siri-gemini.html), [CNN](https://www.cnn.com/2026/01/12/tech/apple-google-gemini-siri), [Forbes](https://www.forbes.com/sites/johnkoetsier/2026/01/12/hey-siri-becomes-hey-google-as-apple-and-gemini-get-hitched/), [Apple Newsroom(WWDC26)](https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/), [Apple Newsroom(2026-09 출시)](https://www.apple.com/newsroom/2026/09/siri-ai-a-profoundly-more-capable-and-personal-assistant-is-here/))
+  [2026-09-21 verifier 확인] 2026-01-12 발표, 연 약 $1B, 1.2조 파라미터(기존 대비 8배) 모두 재검색으로
+  교차확인됨(CNBC 2026-01-12 원문 일치, Introl·ComputeLeap 등 추가 매체 일치).
 - **아마존 — 외부 파트너(Anthropic)에 올인하되, 그 대가로 인프라 락인을 확보.** Alexa+는 Claude가
   복잡한 작업 대부분을 처리(Amazon Bedrock 경유, 2025-02-26 파트너십 공식화). 2026-04-21, Amazon은
   Anthropic에 최대 $25B를 추가 투자한다고 발표(즉시 $5B + 마일스톤 조건부 $20B, 2023년 이후 누적
@@ -63,6 +70,8 @@ Scope: 삼성(Bixby/Gauss+Perplexity), 구글(Gemini for Home), 애플(Siri AI+G
   기술에 지출 약정, Amazon은 Claude 학습·서빙용 최대 5GW 전용 컴퓨팅(Trainium2/3)을 확보. 즉
   "모델은 외부"이지만 "그 외부사의 클라우드 인프라 제공자가 되어 관계를 락인"하는 구조.
   (source: [CNBC(2026-04-20/21 보도)](https://www.cnbc.com/2026/04/20/amazon-invest-up-to-25-billion-in-anthropic-part-of-ai-infrastructure.html), [Anthropic 공식](https://www.anthropic.com/news/anthropic-amazon-compute), [CIO Dive](https://www.ciodive.com/news/amazon-25-billion-to-anthropic-ai-infrastructure/818123/), [CNBC(2025-02-28, Alexa+ Claude 파트너십)](https://www.cnbc.com/2025/02/28/amazon-most-powerful-new-alexa-features-being-powered-by-anthropic-ai.html))
+  [2026-09-21 verifier 확인] 2026-04-20 발표(즉시 $5B + 마일스톤 최대 $20B), Trainium2/3·5GW 확보
+  모두 재검색으로 교차확인됨(CNBC, Motley Fool, CloudComputing-News 등 추가 매체 일치).
 - → **공통점: 4사 모두 "순수 자체 개발 단독 고수"는 없다.** 구글조차 폐쇄 자체 모델을 외부 오픈
   표준(MCP)으로 노출한다. "자체냐 외부냐"라는 이분법 자체가 무의미해지고 있으며, 모두 하이브리드로
   수렴 중이라는 것이 2026년 시점의 실질적 결론.
@@ -112,9 +121,16 @@ Scope: 삼성(Bixby/Gauss+Perplexity), 구글(Gemini for Home), 애플(Siri AI+G
 LG전자는 이 경쟁 구도에서 "각 요소는 갖추고 있으나 통합된 전략 서사가 없는" 상태로 진단된다.
 
 - **허브**: ThinQ ON(AI홈 허브, DQ-X AI 칩 탑재, 생성형 AI 기반 자연어 음성 명령·컨텍스트 이해 지원)
-- **에이전트**: 씽큐 클로(ThinQ Clo) — 2026-09-04 IFA 2026에서 최초 공개, LLM 기반 실행형 에이전트로
-  카카오톡·텔레그램 같은 외부 메신저로 집 밖에서도 대화 가능. 2026년 말 PoC/클로즈드 베타를 거쳐
-  연내 정식 출시 예정(LG전자 노범준 임원, 2026-09-04 현지 테크 브리핑). 어떤 LLM을 기반으로 하는지는
+- **에이전트**: 씽큐 클로(ThinQ Claw, [2026-09-21 verifier 정정] 원문 영문 표기는 "ThinQ Clo"가 아니라
+  "ThinQ Claw"다 — LG 공식 뉴스룸(lg.com, PR Newswire) 및 채널라이프 등 다수 매체가 "ThinQ Claw"로
+  표기하며, 오픈소스 에이전트 프레임워크 "OpenClaw"를 기반으로 명명된 것으로 확인됨. 아래 및
+  Open questions 섹션의 "ThinQ Clo" 표기도 함께 정정함) — 2026-09-04 IFA 2026에서 최초 공개, LLM
+  기반 실행형 에이전트로 카카오톡 등 외부 메신저로 집 밖에서도 대화 가능. [2026-09-21 verifier 확인]
+  IFA 2026 발표 시점(2026-09-04~08) 기준 노범준 LG전자 HS AI홈솔루션사업개발담당 상무가 PoC·
+  내외부 베타테스트를 진행 중이며 연말 중 공식 출시를 목표로 한다고 밝혔고(다수 매체, 예:
+  이투데이·이데일리·시대일보 2026-09-05 보도), 커머스 제휴·구독형 서비스 모델도 검토 중이라는
+  발언도 원문과 일치함을 확인. 연내 정식 출시 예정(LG전자 노범준 임원, 2026-09-04 현지 테크 브리핑).
+  어떤 LLM을 기반으로 하는지는
   이번 세션에서 확인하지 못함(자체 EXAONE 기반인지, 외부 모델 라이선스인지 불명확 — Open questions
   참고).
 - **개방형 커넥티비티**: 2024-07-03, 네덜란드 스마트홈 플랫폼 앳홈(Athom) 지분 80% 인수(현금
@@ -161,10 +177,10 @@ LG전자는 이 경쟁 구도에서 "각 요소는 갖추고 있으나 통합된
 
 ## Open questions / gaps
 
-- 씽큐 클로(ThinQ Clo)가 어떤 LLM(자체 EXAONE인지, 외부 라이선스 모델인지, 혹은 하이브리드인지)을
+- 씽큐 클로(ThinQ Claw)가 어떤 LLM(자체 EXAONE인지, 외부 라이선스 모델인지, 혹은 하이브리드인지)을
   쓰는지 이번 세션에서 확인하지 못했다 — LG 공식 뉴스룸(`lg.co.kr`, `news.lge.co.kr` 등)이
   EGRESS_BLOCKED로 직접 열람이 막혀 있어 후속 세션에서 원문 확인이 필요.
-  (다음 세션 참고용 검색 실마리: "씽큐 클로 LLM", "ThinQ Clo model architecture", IFA 2026 LG
+  (다음 세션 참고용 검색 실마리: "씽큐 클로 LLM", "ThinQ Claw model architecture", IFA 2026 LG
   기술 브리핑 상세 자료)
 - "승자독식 vs 다자공존" 결말에 대한 정식 애널리스트 리포트(Gartner/IDC/Counterpoint/CCS Insight
   등)의 명시적 코멘트를 이번 세션에서 찾지 못했다 — 위 4번 항목의 전망은 개별 사실을 조합한
