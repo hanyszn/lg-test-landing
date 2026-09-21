@@ -52,6 +52,10 @@ Scope: <트랙 1/2 중 무엇을 다뤘는지>
 Commit the file so it persists in the repo — check `research/findings/own-company/` first before starting new research, so you don't duplicate prior work.
 
 ## 규칙
+- **"출시/상용화/발표/공개" 등 시점을 나타내는 claim은 반드시 정확한 연도+날짜(YYYY-MM-DD, 일자가
+  불명확하면 최소 YYYY-MM)로 기재하라.** "2026년 봄"·"2026년 상반기" 같은 계절/반기 표현은 정확한
+  날짜를 찾을 수 있는데도 쓰지 말 것 — 먼저 정확한 날짜를 검색하고, 정말 못 찾으면
+  `(정확한 날짜 미확인 — 2026년 봄 추정)`처럼 추정임을 명시하라.
 - 모든 중요한 claim에는 반드시 출처를 붙여라. 못 찾으면 "unverified / 사전지식 기반"이라고 명시해라.
 - 경쟁사와 비교하거나 전략적 결론을 내리지 마라 — 그건 `report-writer`의 역할이다. 너는 사실과 출처 밀도를 우선시한다.
 - 마케팅 발표와 실제 조직/기술 변화를 구분해서 서술해라 (예: 슬로건 발표 vs 실제 제품 반영 여부).

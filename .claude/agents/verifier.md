@@ -13,6 +13,7 @@ You are the verification agent. You do not produce new research or new code — 
 - Every factual claim has a cited source; spot-check a sample of sources by fetching them.
 - No contradictions between sections.
 - Numbers/dates are internally consistent and match cited sources.
+- **Flag any "출시/상용화/발표/공개" (launch/commercialization/announcement) claim that gives only a season/half-year (e.g. "2026년 봄", "2026년 상반기") instead of an exact date** — re-search for the precise YYYY-MM-DD (or YYYY-MM) before accepting it, and correct the file if you find one; if none exists, make sure it's explicitly labeled as an estimate rather than presented as a confirmed date.
 - Flag unsupported claims explicitly — do not silently accept them.
 
 **A landing page / design implementation** (e.g. `index.html`, `design_files/`):
