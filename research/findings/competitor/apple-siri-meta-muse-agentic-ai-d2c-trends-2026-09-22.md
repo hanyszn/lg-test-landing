@@ -67,9 +67,12 @@ CarPlay Ultra, App Intents/SiriKit 폐기, Apple-Google $1B/년 Gemini 라이선
   제품과 혼동될 만한 별도 실체가 확인되지 않았다 — "Muse"가 유일하고 명확한 매치.
 - **출시일: 2026-09-08, 미국 우선 출시(18세 이상), 웹(muse.ai)·iOS·Android 앱·WhatsApp 챗봇으로
   제공.** 향후 Meta의 AI 안경(Ray-Ban 등)에도 탑재 예정이라고 Meta가 밝힘(정확한 날짜 미정).
-  기반 모델은 Meta Superintelligence Labs의 첫 플래그십 모델 **Muse Spark(1.3, 100만 토큰 컨텍스트
-  윈도우)로, 2026-09-02에 별도 공개**됐다(Muse 출시보다 6일 앞선 모델 공개).
-  (source: [Meta Newsroom(2026-09-08 발표)](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/), [TechCrunch(2026-09-08)](https://techcrunch.com/2026/09/08/meta-debuts-its-muse-ai-agent-will-consumers-trust-it/), [Axios(2026-09-08)](https://www.axios.com/2026/09/08/meta-debuts-muse-personal-ai-agent), [Bloomberg(2026-09-08)](https://www.bloomberg.com/news/articles/2026-09-08/meta-announces-muse-ai-agent-for-personal-tasks-and-organization), [Engadget(사용 가이드)](https://www.engadget.com/2256577/how-to-get-started-with-meta-s-new-ai-agent-muse/))
+  기반 모델은 Meta Superintelligence Labs의 **Muse Spark 계열(1.3, 100만 토큰 컨텍스트 윈도우)**로,
+  이 최신 버전이 **2026-09-02에 공개**됐다(Muse 출시보다 6일 앞선 모델 공개). **[verifier 수정,
+  2026-09-22]** Muse Spark는 "첫 플래그십 모델"이 아니라 계열 모델이다 — Muse Spark 계열은
+  2026-04-08에 처음 소개됐고, 1.1이 2026-07-09에 출시됐으며, 1.3(2026-09-02)은 그 최신 반복판이다.
+  (source: [Meta Newsroom(2026-09-08 발표)](https://about.fb.com/news/2026/09/introducing-muse-personal-ai-agent/), [TechCrunch(2026-09-08)](https://techcrunch.com/2026/09/08/meta-debuts-its-muse-ai-agent-will-consumers-trust-it/), [Axios(2026-09-08)](https://www.axios.com/2026/09/08/meta-debuts-muse-personal-ai-agent), [Bloomberg(2026-09-08)](https://www.bloomberg.com/news/articles/2026-09-08/meta-announces-muse-ai-agent-for-personal-tasks-and-organization), [Engadget(사용 가이드)](https://www.engadget.com/2256577/how-to-get-started-with-meta-s-new-ai-agent-muse/); Muse Spark 계열 출시 이력은
+  `research/verification/apple-siri-meta-muse-d2c-verification-2026-09-22.md` 참고)
 - **연동 카테고리: 이메일·캘린더·결제·건강/피트니스·쇼핑·스마트홈·외식·음악·이벤트 등 최소
   9개 영역.** 사용자가 앱/서비스를 하나씩 개별적으로 옵트인 연결해야 하며, 언제든 접근 권한을
   회수할 수 있다("opt-in 투명성" 구조). 공식 API가 없는 서비스는 사용자가 제공한 자격증명으로
@@ -88,8 +91,8 @@ CarPlay Ultra, App Intents/SiriKit 폐기, Apple-Google $1B/년 Gemini 라이선
 - **가격: 무료 티어 + 유료 2단계("Power" $20/월, "Maximum" $100/월)**, 사용량에 따라 상위 티어로
   유도하는 구조. Meta는 대다수 사용자가 무료 티어에 머물 것으로 예상한다고 밝힘.
   (source: [datacamp.com](https://www.datacamp.com/blog/muse-agent), [tech-insider.org](https://tech-insider.org/meta-muse-personal-ai-agent-launch-2026/))
-- **D2C 관련 파트너십: Shopify와의 제휴로 "Shop Pay" 기반 에이전틱 체크아웃 지원, 2026-09
-  발표(구체 일자 미확인 — Muse 출시일 전후로 추정).** Universal Commerce Protocol을 매개로 Muse가
+- **D2C 관련 파트너십: Shopify와의 제휴로 "Shop Pay" 기반 에이전틱 체크아웃 지원, 2026-09-21 발표**
+  ([verifier 확정, 2026-09-22] — Amazon의 Muse 차단 보도와 같은 날). Universal Commerce Protocol을 매개로 Muse가
   Shopify 카탈로그를 탐색해 사용자 대신 구매까지 완료할 수 있고, **Shopify 입점 판매자(머천트)는
   기본값으로 Muse에서 발견·구매 가능한 상태**가 된다 — 이는 제조사·브랜드가 대형 리테일 플랫폼을
   거치지 않고 AI 에이전트를 새로운 소비자 접점(distribution channel)으로 활용할 수 있게 된
@@ -126,16 +129,22 @@ CarPlay Ultra, App Intents/SiriKit 폐기, Apple-Google $1B/년 Gemini 라이선
     구조). 30개 이상 기업(Coinbase, Stripe, Adyen 등)이 참여했고, 에이전트 권한·자격증명은 초기에
     Polygon·Solana·Base 블록체인에 기록되는 방식으로 시작했다.
     (source: [Mastercard 공식(2026-06-10)](https://www.mastercard.com/us/en/news-and-trends/press/2026/june/mastercard-launches-agent-pay-for-machines.html), [Fortune(2026-06-10)](https://fortune.com/2026/06/10/mastercard-ai-payments-protocol-launch-agentic-finance/), [CoinDesk(2026-06-10)](https://www.coindesk.com/business/2026/06/10/mastercard-prepares-for-a-future-where-ai-agents-make-payments-with-latest-introduction))
-  - **Mastercard·Santander·PayOS가 2026-03(정확한 날짜 미확인 — 2026년 3월 중으로만 확인) 유럽
-    최초의 "AI 에이전트가 은행의 실제 결제 인프라를 통해 완결한 실거래(live end-to-end payment)"를
-    성사시켰다.** 파일럿 단계를 넘어 실제 은행 인프라 기반 거래라는 점에서 유의미하다.
-    (source: [ffnews.com](https://ffnews.com/newsarticle/mastercard-launches-agent-pay-for-machines-to-unlock-super-fast-always-on-payments/) — Santander/PayOS 실거래 사실은 이 기사에서 언급된 것으로, 원 발표 1차 출처는 이번 조사에서 별도 확정하지 못함, Open question 참고)
-  - **Visa Trusted Agent Protocol(TAP)은 2026년 초 기준 파트너 100개 이상, 그중 30개 이상이
-    샌드박스 테스트, 20개 이상이 프로덕션 통합 중.** 단, 이 수치의 정확한 발표일(YYYY-MM-DD)은
-    확정하지 못했고("2026년 초"라는 스니펫 정보로만 확인) 2025-12-18 Visa 공식 발표(배경정보,
-    2025년 자료라 헤드라인에는 미사용)에서 "2026년 홀리데이 시즌까지 수백만 소비자가 AI 에이전트로
-    구매를 완료할 것"이라 전망했다는 점만 배경으로 남긴다.
-    (source: [Visa 공식(2025-12-18, 배경정보)](https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.21961.html) — 2026년 파트너 수 확정 1차 출처는 Open question)
+  - **Mastercard·Santander·PayOS가 2026-03-02** ([verifier 확정, 2026-09-22]) **유럽 최초의 "AI
+    에이전트가 은행의 실제 결제 인프라를 통해 완결한 실거래(live end-to-end payment)"를
+    성사시켰다.** 단, Santander 측이 이를 통제된 환경의 파일럿(pilot)이라고 명시적으로 밝혔으므로
+    "파일럿 단계를 넘어"라는 표현은 과장이다 — 실제 은행 인프라를 통했다는 점에서 의미는 있으나
+    상용(commercial) 롤아웃은 아니다.
+    (source: [ffnews.com](https://ffnews.com/newsarticle/mastercard-launches-agent-pay-for-machines-to-unlock-super-fast-always-on-payments/), Santander 발표일 및 파일럿 성격은 `research/verification/apple-siri-meta-muse-d2c-verification-2026-09-22.md` 참고)
+  - **[verifier 수정, 2026-09-22] Visa Trusted Agent Protocol(TAP)의 "파트너 100개 이상/샌드박스
+    30개 이상/프로덕션 20개 이상" 수치는 2026년 자료가 아니라 2025-12-18 Visa 공식 발표에서 나온
+    것으로 강하게 추정된다** (betanews.com, mediapost.com, fintech.global, streetinsider 등 복수
+    2차 매체가 이 수치를 2025-12-18 발표와 함께 인용 — 단 usa.visa.com/investor.visa.com이 이번
+    조사에서도 EGRESS_BLOCKED로 원문 1차 대조는 못해 100% 확정은 아님). CLAUDE.md의 "현재 경쟁
+    상황은 해당 연도(2026년) 자료만" 규칙에 따라 **이 수치를 "2026년 현재 상황" 헤드라인으로 쓰지
+    않는다 — Visa TAP의 2026년 갱신 수치는 확인 자료 없음으로 남긴다.** 2025-12-18 발표에서
+    "2026년 홀리데이 시즌까지 수백만 소비자가 AI 에이전트로 구매를 완료할 것"이라 전망했다는 점만
+    배경정보로 남긴다.
+    (source: [Visa 공식(2025-12-18, 배경정보)](https://usa.visa.com/about-visa/newsroom/press-releases.releaseId.21961.html); 2025년 자료 추정 근거는 `research/verification/apple-siri-meta-muse-d2c-verification-2026-09-22.md` 참고)
   - **2026년 확인 자료 없음**: 위 결제 프로토콜들이 실제 "가전제품이 스스로 소모품(세제·필터·
     잉크 등)을 재주문"하는 구체적 상용 사례로 이어졌다는 2026년 발표는 이번 조사에서 찾지 못했다
     — 인프라는 갖춰졌으나 가전 적용 사례는 아직 공개되지 않은 것으로 보인다.
@@ -188,12 +197,15 @@ CarPlay Ultra, App Intents/SiriKit 폐기, Apple-Google $1B/년 Gemini 라이선
   아니면 사용자 제공 API 키/브라우저 기반의 범용 방식인지 1차 출처로 확정하지 못했다.** about.fb.com,
   ai.meta.com이 이번 세션에서 EGRESS_BLOCKED로 직접 열람 불가했던 것이 원인 — 후속 세션에서
   프록시 우회 없이 접근 가능한 환경에서 원문 대조가 필요하다.
-- **Shopify-Muse Shop Pay 제휴의 정확한 발표일(YYYY-MM-DD)을 확정하지 못했다** — Muse 출시일
-  (2026-09-08) 전후로 발표된 것으로 추정되나 원문 1차 대조 미완료.
-- **Mastercard·Santander·PayOS의 "유럽 최초 AI 에이전트 실거래" 정확한 날짜(2026년 3월 중으로만
-  확인)와 1차 출처(Mastercard/Santander 공식 보도자료)를 확정하지 못했다.**
-- **Visa TAP의 "파트너 100개 이상" 수치의 정확한 발표일을 확정하지 못했다** — "2026년 초"라는
-  스니펫 정보로만 확인, 2026년 신규 공식 발표 원문 대조 필요.
+- ~~Shopify-Muse Shop Pay 제휴의 정확한 발표일~~ **[verifier 확정, 2026-09-22] 2026-09-21로 확정**
+  (본문에 반영됨).
+- ~~Mastercard·Santander·PayOS의 "유럽 최초 AI 에이전트 실거래" 정확한 날짜~~ **[verifier 확정,
+  2026-09-22] 2026-03-02로 확정, 단 Santander가 "파일럿"이라 명시했다는 점도 함께 확정**
+  (본문에 반영됨).
+- **Visa TAP의 "파트너 100개 이상" 수치는 [verifier 재조사, 2026-09-22] 2025-12-18 발표 자료일
+  가능성이 높은 것으로 재확인됐다(100% 확정은 아님, 1차 출처 EGRESS_BLOCKED 지속)** — 본문에서
+  "2026년 현재 상황" 헤드라인으로 쓰지 않도록 수정 완료. 후속 세션에서 usa.visa.com/investor.visa.com
+  원문 대조가 가능해지면 최종 확정 필요.
 - **가전제품이 Mastercard Agent Pay for Machines나 Visa TAP 같은 프로토콜을 실제로 채택해
   소모품을 자동 재주문한 2026년 상용 사례는 이번 조사에서 찾지 못했다** — "2026년 확인 자료
   없음"으로 명시. 후속 세션에서 CES 2026/IFA 2026 발표 중 이런 사례가 있었는지 재확인 필요.
