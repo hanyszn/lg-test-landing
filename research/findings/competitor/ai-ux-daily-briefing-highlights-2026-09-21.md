@@ -129,7 +129,9 @@ the Table"의 핵심 수치는 "AI가 절약해준 시간의 거의 40%가 재�
 맥락 전달 문제가 아니라 AI 산출물의 품질·신뢰 문제**를 가리킨다 — 이번 세션에서 이미 다룬
 "에이전틱 AI 신뢰 병목"(`agentic-ai-trust-bottleneck-deep-dive-2026-09-21.md`) 쪽 논지에 더
 가깝다.
-(source: [Workday Newsroom, 2026-01-14](https://newsroom.workday.com/))
+(source: [Workday Newsroom, 2026-01-14](https://newsroom.workday.com/2026-01-14-New-Workday-Research-Companies-Are-Leaving-AI-Gains-on-the-Table))
+
+[2026-09-22 verifier 확인] 독립 재검색(WebSearch, newsroom.workday.com/investor.workday.com/prnewswire/barchart/morningstar/uctoday 등 다수 소스 교차 확인 — 직접 WebFetch는 이 세션의 네트워크 정책상 newsroom.workday.com 등 다수 도메인이 차단돼 있어 검색 스니펫을 통한 교차검증까지만 가능했음)로 "Nearly 40% of AI time savings lost to rework"(재작업/오류 수정/품질 검증)라는 문구와 프레이밍(품질·신뢰 문제, 도구 간 맥락 복사 문제가 아님)을 재확인함. 정정 A는 정확함.
 
 **정정 B — 실제 "도구 간 맥락 수동 이전" 문제는 별도 통계인 "Copy/Paste Economy"다.**
 Workday의 "The Copy/Paste Economy: How The AI Productivity Tax Slows Your Best People" 보고서에
@@ -140,9 +142,27 @@ Nearly a Full Work Day Each Week Managing Disconnected AI Tools")도 같은 논�
 재확인했다 — 즉 "주당 거의 하루(최대 약 7~8시간)를 서로 단절된 AI 도구를 관리하는 데 쓴다"는
 것으로, **Context Portability 아이디어(맥락 이전성)를 뒷받침하는 올바른 수치는 이 "1/5(7시간+)"
 쪽**이다.
-(sources: [Workday "Copy/Paste Economy" 리포트](https://www.workday.com/), [Workday Newsroom,
-2026-05-14](https://newsroom.workday.com/); 2차 확인: barchart.com의 2026-01-14 보도자료
-재게재, HR Grapevine·cfotech.com.au의 2026-05-14 보도 인용)
+(sources: [Workday "Copy/Paste Economy" 리포트](https://www.workday.com/en-us/perspectives/ai/copy-paste-economy-ai-productivity-tax.html),
+[Workday Newsroom, 2026-05-14](https://en-hk.newsroom.workday.com/2026-05-14-New-Workday-Research-UK-Employees-Spend-Nearly-a-Full-Work-Day-Each-Week-Managing-Disconnected-AI-Tools);
+2차 확인: barchart.com의 2026-01-14 보도자료 재게재, HR Grapevine·cfotech.com.au·TechRadar·
+ComputerWeekly의 2026-05-14 보도 인용)
+
+[2026-09-22 verifier 확인] 독립 재검색 결과 "Copy/Paste Economy" 리포트(workday.com 자체 페이지 및
+2차 보도 다수)에서 "82% 직원이 도구 간 데이터 이동/상충 결과 대조에 상당한 시간을 씀", "5명 중
+1명이 주 7시간+, IT 담당자는 4명 중 1명"이라는 수치를 그대로 확인함. 2026-05-14 영국 특화 후속
+보도자료("UK Employees Spend Nearly a Full Work Day Each Week Managing Disconnected AI Tools")도
+날짜·제목·"영국 근로자 4명 중 1명이 주 7시간+"라는 취지의 수치를 확인함(TechRadar, HR Grapevine
+경유 — 영국 조사는 The Harris Poll이 Workday 의뢰로 영국 전문직 2,400명 대상 별도 수행한 조사로,
+글로벌 "Copy/Paste Economy" 조사(6,100명, 미국 중심)와는 표본이 다른 **별개 조사**임을 확인 —
+파일의 "같은 논지를 별도 수치로 재확인" 표현은 정확함, 두 수치를 동일 수치인 것처럼 섞지 않아야
+한다는 점도 맞음). **정정 B도 정확함.**
+
+[2026-09-22 verifier 확인] (c) 종합 판단: 정정 A(재작업/품질, 2026-01-14)와 정정 B(도구 간 맥락
+이전, Copy/Paste Economy + 2026-05-14 영국 후속)는 독립적으로 확인 가능한 **서로 다른 두 개의
+실제 Workday 통계**이며, 사용자가 이번 세션에서 수행한 정정 과정에서 새로운 오류가 발생하지
+않았음을 확인함. 다만 이 세션에서도 newsroom.workday.com/www.workday.com에 대한 직접 WebFetch가
+네트워크 정책상 차단되어 있어, WebSearch 스니펫 기반 교차검증에 머물렀다는 한계가 있다 — 완전한
+1차 자료 열람(PDF/페이지 원문 전체)은 여전히 미완료.
 
 **결론**: "통합 UX/맥락 이전성"을 2027 과제로 인용할 때는 "AI 시간절약의 40%가 복사·붙여넣기로
 날아간다"가 아니라, **"직원 5명 중 1명, IT 담당자는 4명 중 1명이 서로 단절된 AI 도구 간 맥락을
@@ -157,12 +177,30 @@ Nearly a Full Work Day Each Week Managing Disconnected AI Tools")도 같은 논�
 ### 7) 크로스 앱 시맨틱 딥링킹 (App Intents / AppFunctions)
 (원 출처: 2026-09-02자 브리핑 — Apple Newsroom, 2026-06 공식 발표 기반)
 
-Apple의 App Intents 프레임워크와 Android의 AppFunctions(Google, 2026-06 공식 발표)는 앱이
-자신의 기능을 OS 수준 AI 에이전트가 "이해하고 직접 호출"할 수 있는 시맨틱 딥링크로 노출하게
-한다 — 사용자가 앱을 열어 메뉴를 탐색하지 않아도, 에이전트가 "다른 앱의 특정 기능"을 맥락에
-맞게 바로 실행. 기존 딥링크(URL 스킴)가 "화면 이동"만 가능했다면, App Intents/AppFunctions는
-"행동 실행"까지 가능하다는 점이 질적 차이.
-(원 출처: Apple Newsroom, 2026-06 공식 발표)
+Apple의 App Intents 프레임워크와 Android의 AppFunctions는 앱이 자신의 기능을 OS 수준 AI
+에이전트가 "이해하고 직접 호출"할 수 있는 시맨틱 딥링크로 노출하게 한다 — 사용자가 앱을 열어
+메뉴를 탐색하지 않아도, 에이전트가 "다른 앱의 특정 기능"을 맥락에 맞게 바로 실행. 기존
+딥링크(URL 스킴)가 "화면 이동"만 가능했다면, App Intents/AppFunctions는 "행동 실행"까지
+가능하다는 점이 질적 차이.
+(Apple App Intents source: [Apple Newsroom, 2026-06-08 — "Apple unveils next generation of
+Apple Intelligence, Siri AI, and more"](https://www.apple.com/newsroom/2026/06/apple-unveils-next-generation-of-apple-intelligence-siri-ai-and-more/)
+— WWDC 2026 키노트(2026-06-08)에서 App Intents가 SiriKit을 공식 대체하는 유일한 경로로
+격상되고 entity/intent schema, View Annotations 등이 추가됨;
+Google AppFunctions source: [Android Developers Blog, 2026-02-26 — "The Intelligent OS: Making
+AI agents more helpful for Android apps"](https://android-developers.googleblog.com/2026/02/the-intelligent-os-making-ai-agents.html))
+
+[2026-09-22 verifier 정정] 원문의 "Android의 AppFunctions(Google, 2026-06 공식 발표)"는 날짜
+오류다. 독립 재검색 결과 Google이 AppFunctions를 처음으로 자세히 설명한 공식 발표는
+**2026-02-26 Android Developers Blog 포스트("The Intelligent OS: Making AI agents more helpful
+for Android apps")**이며(그 이전 2025년 Google I/O에서 "조용히" 먼저 언급된 바 있음), 이후
+2026-05 Google I/O '26에서 확장 소개, 2026-06 Android 17 출시 포스트에서 추가 확장, 2026-07
+튜토리얼 시리즈로 이어지는 다단계 롤아웃이었다 — 단일 "2026-06 공식 발표"는 없다. 원문은 Apple
+App Intents의 실제 공식 발표일(WWDC 2026, 2026-06-08)과 Google AppFunctions를 같은 "2026-06"
+날짜로 묶어 서술한 것으로 보이는데, 이는 오인이다. **두 프레임워크 모두 실재하며 이번 세션에서
+독립 확인됨(Apple App Intents는 iOS 16(2022)부터 존재해온 프레임워크가 WWDC 2026에서 대폭
+강화된 것; "AppFunctions"는 Google/Android가 공식적으로 쓰는 정확한 명칭 — developer.android.com/ai/appfunctions
+확인)이나, "Google, 2026-06 공식 발표"라는 날짜 귀속만 정정한다.** CLAUDE.md의 정확한 날짜 인용
+규칙에 따라 위와 같이 각 프레임워크별로 실제 공식 발표일을 분리해 기재함.
 
 **LG 연결점**: Theme 02("기기 간 연결성 UX")의 기술적 구현 층위에 직접 해당 — LG가 가전↔로봇,
 가전↔차량 연결 시나리오를 설계할 때, "각 기기의 기능을 시맨틱 인텐트로 노출해 AI Agent가
@@ -178,8 +216,26 @@ Apple의 App Intents 프레임워크와 Android의 AppFunctions(Google, 2026-06 
 UI를 생성하도록 하는 방식. SAP 사례는 엔터프라이즈 소프트웨어의 "생성형 UI(Generative UI)"
 수요에 대응하기 위한 것으로, 컴포넌트 자체보다 "조합 규칙(composition rules)"을 시스템화하는
 데 방점.
-(원 출처: SAP Design Stories, 2026-08 관련 게시물 — 1차 URL은 브리핑 문서에 매체명만 기재돼
-있어 이번 세션에서 직접 대조하지 않음, `verifier` 재확인 권장)
+(source: [SAP Design Stories, 2026-05-12 — "Evolving design systems for AI driven UX"](https://www.sap.com/design/stories-resources/evolving-design-systems-for-ai-driven-ux);
+[SAP Design System — "Compositional Design System and Engagement Layer"](https://www.sap.com/design-system/compositional-design-system-and-engagement-layer))
+
+[2026-09-22 verifier 정정+확인] 이 항목은 파일의 "Open questions"에서 "1차 URL 미확인·검증
+불가"로 플래그돼 있었으나, 독립 재검색으로 **실제 1차 출처를 찾아 확인함**. SAP Design Stories의
+실제 게시글은 "Evolving design systems for AI driven UX"이며, 발행일은 원문이 주장한 "2026-08"이
+아니라 **2026-05-12**로, SAP Sapphire & ASUG Annual Conference 2026(2026-05-11~13, 올랜도)에서
+"Joule Work"(신규 AI 엔게이지먼트 레이어)가 공개된 시점과 일치한다 — 날짜를 정정한다. 다만
+브리핑 문서 자체의 "2026-08-30자" 표기는 사용자의 일일 브리핑이 그 항목을 다룬 날짜일 뿐
+(브리핑 매체가 5월 발행 글을 8월에 재조명했을 가능성), SAP 원문 발행일과는 별개다 — 혼동 방지를
+위해 본문의 "원 출처: SAP Design Stories, 2026-08 관련 게시물" 표기는 오기이며 위 정정된 날짜로
+대체한다.
+
+내용 검증: 독립 재검색으로 확인한 SAP 자체 페이지 내용은 이 항목의 서술과 실질적으로 일치한다 —
+"Compositional Design System은 전통적 디자인 시스템에 AI 기반 경험 조합에 필요한 로직·구조·
+메타데이터·가드레일을 추가로 확장한 것", "무엇이 존재하는지를 정의하는 데 그치지 않고 경험이
+어떻게 조합되는지, 어떤 조합이 유효한지, 시스템이 무엇을 생성하도록 허용되는지의 디자인 로직을
+인코딩하는 것이 역할", "기존 SAP Fiori를 대체하지 않고 그 위에 AI 주도 조합·적응을 위한 구조를
+더한 것"이라는 설명이 확인됨 — "고정 컴포넌트 세트 대 조합 규칙 시스템화"라는 파일의 프레이밍과
+부합한다. **8번 항목은 더 이상 "unverified"가 아니며, 확인됨(PASS)으로 상태를 갱신한다.**
 
 **LG 연결점**: Theme 02의 03/08 인프라 정비(공통 컴포넌트·AI Agent 아이덴티티 일관성) 항목과
 연결 — 가전·로봇·차량 각 터치포인트마다 고정 컴포넌트를 배포하는 대신, LG의 UX 3.0/webOS
@@ -189,14 +245,28 @@ Agent가 일관된 조합 규칙에 따라 그 기기에 맞는 UI를 즉석 생
 
 ## Open questions / gaps
 
-- 이 8건의 원 출처는 대부분 AI/UX 트렌드 매체의 2차 정리 글로, 1차 발표(예: Samsung 공식 발표,
-  Stripe/Google 공식 자료, SAP Design Stories)와 직접 대조되지 않은 항목이 남아 있다(특히 8번) —
-  아티팩트/보고서의 헤드라인 근거로 쓰기 전에 `verifier`가 원문 대조하는 것을 권장.
+[2026-09-22 verifier 확인] 6/7/8번은 `verifier`가 검증 패스를 완료했다 — 상세 근거는
+`research/verification/ai-ux-daily-briefing-highlights-items-6-8-2026-09-22.md` 참조.
+아래 항목 중 8번의 "1차 URL 미확인" 플래그는 이번 검증에서 해소됐고(SAP 원문 발견·대조 완료),
+7번은 날짜 오류 1건이 정정됐다(본문 참조). 나머지 미해소 항목은 아래에 남겨둔다.
+
+- (해소됨 — 8번) ~~이 8건의 원 출처는 대부분 AI/UX 트렌드 매체의 2차 정리 글로, 1차 발표(예:
+  Samsung 공식 발표, Stripe/Google 공식 자료, SAP Design Stories)와 직접 대조되지 않은 항목이
+  남아 있다(특히 8번)~~ → 8번은 이번 세션에서 SAP 1차 출처(sap.com/design/stories-resources,
+  sap.com/design-system)를 직접 대조해 확인 완료. 1번(Samsung 공식 발표), 2번(Stripe/Google
+  공식 자료)은 여전히 2차 매체(TechBytes, Forkast) 경유이며 이번 검증 범위(6~8번)에 포함되지
+  않아 미대조 상태로 남아 있음 — 후속 세션에서 필요 시 재확인.
 - 브리핑 시리즈 자체가 "2026년 X월 기준"이라고 다는 자체 라벨을 정확한 발표일(YYYY-MM-DD)까지
-  보장하지 않는 항목이 있다(특히 5번, 8번) — CLAUDE.md의 날짜 규칙에 맞춰 재확인 필요.
-- 6번(Context Portability)의 Workday 통계 정정은 이번 세션 자체 재조사로 이뤄졌으나, Workday의
-  "Copy/Paste Economy" 리포트 원문 PDF/페이지는 직접 열람하지 못하고 2차 보도(barchart.com,
-  HR Grapevine, cfotech.com.au)로 교차 확인한 것 — `verifier`가 Workday 1차 자료를 직접
-  대조하는 것을 권장.
+  보장하지 않는 항목이 있다(특히 5번) — 8번은 이번 검증으로 정확한 발표일(2026-05-12)을 확보해
+  해소됨. 5번은 이번 검증 범위 밖이라 미확인 상태 유지.
+- 6번(Context Portability)의 Workday 통계 정정은 이번 세션 자체 재조사로 이뤄졌고, 이번
+  `verifier` 패스에서 독립 재검색으로 재확인했다. 다만 이번 검증에서도 newsroom.workday.com/
+  www.workday.com에 대한 직접 WebFetch가 이 환경의 네트워크 정책상 차단되어 있어, 2차 보도
+  (barchart.com, HR Grapevine, cfotech.com.au, TechRadar, ComputerWeekly)와 WebSearch가
+  반환한 원문 발췌를 통한 교차 확인에 머물렀다 — Workday 원문 페이지/PDF의 전체 텍스트를 직접
+  열람한 것은 아니라는 한계가 남아 있다.
+- 7번(App Intents/AppFunctions): 이번 검증에서 "Google, 2026-06 공식 발표"라는 날짜 귀속이
+  오류임을 발견해 정정했다(정확한 Google 발표일은 2026-02-26). Apple 쪽 2026-06-08(WWDC)은
+  정확함이 확인됨.
 - 9/17~9/21 이후에도 이 브리핑이 매일 발행되고 있으므로, 후속 세션에서 새 항목이 나오면 같은
   기준(큰 그림·LG 임팩트)으로 다시 걸러서 추가할 것.
