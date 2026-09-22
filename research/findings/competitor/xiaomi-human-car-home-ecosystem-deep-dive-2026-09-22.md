@@ -52,12 +52,23 @@ Scope: 샤오미 HyperOS/HyperOS 4의 "人車家"(사람-차-집) 통합 아키�
   (source: [IT之家](https://www.ithome.com/0/926/401.htm), [53AI](https://www.53ai.com/news/LargeLanguageModel/2026030745937.html), [观察者网](https://www.guancha.cn/economy/2026_03_06_809060.shtml), [小米澎湃OS 개발자 공지](https://dev.mi.com/xiaomihyperos/announcement/detail?id=41), [量子位(PC판 베타)](https://www.qbitai.com/2026/04/403867.html), 2026-03-06/2026-04)
 - **HyperOS 4 출시 타임라인 — 정확한 날짜**: **2026-08-13** 공식 발표(전통적 발표 행사 없이 곧바로
   중국 내 베타 프로그램 신청 오픈), 중국 베타는 **2026-08-14~2026-09-17** 사이 3차례로 나눠 순차
-  배포, 안정 버전(stable) 일부 기기 배포는 **2026-09-07**로 확인됨(베타 종료 시점보다 이른 점은
-  기기별 순차 배포 특성으로 추정 — 정확한 정합성은 이번 세션에서 재확인 못함, Open questions 참고).
+  배포. ~~안정 버전(stable) 일부 기기 배포는 **2026-09-07**로 확인됨(베타 종료 시점보다 이른 점은
+  기기별 순차 배포 특성으로 추정 — 정확한 정합성은 이번 세션에서 재확인 못함, Open questions 참고).~~
+  **[2026-09-22 verifier 정정]** 저자가 스스로 플래그한 날짜 불일치를 중국어 1차 매체(今日头条,
+  凤凰网, 新浪, MIUI 공식 페이지)로 재검색해 해소함 — **2026-09-07은 "안정 버전 배포"가 아니라
+  "6개 기종(Xiaomi 17 시리즈, Redmi K90 시리즈 등) 대상 베타(测试版) 푸시"였고, 같은 날 신제품
+  Xiaomi Pad 9 Pro Max가 HyperOS 4를 공장 출고 시 기본 탑재(首发搭载)한 것**이 "9월 7일에 HyperOS
+  4가 배포됐다"는 인상을 만든 원인으로 확인된다. 기존 보유 기종 대상 **정식 안정 버전(正式版)
+  순차 배포는 2026-10-15부터 시작 예정**이며(小米公布澎湃OS 4正式版推送计划, 凤凰网·新浪 2026-09
+  보도), 전체 대상 기종 롤아웃은 2026년 12월~2027년 1월까지 이어질 계획이다. 즉 원문의 "베타
+  종료(~09-17)보다 안정판(09-07)이 먼저"라는 모순은 **애초에 09-07 배포분이 안정판이 아니라
+  베타였기 때문**이며, 실제 안정판은 베타 3차 배포(~09-17) 이후인 10-15부터 시작되므로 시간
+  순서상 모순이 없다 — 날짜 자체가 아니라 "무엇이 베타/안정판인지"를 혼동한 것이 원인이었다.
   글로벌 베타 모집은 **2026-09-10** 시작, 글로벌 첫 펌웨어는 2026년 9월 말~10월 초 예정. HyperOS 4는
   러스트(Rust) 코어 재작성, 40% 성능 개선, MiMo·miclaw 기반 오프라인 AI, 기기 간 파일 전송 속도
   300% 개선을 표방.
-  (source: [Gizchina](https://www.gizchina.com/xiaomi-phones/hyperos-4-is-dropping-in-august), [Gizmochina(2026-06-20)](https://www.gizmochina.com/2026/06/20/xiaomi-hyperos-4-update-supported-devices-release-date-and-more/), [en.xiaomi-miui.gr](https://en.xiaomi-miui.gr/hyperos-4-features-release-date-2026/), 2026-08~09)
+  (source: [Gizchina](https://www.gizchina.com/xiaomi-phones/hyperos-4-is-dropping-in-august), [Gizmochina(2026-06-20)](https://www.gizmochina.com/2026/06/20/xiaomi-hyperos-4-update-supported-devices-release-date-and-more/), [en.xiaomi-miui.gr](https://en.xiaomi-miui.gr/hyperos-4-features-release-date-2026/), 2026-08~09.
+  **[2026-09-22 verifier 정정 출처]** [今日头条(9/7 6개 기종 베타 푸시)](https://www.toutiao.com/article/7682298666467721772/), [凤凰网(정식판 10/15 순차 배포 계획 발표)](https://tech.ifeng.com/c/8wUmQy0wacV), [新浪(정식판 배포 계획 공표)](https://www.sina.cn/weibo/detail/5345238476392783.html), [MIUI 공식 베타 공지](https://web.vip.miui.com/page/info/mio/mio/detail?postId=53263627))
 - **연결 규모 — 2026년 실적으로 검증된 숫자**: 샤오미 2026년 2분기(2026-04~06) 실적 발표(**발표일
   2026-08-18**, 자체 홍콩거래소 공시·IR 캘린더로 확인)에 따르면 **AIoT 플랫폼 연결기기(스마트폰·
   태블릿 제외) 11.6억 대**(전년 동기 대비 17.4% 증가), **AIoT MAU 7억 6,650만 명**(사상 최고치),
@@ -66,6 +77,9 @@ Scope: 샤오미 HyperOS/HyperOS 4의 "人車家"(사람-차-집) 통합 아키�
   247억 위안이었다 — 즉 2026년 한 해에만 분기별로 꾸준히 규모가 커지고 있음이 자체 IR 자료로
   확인된다.
   (source: [Xiaomi 공식 X(Twitter) 계정](https://x.com/Xiaomi/status/2089683744730890253), [Xiaomi IR 이벤트 캘린더](https://ir.mi.com/events/event-details/2026-interim-results-announcement), [KuCoin](https://www.kucoin.com/news/flash/xiaomi-q2-2026-revenue-falls-6-1-amid-high-r-d-and-capital-expenditure), [Investing.com](https://www.investing.com/news/company-news/xiaomi-q2-2026-slides-ev-growth-and-ai-gains-offset-smartphone-pressure-93CH-4865316), 2026-08-18 발표)
+  **[2026-09-22 verifier 확인]** 재검색으로 2026-08-18 발표, 연결기기 11.6억 대, AIoT MAU 766.5백만
+  (사상 최고치), 5대 이상 보유 이용자 2,460만 명(+20.2% YoY), IoT·라이프스타일 매출 313억 위안 모두
+  Xiaomi 공식 X 계정·Investing.com·Quartr·KuCoin 등 복수 소스로 원문 수치 그대로 일치 확인.
 
 ### 2. Xiaomi SU7/SU7 Ultra × 스마트홈 연동 — 구체 시나리오와 2026년 판매 실적
 
@@ -92,6 +106,10 @@ Scope: 샤오미 HyperOS/HyperOS 4의 "人車家"(사람-차-집) 통합 아키�
   체결식을 가졌다 — 즉 **2026-09 시점까지도 "人車家" 서사의 차량 축은 중국 내수에서만 실현된
   상태이고, 유럽에서는 딜러망 계약 단계일 뿐 실제 판매는 시작되지 않았다.**
   (source: WebSearch 종합 [fonearena](https://www.fonearena.com/blog/491337/xiaomi-380-products-xiaomi-auto-human-x-car-x-home-ecosystem-ifa-2026.html), [Carscoops](https://www.carscoops.com/2026/09/xiaomi-launch-europe-germany/), [Euronews](https://www.euronews.com/next/2026/09/06/ifa-2026-xiaomi-wants-its-smart-home-cars-on-european-roads-by-2027), 2026-09)
+  **[2026-09-22 verifier 확인]** 재검색으로 Electrek·CnEVPost·Just Auto·ArenaEV·Lowyat.NET 등
+  추가 매체가 "2027년 독일/유럽 EV 출시", "IFA 2026에서 독일 8개 딜러 그룹과 MOU 체결" 사실을
+  동일하게 보도함을 확인 — EU向 판매 2027년 시작 서술은 정확하다. 단, 구체 차종·가격·정확한 월은
+  2026-09-22 시점까지 미공개임을 추가 확인(Electrek: "차종·가격·구체 일정 미공개" 명시).
 - **MWC 2026(2026-03-02~05, 바르셀로나) 시연**: 샤오미 프레스 콘퍼런스에서 "Human x Car x Home"을
   핵심 주제로 재확인, SU7 Ultra와 컨셉트카 "Xiaomi Vision GT"를 전시하며 스쿠터(Electric Scooter
   6)·Mijia 가전 라인업까지 AIoT 확장을 시연 — "AI가 화면을 넘어 실물 세계로 이동한다"는 메시지를
@@ -104,6 +122,12 @@ Scope: 샤오미 HyperOS/HyperOS 4의 "人車家"(사람-차-집) 통합 아키�
   듀얼 챔버 에어 서스펜션을 기본 탑재, 후석에 6개 통합 스크린을 제어하는 업그레이드 리모트 패널을
   추가.
   (source: [IT之家(2026-07 인도량)](https://m.ithome.com/html/984428.htm), [IT之家(레이쥔 발표)](https://www.ithome.com/0/988/768.htm), [网通社(누적 70만대)](http://www.news18a.com/news/storys_255285.html), [Phandroid(2026-03-20 페이스리프트)](https://phandroid.com/2026/03/20/xiaomis-upgraded-su7-models-make-their-official-debut/), 2026년)
+  **[2026-09-22 verifier 확인]** 재검색 결과 Xiaomi Auto가 **2026-07-30 누적 인도 70만 대**를
+  달성했고(Gasgoo·CnEVPost·ArenaEV 등 복수 매체), 이후 약 한 달 뒤 80만 대를 돌파했다는 후속 보도로
+  일치 확인 — "2026-07 기준 70만 대 초과" 서술 정확함. 다만 "SU7 단일 차종 2026-07 월 판매
+  21,044대"는 이번 재검증에서 별도로 원문 재대조하지 못했다(CnEVPost의 "2026-07 EV 인도 31,267대"는
+  SU7+YU7 합산 수치로 보이며 SU7 단독 21,044대와 배타적으로 모순되진 않으나 완전한 수치 정합은
+  확인 못함 — Open questions에 추가).
 
 ### 3. 로봇 라인업과의 통합 현황 — 2026년 기준
 
@@ -189,6 +213,11 @@ Scope: 샤오미 HyperOS/HyperOS 4의 "人車家"(사람-차-집) 통합 아키�
     2025-01-16으로 판단된다(2026년 관련 보도는 기존 2025년 제소 건의 재조명·후속 취재일 가능성이
     높음 — 다음 세션에서 noyb.eu 직접 열람으로 재확인 필요).
   (source: [Agence Europe](https://agenceurope.eu/en/bulletin/article/13560/7/ngo-noyb-sues-chinese-companies-tiktok-aliexpress-shein-temu-wechat-and-xiaomi-for-failing-to-comply-with-gdpr), [DataGuidance](https://www.dataguidance.com/news/eu-noyb-filed-complaints-against-tiktok-aliexpress), [BornCity(2025-01-19)](https://borncity.com/win/2025/01/19/noyb-complains-about-data-transfer-to-tiktok-aliexpress-co/), 2025년 배경)
+  **[2026-09-22 verifier 확인]** 재검색으로 2025-01-16 제소일, 5개국(그리스·이탈리아·벨기에·
+  네덜란드·오스트리아) 중 샤오미·TikTok은 그리스에 제소된 사실을 Cybernews·mezha.ua·Brussels
+  Signal·Infosecurity Magazine 등 추가 매체로 교차 확인 — 파일의 2025-01-16 판단은 정확하다.
+  2026년 최종 제재·판결 결과는 이번 재검증에서도 발견하지 못해 "2026년 확인 자료 없음" 서술은
+  유지한다(noyb.eu 원문은 이번 세션에서도 EGRESS_BLOCKED로 직접 열람 불가).
 
 **(4) 폐쇄형 생태계 — Matter 개방 표준 참여는 사실상 극히 미미**
 - 2026년 기준 Matter 기기 인증 레지스트리(Matter Survey)에 등재된 샤오미 인증 제품은 **매터-OT
@@ -201,6 +230,9 @@ Scope: 샤오미 HyperOS/HyperOS 4의 "人車家"(사람-차-집) 통합 아키�
   기기를 보유한 해외 소비자가 부분적으로만 편입되기는 사실상 어렵다.** 서구권에서 구글/삼성/애플이
   Matter를 공동 인프라로 밀고 있는 것과 정반대 방향의 전략적 선택이다.
   (source: [Matter Survey — Xiaomi 벤더 페이지](https://matter-survey.org/vendor/xiaomi-4718), [MatterDevices.io](https://matterdevices.io/manufacturer/xiaomi/), [Matter Alpha](https://www.matteralpha.com/news/xiaomi-expands-global-Matter-listings-with-a-new-retrofit-lock), 2026년 6월 기준 등재 상태)
+  **[2026-09-22 verifier 확인]** matter-survey.org의 Xiaomi 벤더 페이지 재검색으로 "5개 Matter 인증
+  제품"(스마트 전구, Smart Home Hub 2/2S, 셀프 설치 스마트락 등) 등재 수치를 재확인 — 원문의 "5종
+  수준" 서술과 일치.
 
 **(5) 유럽 진출 실행 리스크 — 투자자도 아직 확신하지 못함 (2026년 자료)**
 - IFA 2026(2026-09) 발표 직후 시점까지도 샤오미 주가는 **2026년 연초 대비 약 31~33% 하락**한
@@ -281,10 +313,12 @@ B2B 구조를 갖는다. 즉 LG는 "진입점(폰)"도 "노드(차량 브랜드)
 
 ## Open questions / gaps
 
-- HyperOS 4의 "베타 배포(~2026-09-17)"와 "안정 버전 배포(2026-09-07)" 날짜가 서로 앞뒤가 맞지
-  않는 것처럼 보이는 점을 이번 세션에서 완전히 해소하지 못했다 — 기기별 순차 배포로 추정되나,
-  Xiaomi 공식 뉴스룸(`hyperos.mi.com`, `dev.mi.com`) 원문 대조가 필요하다(다수 원문 도메인이
-  EGRESS_BLOCKED로 직접 열람 불가).
+- **[2026-09-22 verifier 해소 — 더 이상 Open question 아님]** HyperOS 4의 "베타 배포(~2026-09-17)"
+  vs "안정 버전 배포(2026-09-07)" 날짜 불일치는 재검증으로 해소됨 — 2026-09-07은 안정판이 아니라
+  6개 기종 대상 베타 푸시 + 신제품(Pad 9 Pro Max) 공장 출고 기본 탑재였고, 기존 기종 대상 정식
+  안정판은 2026-10-15부터 순차 배포된다(본문 1번 항목에 정정 반영). Xiaomi 공식 도메인
+  (`hyperos.mi.com`, `dev.mi.com`)은 여전히 이번 세션에서도 EGRESS_BLOCKED였으나, 중국어 1차/2차
+  매체(今日头条·凤凰网·新浪·MIUI 공식 커뮤니티 공지) 교차 확인으로 대체 검증함.
 - noyb의 샤오미 관련 GDPR 제소가 2026년에 별도로 새로 제기됐는지, 아니면 2025-01-16 건이
   재조명된 것인지 이번 세션에서 명확히 가르지 못했다 — `noyb.eu` 원문이 EGRESS_BLOCKED로 직접
   열람이 막혀 있어, 접근 가능한 세션에서 원문 확인이 필요하다("2026년 확인 자료 없음"으로 잠정

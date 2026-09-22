@@ -40,6 +40,8 @@ macOS/watchOS/visionOS)·백엔드(iCloud)·프레임워크(Continuity, App Inte
   효과를 만들며, 타사가 동일한 밀도의 기기 보급률을 갖추지 못하면 Continuity류 기능은 애초에 체감
   빈도가 낮아질 수밖에 없다.
   (source: [MacRumors(2026-01-29)](https://www.macrumors.com/2026/01/29/apple-2-5-billion-active-devices/), [AppleInsider(2026-01-29)](https://appleinsider.com/articles/26/01/29/apple-reaches-25-billion-active-devices-after-record-breaking-quarter))
+  **[2026-09-22 verifier 확인]** MacRumors·AppleInsider·9to5Mac·CNBC·Apple Newsroom(2026-01-29 실적발표)
+  독립 재검색으로 "2.5billion active devices"·"직전 해 2.35B 대비 150M 순증" 수치 일치 확인.
 - **2026-09-14, iOS 27·macOS 27(및 iPadOS 27 등)이 정식 출시**되며 iPhone Mirroring이 리사이즈
   가능한 창·Control Center 접근·DRM 보호 영상 재생 지원으로 업그레이드됐다(WWDC 2026, 2026-06-08
   발표분의 실제 소비자 배포). Universal Control은 Mac 1대의 키보드·트랙패드로 주변 Mac/iPad
@@ -47,6 +49,9 @@ macOS/watchOS/visionOS)·백엔드(iCloud)·프레임워크(Continuity, App Inte
   사용자 배포" 사이 간격을 WWDC(6월)→가을 정식 출시(9월)의 약 3개월로 관리하며, 2026년에도 이
   주기를 그대로 반복했다.
   (source: [MacRumors(iOS 27 출시일 2026-09-09 발표, 2026-09-14 출시)](https://www.macrumors.com/2026/09/09/apple-announces-ios-27-release-date/), [iDropNews(iPhone Mirroring 업그레이드)](https://www.idropnews.com/ios-27/ios-27-macos-27-iphone-mirroring-upgrade/267101/), [Apple Support(Universal Control)](https://support.apple.com/en-us/102459))
+  **[2026-09-22 verifier 확인]** 9to5Mac(2026-09-09 발표), Wikipedia(iOS 27), MacRumors(2026-09-13)
+  재검색으로 2026-09-14(월) iOS 27·macOS 27·iPadOS 27·watchOS 27·tvOS 27·visionOS 27 동시 정식
+  출시 사실 일치 확인. WWDC 2026-06-08 발표 사실도 일치.
 - **App Intents가 "크로스앱 에이전트 실행"의 유일한 공식 경로로 격상됐다 — WWDC 2026(2026-06-08)
   에서 SiriKit 공식 폐기(deprecation) 발표, 개발자에게 2~3년 전환 유예.** 새 Siri AI(Gemini 기반,
   별도 기존 파일 `home-ai-standard-war-2026-09-21.md` 참고)는 App Intents 스키마를 채택한 앱만
@@ -78,12 +83,28 @@ macOS/watchOS/visionOS)·백엔드(iCloud)·프레임워크(Continuity, App Inte
   지원하는 곳은 사실상 없다.** 삼성(SmartThings)·LG(ThinQ)·GE(SmartHQ)·Whirlpool/KitchenAid·
   Bosch(Home Connect)·Miele(Miele@mobile)·Electrolux 모두 각자 자체 앱을 쓰고, 전부 Alexa·Google
   Home과는 연동하지만 HomeKit과는 연동하지 않는다. Matter를 매개로 한 간접 연동이 유일한 경로인데,
-  **삼성은 2026년형 일부 냉장고·세탁기 모델에 Matter 지원을 발표(아직 실배송 전)했고, LG는 Matter
+  ~~**삼성은 2026년형 일부 냉장고·세탁기 모델에 Matter 지원을 발표(아직 실배송 전)했고, LG는 Matter
   가전 지원을 2027년 모델로 계획, Bosch/BSH도 Home Connect의 Matter 대응을 2027년으로 목표**하고
   있다 — 즉 2026년 시점 주요 3사 모두 "가전 자체의 Matter 지원"은 아직 실현되지 않았거나 계획
-  단계다. Matter 모델이 실제로 출하되면 HomePod/Apple TV가 컨트롤러 역할을 해 Apple Home 앱에
-  자동으로 나타나는 구조이므로, 브랜드가 HomeKit 전용 작업을 따로 할 필요는 없다.
-  (source: [EasyBear(2026년 HomeKit 가전 호환성 정리)](https://easybear-appliancerepair.com/blog/apple-homekit-appliance-compatibility), [DataWireSolutions(LG webOS/Matter 2027)](https://datawiresolutions.com/blog/lg-webos-smart-home-integration) — **주의: 두 출처 모두 SEO 성격의 종합 블로그로 1차 출처(삼성·LG·Bosch 공식 발표) 직접 대조는 이번 세션에서 하지 못했다. 2026/2027 Matter 가전 로드맵의 정확성은 후속 세션에서 각사 공식 뉴스룸으로 재검증이 필요하다 — Open questions 참고.**)
+  단계다.~~ **[2026-09-22 verifier 정정] Bosch/BSH 부분은 사실과 다르다 — Bosch/BSH는 이미
+  2025-01(CES 2025)에 "업계 최초 Matter 인증 가전(냉장고)"을 공개했고, Bosch 100/300/500 Series
+  냉장고가 2025년 봄(미국 기준) 실제로 출시·판매됐다(BSH 공식 CES 2025 보도자료, us.bosch-press.com;
+  Bosch 공식 지원 페이지 bosch-home.com/us/experience-bosch/home-connect/matter). BSH의 공개
+  로드맵은 "2025년 냉장고 시작 → 2026년 가전 카테고리 1개 추가 → 2027년 3개 카테고리 추가"이며,
+  "Home Connect의 Matter 대응을 2027년으로 목표"라는 원 서술은 **Bosch가 이미 2년 전에 첫 Matter
+  가전을 출시했다는 사실과 정면으로 배치**되므로 삭제한다. 삼성·LG 부분은 이번 재검증에서도
+  1차 출처(삼성 뉴스룸·LG전자 공식 뉴스룸)로 확정하지 못했다 — 재검색 결과 삼성 SmartThings는
+  Matter 컨트롤러(허브) 역할은 이미 지원하지만 "삼성 자체 대형가전(냉장고·세탁기)이 Matter
+  엔드포인트로 인증됐다"는 확정 근거는 찾지 못했고(GReverse 등 2차 매체는 오히려 "삼성 자체
+  대형가전은 아직 Matter를 채택하지 않았다"고 서술), LG도 webOS/TV의 Matter 컨트롤러 지원 사실은
+  다수 확인되나 "LG 냉장고·세탁기 자체가 Matter 엔드포인트로 2027년 지원 예정"이라는 구체 로드맵은
+  1차 출처로 확정하지 못했다 — 이 두 회사 부분은 계속 Open questions로 남긴다.** 요컨대 2026년
+  시점 "가전 자체의 Matter 엔드포인트 지원"에서 **Bosch/BSH는 이미 2025년부터 실현 단계**이고,
+  삼성·LG는 확인 불가(미확정)다 — 세 회사를 "모두 2026-2027년 계획 단계"로 뭉뚱그린 원문 서술은
+  과도한 일반화였다. Matter 모델이 실제로 출하되면 HomePod/Apple TV가 컨트롤러 역할을 해 Apple
+  Home 앱에 자동으로 나타나는 구조이므로, 브랜드가 HomeKit 전용 작업을 따로 할 필요는 없다.
+  (source: [EasyBear(2026년 HomeKit 가전 호환성 정리)](https://easybear-appliancerepair.com/blog/apple-homekit-appliance-compatibility), [DataWireSolutions(LG webOS/Matter 2027)](https://datawiresolutions.com/blog/lg-webos-smart-home-integration) — 원 출처, 삼성·LG 부분은 여전히 SEO 블로그 기반 미확정.
+  **[2026-09-22 verifier 정정 출처]** [BSH/Bosch 공식 CES 2025 보도자료](https://us.bosch-press.com/pressportal/us/en/press-release-26304.html), [BSH CES 2026 보도자료(2026/2027 카테고리 확장 로드맵)](https://www.bsh-group.com/us/press/press-releases/bsh-home-appliances-at-ces-2026), [Bosch 공식 Matter 지원 페이지](https://www.bosch-home.com/us/experience-bosch/home-connect/matter))
 - **LG가 HomeKit에 없다는 것은 "LG가 뒤처져서"가 아니라 업계 전체가 아직 안 들어가 있다는 뜻이다.**
   즉 HomeKit 가전 생태계는 2026년 시점 Apple 쪽에서도 확장이 정체된 영역이며, Apple의 2026년
   투자는 명백히 "카메라·보안"에 쏠려 있다 — 냉장고·세탁기 같은 대형가전 직접 연동 확장은 2026년
@@ -111,11 +132,19 @@ macOS/watchOS/visionOS)·백엔드(iCloud)·프레임워크(Continuity, App Inte
   유력 후보는 현대 아이오닉 3)에 CarPlay Ultra가 탑재될 것으로 전망되나, 2026-09-22(이 조사
   시점) 기준 실제 출시 여부는 확인되지 않았다.
   (source: [MacRumors(2026-08-20, "Where is CarPlay Ultra?")](https://www.macrumors.com/2026/08/20/apple-where-is-carplay-ultra/), [MacRumors(2026-05-21)](https://www.macrumors.com/2026/05/21/carplay-ultra-future-vehicle-brands/), [9to5Mac(2026-05-04)](https://9to5mac.com/2026/05/04/carplay-ultra-automakers/))
+  **[2026-09-22 verifier 확인]** 재검색으로 "2026-08-20 기준 여전히 Aston Martin 단독", Mark
+  Gurman의 "a bit of a dud" 인용, 현대/기아 2026년 하반기 탑재 전망 모두 원문 그대로 일치 확인.
 - **CarPlay(표준판) 자체의 보급률은 매우 높다 — 2026년 미국 신차의 약 94%가 CarPlay를 지원**하고
   (800개 이상 모델, 50개 이상 브랜드), 미국 신차 구매자의 약 80%가 "CarPlay 미지원 차량은
   고려하지 않는다"고 답했다. 단, 이 수치들은 정확한 발표 기관·조사 시점(정확한 날짜)까지는 확인하지
   못했다("2026년" 자료로 스니펫에서 확인됐으나 원문 1차 대조는 못함 — Open questions 참고).
   (source: WebSearch 종합, addcarwidgets.com 스니펫 기반, 원문 미확인)
+  **[2026-09-22 verifier 확인 — 단, 원문 1차 대조는 여전히 미완료]** 재검색 결과 동일 수치(미국
+  신차의 94%, 신차 구매자의 80%)가 obdeleven.com·cartechstudio.com·wifitalents.com 등 복수의
+  독립된 2차 자동차 통계 매체에서도 일관되게 인용되고 있어, 특정 한 매체의 오기(誤記)가 아니라
+  업계에 널리 통용되는 수치임은 추가로 확인됐다. 다만 이 수치의 최초 발표 기관·조사방법론·정확한
+  조사 시점(YYYY-MM-DD)은 이번 재검증에서도 확정하지 못했다 — 원문 1차 소스 특정은 여전히 Open
+  question으로 남긴다.
 
 → **종합**: LG UX디자인연구소가 다루는 "차→가전 연결 지점"에서, **Apple은 2026년 기준 이 영역의
 실질적 제품을 내놓지 못했다.** CarPlay Ultra(차세대 CarPlay, 계기판까지 장악)조차 자동차 업계의
@@ -133,12 +162,19 @@ macOS/watchOS/visionOS)·백엔드(iCloud)·프레임워크(Continuity, App Inte
   못했다. 단, Mac·visionOS·watchOS는 DMA상 "게이트키퍼 플랫폼"으로 지정되지 않아 이 제한에서
   제외됐다.
   (source: [Bloomberg(2026-06-08)](https://www.bloomberg.com/news/articles/2026-06-08/apple-delays-siri-ai-for-iphone-users-in-eu-says-regulators-refusing-to-engage), [Engadget](https://www.engadget.com/2189932/siri-ai-for-iphones-and-ipads-will-be-delayed-indefinitely-in-the-eu/), [Apple Newsroom](https://www.apple.com/newsroom/2026/06/due-to-dma-siri-ai-delayed-in-eu-for-ios-27-and-ipados-27/) — Apple Newsroom 원문은 EGRESS_BLOCKED로 직접 열람은 못했으나 Bloomberg·Engadget 등 복수 매체가 발표 사실·날짜·내용을 교차 확인)
+  **[2026-09-22 verifier 확인]** 재검색으로 Apple Newsroom URL(apple.com/newsroom/2026/06/due-to-
+  dma-siri-ai-delayed-in-eu-for-ios-27-and-ipados-27/) 실존 확인, Engadget·Daring Fireball·
+  ieu-monitoring 등 추가 매체로 "무기한 연기"·"명확한 일정 없음"·Craig Federighi 발언 내용 일치
+  확인.
 - **2026-07-08, EU 일반법원(General Court)이 Apple의 DMA "게이트키퍼" 지정 취소 소송을 전부
   기각했다.** 이로써 App Store·iOS가 DMA상 핵심 플랫폼 서비스(core platform service)라는 지정이
   확정됐고, Apple의 유일한 남은 불복 경로는 사실관계 재심리가 불가능한 법률심(CJEU 상고)뿐이다.
   즉 Apple이 자사 iOS/App Store의 폐쇄성을 규제로부터 방어하려던 시도가 2026년에 법적으로 실패한
   것이다.
   (source: [TechTimes(2026-07-08)](https://www.techtimes.com/articles/319935/20260708/apple-loses-dma-gatekeeper-fight-eu-court-closes-interoperability-challenge-window.htm), [HNGN(2026-07-09)](https://www.hngn.com/articles/271991/20260709/eu-court-upholds-apples-gatekeeper-status-under-digital-markets-act-rejects-challenge.htm), [Ashurst Perkins Coie 법률분석](https://www.ashurstperkinscoie.com/en/insights/eu-general-court-rejects-apple-challenges-to-european-commission-dma-designation-decisions/))
+  **[2026-09-22 verifier 확인]** 재검색으로 2026-07-08 판결일, T-1079/23·T-1080/23 사건번호,
+  iMessage 핵심 플랫폼 서비스 지정 관련 청구 각하, CJEU 상고만 남은 상황 모두 Concurrences·JURIST·
+  Lawyer Monthly·dig.watch 등 복수 매체로 일치 확인.
 - **DMA 상호운용성 요청 56건 중 단 1건도 해결되지 않음 — 2026-03-22 기준.** 개발자들이 JIT
   컴파일, NFC 프로토콜, Bluetooth LE Audio 등에 대한 접근을 요청했지만 "법의 적용범위 밖"이라는
   이유로 대부분 거부됐다. 또한 iMessage 대화 이력은 사실상 타 플랫폼으로 이전(export)이 불가능해
@@ -146,6 +182,12 @@ macOS/watchOS/visionOS)·백엔드(iCloud)·프레임워크(Continuity, App Inte
   즉 "기기 전환 시 데이터 이전"은 형식적으로는 지원되지만(연락처·캘린더·메시지·사진 등), 실질적
   락인 효과는 여전히 강하다는 것이 2026년 학계·정책 분석의 결론이다.
   (source: [FSFE(2026-07-24)](https://fsfe.org/news/2026/news-20260724-01.en.html), [Policy Review(exit penalty 분석)](https://policyreview.info/articles/news/exit-penalty-platform-migration), [EU DMA 공식 팩트시트(2026-05-11)](https://digital-markets-act.ec.europa.eu/factsheet-how-dma-making-smartphones-better-interoperability-and-data-portability-case-studies-2026-05-11_en))
+  **[2026-09-22 verifier 확인, 출처 보완]** "56건 중 0건 해결(2026-03-22 기준)" 수치 자체는 재검색
+  으로 정확히 일치 확인됐으나, 원 출처는 이 파일이 인용한 FSFE(2026-07-24) "Legal Corner" 글이
+  아니라 FSFE(2026-04-20) "Apple keeps challenging its interoperability obligations under the
+  DMA" 기사(fsfe.org/news/2026/news-20260420-01.html)에서 처음 보도된 수치다(2026-07-24 글은
+  이후 같은 수치를 재인용하는 후속 요약 성격) — 인용 출처를 1차 보도 기준으로 보완한다. FSFE의
+  JIT 컴파일·NFC·BLE Audio 요청 거부 사례, "24개월 이행 유예" 구조도 재검색으로 일치 확인.
 - **자동차 업계의 CarPlay(Ultra) 저항이 2026년에도 이어지고 있다.** GM은 신형 전기차 라인업에서
   Apple CarPlay 자체를 제거하고 자체 소프트웨어 플랫폼으로 전환하는 기존 방침(2023년 결정, 배경
   정보)을 2026년에도 유지 중이며, BMW·Rivian은 CarPlay Ultra 채택에 공개적으로 회의적 입장을,
@@ -203,10 +245,13 @@ LG는 Apple처럼 실리콘(자체 모바일 AP)·OS(모바일/데스크톱)·�
 
 ## Open questions / gaps
 
-- LG의 2027년 Matter 가전 지원 계획, 삼성의 2026년형 일부 모델 Matter 지원, Bosch/BSH의 2027년
-  목표는 모두 SEO 성격 종합 블로그(easybear-appliancerepair.com, datawiresolutions.com)에서만
-  확인했다 — 삼성 뉴스룸, LG전자 공식 뉴스룸(news.lge.co.kr/lg.com, 이번 세션에서 EGRESS_BLOCKED로
-  직접 열람 불가), Bosch/BSH 공식 발표로 1차 대조·재검증이 필요하다.
+- **[2026-09-22 verifier 정정 반영]** LG의 2027년 Matter 가전 지원 계획, 삼성의 2026년형 일부
+  모델 Matter 지원 서술은 재검증 결과 여전히 1차 출처로 확정하지 못했다(계속 Open question).
+  **Bosch/BSH의 "2027년 목표" 서술은 오류로 확인되어 본문에서 정정했다** — Bosch/BSH는 이미
+  2025-01(CES 2025)에 Matter 인증 냉장고를 공개, 2025년 봄 미국 실판매를 시작했고, 공식 로드맵은
+  "2025 냉장고 → 2026 카테고리 1개 추가 → 2027 카테고리 3개 추가"다(BSH/Bosch 공식 보도자료로
+  확인). 삼성·LG 부분은 삼성 뉴스룸, LG전자 공식 뉴스룸(news.lge.co.kr/lg.com, 이번 세션에서도
+  EGRESS_BLOCKED로 직접 열람 불가)으로 1차 대조·재검증이 여전히 필요하다.
 - CarPlay 보급률 수치(미국 신차의 94%, 신차 구매자의 80%가 CarPlay 미지원 시 구매 안 함)는
   addcarwidgets.com 스니펫 기반으로만 확인했고, 정확한 발표 기관·조사 시점·원문은 확인하지
   못했다.
